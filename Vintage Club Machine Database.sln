@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Machine Database", "Machine Database\Machine Database.sqlproj", "{BEE89D70-44E6-42DF-8199-D4B68FC82633}"
+	ProjectSection(ProjectDependencies) = postProject
+		{50F43101-BFDF-40C5-B2FF-E40E00AE52B7} = {50F43101-BFDF-40C5-B2FF-E40E00AE52B7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User Interface For Vintage Club Database", "User Interface For Vintage Club Database\User Interface For Vintage Club Database.csproj", "{50F43101-BFDF-40C5-B2FF-E40E00AE52B7}"
 EndProject
