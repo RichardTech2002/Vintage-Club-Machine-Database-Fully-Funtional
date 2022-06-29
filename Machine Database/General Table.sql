@@ -5,5 +5,6 @@
     [YearBuilt] INT NULL, 
     [DonatedBy] NCHAR(25) NULL, 
     [DonationDate] INT NULL, 
-    [Description] VARCHAR(1500) NULL
+    [Description] VARCHAR(1500) NULL, 
+    [Image] IMAGE NULL
 )
