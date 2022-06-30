@@ -16,5 +16,10 @@ namespace User_Interface_For_Vintage_Club_Database
         {
             InitializeComponent();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
