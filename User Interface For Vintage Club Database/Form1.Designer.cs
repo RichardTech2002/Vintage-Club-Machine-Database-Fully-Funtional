@@ -38,10 +38,11 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(445, 65);
+            this.pictureBox1.Location = new System.Drawing.Point(400, 65);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 211);
+            this.pictureBox1.Size = new System.Drawing.Size(393, 211);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -49,9 +50,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(380, 334);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(357, 333);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 80);
+            this.button1.Size = new System.Drawing.Size(157, 80);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add Machines";
             this.button1.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(686, 334);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(663, 333);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 80);
+            this.button2.Size = new System.Drawing.Size(157, 80);
             this.button2.TabIndex = 2;
             this.button2.Text = "See Machines";
             this.button2.UseVisualStyleBackColor = true;
