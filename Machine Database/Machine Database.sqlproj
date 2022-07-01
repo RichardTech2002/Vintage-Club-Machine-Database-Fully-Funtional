@@ -60,4 +60,7 @@
   <ItemGroup>
     <Build Include="General Table.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Machine Database.refactorlog" />
+  </ItemGroup>
 </Project>

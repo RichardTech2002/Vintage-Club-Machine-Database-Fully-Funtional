@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="9719587c-4140-427f-8306-81f8f941d3f1" ChangeDateTime="07/01/2022 05:25:10">
+    <Property Name="ElementName" Value="[dbo].[General Table].[MachineName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[General Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Machine Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d6173efe-3aaf-48a7-9c78-6b4cff46122e" ChangeDateTime="07/01/2022 05:25:12">
+    <Property Name="ElementName" Value="[dbo].[General Table].[YearBuilt]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[General Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Year Built" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4c1599cb-8511-4156-bdb2-cf30f699493d" ChangeDateTime="07/01/2022 05:25:14">
+    <Property Name="ElementName" Value="[dbo].[General Table].[DonatedBy]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[General Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Donated By" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="af7bfda1-769e-4d69-a07e-b068950ede35" ChangeDateTime="07/01/2022 05:25:18">
+    <Property Name="ElementName" Value="[dbo].[General Table].[DonationDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[General Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Donation Date" />
+  </Operation>
+</Operations>
