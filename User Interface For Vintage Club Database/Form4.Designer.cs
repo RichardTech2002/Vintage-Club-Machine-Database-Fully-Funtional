@@ -171,8 +171,9 @@
             this.ClientSize = new System.Drawing.Size(874, 623);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "Machine Information";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
