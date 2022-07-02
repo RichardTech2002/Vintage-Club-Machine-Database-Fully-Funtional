@@ -63,4 +63,7 @@
   <ItemGroup>
     <RefactorLog Include="Machine Database.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Machine Database.publish.xml" />
+  </ItemGroup>
 </Project>
