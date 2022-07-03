@@ -33,5 +33,11 @@ namespace User_Interface_For_Vintage_Club_Database
             Form4 form4 = new Form4();
             form4.ShowDialog();
         }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            Form4 f4 = new Form4();
+            f4.ShowDialog();
+        }
     }
 }

@@ -51,5 +51,10 @@ namespace User_Interface_For_Vintage_Club_Database
         {
 
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
