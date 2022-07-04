@@ -270,9 +270,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(577, 67);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 29);
+            this.label9.Size = new System.Drawing.Size(195, 29);
             this.label9.TabIndex = 24;
-            this.label9.Text = "Location:";
+            this.label9.Text = "Display Location:";
             // 
             // comboBox2
             // 
@@ -289,10 +289,10 @@
             "Workshop",
             "In Storage - On-Site",
             "In Storage - Off-Site"});
-            this.comboBox2.Location = new System.Drawing.Point(735, 67);
+            this.comboBox2.Location = new System.Drawing.Point(807, 67);
             this.comboBox2.MaxDropDownItems = 20;
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(391, 37);
+            this.comboBox2.Size = new System.Drawing.Size(319, 37);
             this.comboBox2.TabIndex = 25;
             // 
             // Form2
