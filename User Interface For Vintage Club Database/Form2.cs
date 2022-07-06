@@ -40,9 +40,12 @@ namespace User_Interface_For_Vintage_Club_Database
             Demotext3 = textBox2.Text;
             Demotext4 = textBox3.Text;
             Demotext5 = richTextBox1.Text;
-            textBox1.Text = "";
+            comboBox1.SelectedItem = null;
+            comboBox2.SelectedItem = null;
+            textBox1.SelectedItem = null;
             textBox2.Text = "";
             textBox3.Text = "";
+            textBox4.Text = "";
             richTextBox1.Text = "";
             numericUpDown1.Text = "";
         }
@@ -55,6 +58,26 @@ namespace User_Interface_For_Vintage_Club_Database
         private void Form2_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string ImageLocation = "";
+            try
+            {
+                OpenFileDialog Dialog = new OpenFileDialog();
+                Dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png) |*.png|All Files(*.*)|*.*";
+
+                if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    ImageLocation = Dialog.FileName;
+                    pictureBox1.ImageLocation = ImageLocation;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
