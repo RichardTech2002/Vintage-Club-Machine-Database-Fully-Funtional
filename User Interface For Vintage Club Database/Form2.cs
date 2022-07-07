@@ -19,6 +19,8 @@ namespace User_Interface_For_Vintage_Club_Database
             InitializeComponent();
         }
 
+        public string conString = "";
+
         public static string Demotext1 = "";
         public static string Demotext2 = "";
         public static string Demotext3 = "";
