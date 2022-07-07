@@ -19,6 +19,8 @@ namespace User_Interface_For_Vintage_Club_Database
             InitializeComponent();
         }
 
+        public string conString = "Data Source=LAPTOP-BT59QU4U;Initial Catalog=Vintage_Database;Integrated Security=True";
+
         private void Form4_Load(object sender, EventArgs e)
         {          
             textBox2.Text = Form2.Demotext1;

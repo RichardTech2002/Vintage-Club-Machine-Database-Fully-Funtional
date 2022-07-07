@@ -14,39 +14,16 @@ namespace User_Interface_For_Vintage_Club_Database
 {
     public partial class Form3 : Form
     {
-        public List<DataClass> DataClass { get; set; }
         public Form3()
         {
-            DataClass = GetData();
             InitializeComponent();
         }
-        private List<DataClass> GetData()
-        {
-            var list = new List<DataClass>();
-            list.Add(new DataClass()
-            {
-                Machine_Type = "Tractor",
-                Year_Built = "1978",
-                Date_Donated = "05/05/2005",
-                Description = "It's a Tractor",
-                Maintenence_Information = "Put petrol in it",
-                Model = "Messy Fingerson",
-                Machine_Location = "Workshop",
-                Restoration_Status = "Scrapped",
-                Link_To_Tractor = "https//website.com"
-            });
 
-            return list;
-        }
+        public string conString = "Data Source=LAPTOP-BT59QU4U;Initial Catalog=Vintage_Database;Integrated Security=True";
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            var DataClass = this.DataClass;
-            dataGridView1.DataSource = DataClass;
-            dataGridView1.Columns["Date_Donated"].Visible = false;
-            dataGridView1.Columns["Description"].Visible = false;
-            dataGridView1.Columns["Maintenence_Information"].Visible = false;
-            dataGridView1.Columns["Horse_Power"].Visible = false;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

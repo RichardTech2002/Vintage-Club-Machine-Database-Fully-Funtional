@@ -19,8 +19,6 @@ namespace User_Interface_For_Vintage_Club_Database
             InitializeComponent();
         }
 
-        public string conString = "";
-
         public static string Demotext1 = "";
         public static string Demotext2 = "";
         public static string Demotext3 = "";
@@ -39,13 +37,17 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string constring = "Data Source=LAPTOP-BT59QU4U;Initial Catalog=Vintage_Database;Integrated Security=True";
+            SqlConnection con = new SqlConnection(constring);
+            con.Open();
+            string query = "";
+
+
             Demotext1 = textBox1.Text;
             Demotext2 = numericUpDown1.Text;
             Demotext3 = textBox2.Text;
             Demotext4 = textBox3.Text;
             Demotext5 = richTextBox1.Text;
-
-            
 
 
             comboBox1.SelectedItem = null;
