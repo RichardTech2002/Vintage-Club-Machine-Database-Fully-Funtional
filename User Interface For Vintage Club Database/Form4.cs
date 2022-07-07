@@ -32,6 +32,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button2_Click(object sender, EventArgs e)
         {
+            button4.Enabled = true;
             button2.Enabled = false;
             button2.Visible = false;
             button3.Enabled = true;
@@ -45,6 +46,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button3_Click(object sender, EventArgs e)
         {
+            button4.Enabled = false;
             button2.Visible = true;
             button2.Enabled = true;
             button3.Visible = false;
@@ -54,6 +56,32 @@ namespace User_Interface_For_Vintage_Club_Database
             textBox3.Enabled = false;
             textBox4.Enabled = false;
             richTextBox1.Enabled = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string ImageLocation = "";
+            try
+            {
+                OpenFileDialog Dialog = new OpenFileDialog();
+                Dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png) |*.png|All Files(*.*)|*.*";
+
+                if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    ImageLocation = Dialog.FileName;
+                    pictureBox1.ImageLocation = ImageLocation;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5();
+            f5.ShowDialog();
         }
     }
 }

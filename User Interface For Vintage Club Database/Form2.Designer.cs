@@ -57,7 +57,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(852, 597);
+            this.button1.Location = new System.Drawing.Point(272, 909);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 59);
             this.button1.TabIndex = 0;
@@ -88,7 +88,7 @@
             this.button2.AutoSize = true;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1055, 597);
+            this.button2.Location = new System.Drawing.Point(61, 909);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 59);
             this.button2.TabIndex = 7;
@@ -314,7 +314,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1254, 760);
+            this.ClientSize = new System.Drawing.Size(1833, 1055);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox2);
