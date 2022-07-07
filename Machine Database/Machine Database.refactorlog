@@ -63,4 +63,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Maintenence_Information" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="fd2f6696-bf56-4d01-91a5-97abf227330c" ChangeDateTime="07/07/2022 08:38:43">
+    <Property Name="ElementName" Value="[dbo].[General_Table].[Machine Location]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[General_Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Machine_Location" />
+  </Operation>
 </Operations>
