@@ -42,4 +42,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Machine Type" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="8639df6d-1e7c-46dd-8829-ef1fb7bf119c" ChangeDateTime="07/07/2022 04:04:51">
+    <Property Name="ElementName" Value="[dbo].[General Table].[Donated By]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[General Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Original Owner" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9499ebc9-47b8-4253-95dc-9ccf27acf556" ChangeDateTime="07/07/2022 04:05:12">
+    <Property Name="ElementName" Value="[dbo].[General Table].[Donation Date]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[General Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Data Acquired" />
+  </Operation>
 </Operations>

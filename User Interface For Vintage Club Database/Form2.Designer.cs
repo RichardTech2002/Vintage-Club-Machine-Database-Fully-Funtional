@@ -114,9 +114,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(29, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 29);
+            this.label4.Size = new System.Drawing.Size(182, 29);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Donated By:";
+            this.label4.Text = "Original Owner:";
             // 
             // label5
             // 
@@ -150,9 +150,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(29, 177);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 29);
+            this.label6.Size = new System.Drawing.Size(171, 29);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Donated Date:";
+            this.label6.Text = "Date Acquired:";
             // 
             // textBox3
             // 
@@ -224,6 +224,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(319, 37);
             this.textBox1.TabIndex = 21;
+            this.textBox1.SelectedIndexChanged += new System.EventHandler(this.textBox1_SelectedIndexChanged);
             // 
             // comboBox1
             // 

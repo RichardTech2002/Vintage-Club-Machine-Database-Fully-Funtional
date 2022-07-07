@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace User_Interface_For_Vintage_Club_Database
 {
@@ -40,6 +42,10 @@ namespace User_Interface_For_Vintage_Club_Database
             Demotext3 = textBox2.Text;
             Demotext4 = textBox3.Text;
             Demotext5 = richTextBox1.Text;
+
+            
+
+
             comboBox1.SelectedItem = null;
             comboBox2.SelectedItem = null;
             textBox1.SelectedItem = null;
@@ -78,6 +84,11 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void textBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

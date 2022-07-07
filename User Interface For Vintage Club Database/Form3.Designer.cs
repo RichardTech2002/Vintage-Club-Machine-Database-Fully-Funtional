@@ -66,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(381, 226);
+            this.label1.Location = new System.Drawing.Point(455, 226);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(430, 38);
             this.label1.TabIndex = 10;
@@ -82,6 +82,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1220, 171);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_2);
             // 
             // Form3
             // 
