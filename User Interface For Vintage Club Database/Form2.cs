@@ -19,6 +19,7 @@ namespace User_Interface_For_Vintage_Club_Database
             InitializeComponent();
         }
 
+
         public static string Demotext1 = "";
         public static string Demotext2 = "";
         public static string Demotext3 = "";
@@ -37,7 +38,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connectionstring = "Data Source=(localdb)/MSSQLLocalDB;Initial Catalog=Information Database;Integrated Security=True";
+            //SqlCommand cmd = new SqlCommand("insert into Machine_Database values (@Machine_Type, @Year_Built, @Original_Owner, @Date_Acquired)", con); 
 
             comboBox1.SelectedItem = null;
             comboBox2.SelectedItem = null;
