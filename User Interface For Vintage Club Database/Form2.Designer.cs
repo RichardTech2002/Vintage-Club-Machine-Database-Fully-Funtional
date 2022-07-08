@@ -50,6 +50,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -190,9 +192,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(29, 256);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(256, 29);
+            this.label7.Size = new System.Drawing.Size(262, 29);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Link for specific details";
+            this.label7.Text = "Link for specific details:";
             // 
             // textBox4
             // 
@@ -238,7 +240,7 @@
             "Under Restoration",
             "Awaiting Restoration",
             "Scrapped"});
-            this.comboBox1.Location = new System.Drawing.Point(807, 6);
+            this.comboBox1.Location = new System.Drawing.Point(811, 6);
             this.comboBox1.MaxDropDownItems = 20;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(319, 37);
@@ -260,7 +262,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.Menu;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(577, 67);
+            this.label9.Location = new System.Drawing.Point(577, 58);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(195, 29);
             this.label9.TabIndex = 24;
@@ -281,7 +283,7 @@
             "Workshop",
             "In Storage - On-Site",
             "In Storage - Off-Site"});
-            this.comboBox2.Location = new System.Drawing.Point(807, 67);
+            this.comboBox2.Location = new System.Drawing.Point(811, 58);
             this.comboBox2.MaxDropDownItems = 20;
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(319, 37);
@@ -290,7 +292,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(572, 121);
+            this.button3.Location = new System.Drawing.Point(566, 174);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(239, 44);
             this.button3.TabIndex = 26;
@@ -301,12 +303,38 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(817, 121);
+            this.pictureBox1.Location = new System.Drawing.Point(811, 174);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(212, 119);
+            this.pictureBox1.Size = new System.Drawing.Size(319, 184);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AllowDrop = true;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Donated",
+            "Loaned"});
+            this.comboBox3.Location = new System.Drawing.Point(811, 121);
+            this.comboBox3.MaxDropDownItems = 20;
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(319, 37);
+            this.comboBox3.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.Menu;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(577, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(230, 29);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Donated Or Loaned:";
             // 
             // Form2
             // 
@@ -315,6 +343,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1833, 1055);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox2);
@@ -373,5 +403,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label10;
     }
 }
