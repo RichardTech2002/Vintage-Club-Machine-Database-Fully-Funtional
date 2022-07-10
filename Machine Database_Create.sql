@@ -248,6 +248,7 @@ CREATE TABLE [dbo].[General_Table] (
     [Machine_Location]        NVARCHAR (MAX) NULL,
     [Restoration_Status]      NCHAR (50)     NULL,
     [Link_to_TractorData]     NVARCHAR (MAX) NULL,
+    [Donated_Or_Loaned]       NCHAR (10)     NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
