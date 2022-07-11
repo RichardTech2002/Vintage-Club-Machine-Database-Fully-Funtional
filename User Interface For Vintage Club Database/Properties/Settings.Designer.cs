@@ -22,5 +22,16 @@ namespace User_Interface_For_Vintage_Club_Database.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-BT59QU4U;Initial Catalog=Machine_Database;Integrated Security=" +
+            "True")]
+        public string Machine_DatabaseConnectionString {
+            get {
+                return ((string)(this["Machine_DatabaseConnectionString"]));
+            }
+        }
     }
 }

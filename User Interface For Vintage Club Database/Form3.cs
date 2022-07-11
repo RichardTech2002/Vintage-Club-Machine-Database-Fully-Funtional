@@ -23,6 +23,8 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'machine_DatabaseDataSet1.General_Table' table. You can move, or remove it, as needed.
+            this.general_TableTableAdapter.Fill(this.machine_DatabaseDataSet1.General_Table);
 
         }
 
@@ -51,6 +53,11 @@ namespace User_Interface_For_Vintage_Club_Database
         }
 
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void generalTableBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }

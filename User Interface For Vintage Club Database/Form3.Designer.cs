@@ -28,21 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.machine_DatabaseDataSet1 = new User_Interface_For_Vintage_Club_Database.Machine_DatabaseDataSet1();
+            this.generalTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.general_TableTableAdapter = new User_Interface_For_Vintage_Club_Database.Machine_DatabaseDataSet1TableAdapters.General_TableTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.machineTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearBuiltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.originalOwnerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateAcquiredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maintenenceInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.machineLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.restorationStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linktoTractorDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donatedOrLoanedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machine_DatabaseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -82,6 +94,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -93,77 +106,166 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column6,
-            this.Column3,
-            this.Column7,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(89, 288);
+            this.idDataGridViewTextBoxColumn,
+            this.imageDataGridViewImageColumn,
+            this.machineTypeDataGridViewTextBoxColumn,
+            this.yearBuiltDataGridViewTextBoxColumn,
+            this.originalOwnerDataGridViewTextBoxColumn,
+            this.dateAcquiredDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.maintenenceInformationDataGridViewTextBoxColumn,
+            this.modelDataGridViewTextBoxColumn,
+            this.machineLocationDataGridViewTextBoxColumn,
+            this.restorationStatusDataGridViewTextBoxColumn,
+            this.linktoTractorDataDataGridViewTextBoxColumn,
+            this.donatedOrLoanedDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.generalTableBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(89, 287);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1836, 491);
+            this.dataGridView1.Size = new System.Drawing.Size(1739, 492);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_2);
             // 
-            // Column1
+            // machine_DatabaseDataSet1
             // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
+            this.machine_DatabaseDataSet1.DataSetName = "Machine_DatabaseDataSet1";
+            this.machine_DatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Column2
+            // generalTableBindingSource
             // 
-            this.Column2.HeaderText = "Machine Type";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 200;
+            this.generalTableBindingSource.DataMember = "General_Table";
+            this.generalTableBindingSource.DataSource = this.machine_DatabaseDataSet1;
             // 
-            // Column6
+            // general_TableTableAdapter
             // 
-            this.Column6.HeaderText = "Make";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 250;
+            this.general_TableTableAdapter.ClearBeforeFill = true;
             // 
-            // Column3
+            // idDataGridViewTextBoxColumn
             // 
-            this.Column3.HeaderText = "Model";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 250;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Column7
+            // imageDataGridViewImageColumn
             // 
-            this.Column7.HeaderText = "Year Built";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 200;
+            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
+            this.imageDataGridViewImageColumn.HeaderText = "Image";
+            this.imageDataGridViewImageColumn.MinimumWidth = 6;
+            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.ReadOnly = true;
+            this.imageDataGridViewImageColumn.Width = 200;
             // 
-            // Column4
+            // machineTypeDataGridViewTextBoxColumn
             // 
-            this.Column4.HeaderText = "Machine Location";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 250;
+            this.machineTypeDataGridViewTextBoxColumn.DataPropertyName = "Machine_Type";
+            this.machineTypeDataGridViewTextBoxColumn.HeaderText = "Machine Type";
+            this.machineTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.machineTypeDataGridViewTextBoxColumn.Name = "machineTypeDataGridViewTextBoxColumn";
+            this.machineTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.machineTypeDataGridViewTextBoxColumn.Width = 250;
             // 
-            // Column5
+            // yearBuiltDataGridViewTextBoxColumn
             // 
-            this.Column5.HeaderText = "Restoration Status";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 250;
+            this.yearBuiltDataGridViewTextBoxColumn.DataPropertyName = "Year_Built";
+            this.yearBuiltDataGridViewTextBoxColumn.HeaderText = "Year Built";
+            this.yearBuiltDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.yearBuiltDataGridViewTextBoxColumn.Name = "yearBuiltDataGridViewTextBoxColumn";
+            this.yearBuiltDataGridViewTextBoxColumn.ReadOnly = true;
+            this.yearBuiltDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // originalOwnerDataGridViewTextBoxColumn
+            // 
+            this.originalOwnerDataGridViewTextBoxColumn.DataPropertyName = "Original_Owner";
+            this.originalOwnerDataGridViewTextBoxColumn.HeaderText = "Original Owner";
+            this.originalOwnerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.originalOwnerDataGridViewTextBoxColumn.Name = "originalOwnerDataGridViewTextBoxColumn";
+            this.originalOwnerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.originalOwnerDataGridViewTextBoxColumn.Visible = false;
+            this.originalOwnerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateAcquiredDataGridViewTextBoxColumn
+            // 
+            this.dateAcquiredDataGridViewTextBoxColumn.DataPropertyName = "Date_Acquired";
+            this.dateAcquiredDataGridViewTextBoxColumn.HeaderText = "Date_Acquired";
+            this.dateAcquiredDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateAcquiredDataGridViewTextBoxColumn.Name = "dateAcquiredDataGridViewTextBoxColumn";
+            this.dateAcquiredDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateAcquiredDataGridViewTextBoxColumn.Visible = false;
+            this.dateAcquiredDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Visible = false;
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // maintenenceInformationDataGridViewTextBoxColumn
+            // 
+            this.maintenenceInformationDataGridViewTextBoxColumn.DataPropertyName = "Maintenence_Information";
+            this.maintenenceInformationDataGridViewTextBoxColumn.HeaderText = "Maintenence_Information";
+            this.maintenenceInformationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maintenenceInformationDataGridViewTextBoxColumn.Name = "maintenenceInformationDataGridViewTextBoxColumn";
+            this.maintenenceInformationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maintenenceInformationDataGridViewTextBoxColumn.Visible = false;
+            this.maintenenceInformationDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modelDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // machineLocationDataGridViewTextBoxColumn
+            // 
+            this.machineLocationDataGridViewTextBoxColumn.DataPropertyName = "Machine_Location";
+            this.machineLocationDataGridViewTextBoxColumn.HeaderText = "Machine Location";
+            this.machineLocationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.machineLocationDataGridViewTextBoxColumn.Name = "machineLocationDataGridViewTextBoxColumn";
+            this.machineLocationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.machineLocationDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // restorationStatusDataGridViewTextBoxColumn
+            // 
+            this.restorationStatusDataGridViewTextBoxColumn.DataPropertyName = "Restoration_Status";
+            this.restorationStatusDataGridViewTextBoxColumn.HeaderText = "Restoration Status";
+            this.restorationStatusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.restorationStatusDataGridViewTextBoxColumn.Name = "restorationStatusDataGridViewTextBoxColumn";
+            this.restorationStatusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.restorationStatusDataGridViewTextBoxColumn.Visible = false;
+            this.restorationStatusDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // linktoTractorDataDataGridViewTextBoxColumn
+            // 
+            this.linktoTractorDataDataGridViewTextBoxColumn.DataPropertyName = "Link_to_TractorData";
+            this.linktoTractorDataDataGridViewTextBoxColumn.HeaderText = "Link to TractorData";
+            this.linktoTractorDataDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.linktoTractorDataDataGridViewTextBoxColumn.Name = "linktoTractorDataDataGridViewTextBoxColumn";
+            this.linktoTractorDataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.linktoTractorDataDataGridViewTextBoxColumn.Visible = false;
+            this.linktoTractorDataDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // donatedOrLoanedDataGridViewTextBoxColumn
+            // 
+            this.donatedOrLoanedDataGridViewTextBoxColumn.DataPropertyName = "Donated_Or_Loaned";
+            this.donatedOrLoanedDataGridViewTextBoxColumn.HeaderText = "Donated Or Loaned";
+            this.donatedOrLoanedDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.donatedOrLoanedDataGridViewTextBoxColumn.Name = "donatedOrLoanedDataGridViewTextBoxColumn";
+            this.donatedOrLoanedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.donatedOrLoanedDataGridViewTextBoxColumn.Visible = false;
+            this.donatedOrLoanedDataGridViewTextBoxColumn.Width = 125;
             // 
             // Form3
             // 
@@ -186,6 +288,8 @@
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machine_DatabaseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,12 +300,21 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private Machine_DatabaseDataSet1 machine_DatabaseDataSet1;
+        private System.Windows.Forms.BindingSource generalTableBindingSource;
+        private Machine_DatabaseDataSet1TableAdapters.General_TableTableAdapter general_TableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn machineTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearBuiltDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn originalOwnerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateAcquiredDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maintenenceInformationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn machineLocationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn restorationStatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn linktoTractorDataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donatedOrLoanedDataGridViewTextBoxColumn;
     }
 }
