@@ -15,7 +15,7 @@ namespace User_Interface_For_Vintage_Club_Database
 {
     public partial class Form2 : Form
     {
-        DBAccess dBAccess = new DBAccess();
+        DBAccess objDBAccess = new DBAccess();
 
 
 
@@ -138,7 +138,6 @@ namespace User_Interface_For_Vintage_Club_Database
                 if (Blank == DialogResult.OK)
                 {
                     Duh = 0;
-                    MessageBoxDisplay.Text = "No";
                     ColourReset();
                 }
             }
@@ -206,23 +205,13 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 pictureBox1.BackColor = Color.Red;
             }
-
-            else if (MessageBox.Show("There are empty fields! Would you like to continue?", "Empty Box", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                //Send incomplete form data to the database.
-                
-            }
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MessageBoxDisplay.Text = "No";
             BoxChecker();
-
-            if (MessageBoxDisplay.Text == "Yes")
-            {
-                ShowMessageBox();
-            }
 
             if (MessageBoxDisplay.Text == "No")
             {
@@ -236,8 +225,35 @@ namespace User_Interface_For_Vintage_Club_Database
                 string DisplayLocation = comboBox2.Text;
                 string DonatedOrLoaned = comboBox3.Text;
                 string LinkToTractorData = textBox4.Text;
-                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Name, Year_Built, Original_Owner, Date_Acquired, Description, Image, Maintenence_Information, Model, Horse_Power, Machine_Location, Restoration_Status, Link_To_TractorData) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MaintainenceInformation, @RestorationStatus, @DisplayLocation, @DonatedOrLoaned, @LinkToTractorData)");
-                ClearBoxes();
+                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Display_Location, Restoration_Status, Link_To_TractorData) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MaintenenceInformation, @RestorationStatus, @DisplayLocation, @DonatedOrLoaned, @LinkToTractorData)");
+                insertcommand.Parameters.AddWithValue("@MachineType", textBox1.ToString());
+                insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.ToString());
+                insertcommand.Parameters.AddWithValue("@OriginalOwner", textBox2.ToString());
+                insertcommand.Parameters.AddWithValue("@DateAcquired", textBox3.ToString());
+                insertcommand.Parameters.AddWithValue("@Description", richTextBox1.ToString());
+                insertcommand.Parameters.AddWithValue("@MaintenenceInformation", richTextBox2.ToString());
+                insertcommand.Parameters.AddWithValue("@RestorationStatus", comboBox1.ToString());
+                insertcommand.Parameters.AddWithValue("@DisplayLocation", comboBox2.ToString());
+                insertcommand.Parameters.AddWithValue("@DonatedOrLoaned", comboBox3.ToString());
+                insertcommand.Parameters.AddWithValue("@LinkToTractorData", textBox4.ToString());
+
+                int row = objDBAccess.executeQuery(insertcommand);
+
+                if(row == 1)
+                {
+                    DialogResult Submit = MessageBox.Show("Information Submitted to the database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearBoxes();
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+            if (MessageBoxDisplay.Text == "Yes")
+            {
+                ShowMessageBox();
             }
         }
 
@@ -254,7 +270,7 @@ namespace User_Interface_For_Vintage_Club_Database
             try
             {
                 OpenFileDialog Dialog = new OpenFileDialog();
-                Dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png) |*.png|All Files(*.*)|*.*";
+                Dialog.Filter = "All Files(*.*)|*.*| PNG files(*.png) |*.png|jpg files(*.jpg)|*.jpg";
 
                 if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -275,7 +291,7 @@ namespace User_Interface_For_Vintage_Club_Database
             try
             {
                 OpenFileDialog Dialog = new OpenFileDialog();
-                Dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png) |*.png|All Files(*.*)|*.*";
+                Dialog.Filter = "All Files(*.*)|*.*| PNG files(*.png) |*.png|jpg files(*.jpg)|*.jpg";
 
                 if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
