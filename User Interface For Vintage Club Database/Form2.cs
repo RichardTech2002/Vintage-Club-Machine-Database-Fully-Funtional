@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using DatabaseProject;
+using System.Configuration;
+
 
 namespace User_Interface_For_Vintage_Club_Database
 {
@@ -215,27 +217,27 @@ namespace User_Interface_For_Vintage_Club_Database
 
             if (MessageBoxDisplay.Text == "No")
             {
-                string MachineType = textBox1.Text;
-                string YearBuilt = numericUpDown1.Text.ToString();
-                string OriginalOwner = textBox2.Text;
-                string DateAcquired = textBox3.Text;
-                string Description = richTextBox1.Text;
-                string MaintainenceInformation = richTextBox2.Text;
-                string RestorationStatus = comboBox1.Text;
-                string DisplayLocation = comboBox2.Text;
-                string DonatedOrLoaned = comboBox3.Text;
-                string LinkToTractorData = textBox4.Text;
-                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Display_Location, Restoration_Status, Link_To_TractorData) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MaintenenceInformation, @RestorationStatus, @DisplayLocation, @DonatedOrLoaned, @LinkToTractorData)");
-                insertcommand.Parameters.AddWithValue("@MachineType", textBox1.ToString());
-                insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.ToString());
-                insertcommand.Parameters.AddWithValue("@OriginalOwner", textBox2.ToString());
-                insertcommand.Parameters.AddWithValue("@DateAcquired", textBox3.ToString());
-                insertcommand.Parameters.AddWithValue("@Description", richTextBox1.ToString());
-                insertcommand.Parameters.AddWithValue("@MaintenenceInformation", richTextBox2.ToString());
-                insertcommand.Parameters.AddWithValue("@RestorationStatus", comboBox1.ToString());
-                insertcommand.Parameters.AddWithValue("@DisplayLocation", comboBox2.ToString());
-                insertcommand.Parameters.AddWithValue("@DonatedOrLoaned", comboBox3.ToString());
-                insertcommand.Parameters.AddWithValue("@LinkToTractorData", textBox4.ToString());
+                string MachineType = textBox1.Text.ToString();
+                decimal YearBuilt = numericUpDown1.Value;
+                string OriginalOwner = textBox2.Text.ToString();
+                string DateAcquired = textBox3.Text.ToString();
+                string Description = richTextBox1.Text.ToString();
+                string MaintainenceInformation = richTextBox2.Text.ToString();
+                string RestorationStatus = comboBox1.Text.ToString();
+                string MachineLocation = comboBox2.Text.ToString();
+                string DonatedOrLoaned = comboBox3.Text.ToString();
+                string LinkToTractorData = textBox4.Text.ToString();
+                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MaintenenceInformation, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData)");
+                insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
+                insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.Value);
+                insertcommand.Parameters.AddWithValue("@OriginalOwner", textBox2);
+                insertcommand.Parameters.AddWithValue("@DateAcquired", textBox3);
+                insertcommand.Parameters.AddWithValue("@Description", richTextBox1);
+                insertcommand.Parameters.AddWithValue("@MaintenenceInformation", richTextBox2);
+                insertcommand.Parameters.AddWithValue("@RestorationStatus", comboBox1);
+                insertcommand.Parameters.AddWithValue("@MachineLocation", comboBox2);
+                insertcommand.Parameters.AddWithValue("@DonatedOrLoaned", comboBox3);
+                insertcommand.Parameters.AddWithValue("@LinkToTractorData", textBox4);
 
                 int row = objDBAccess.executeQuery(insertcommand);
 
