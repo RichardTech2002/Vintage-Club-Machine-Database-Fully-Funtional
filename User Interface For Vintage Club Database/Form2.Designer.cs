@@ -55,16 +55,20 @@
             this.MessageBoxDisplay = new System.Windows.Forms.TextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(272, 909);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1057, 835);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 59);
+            this.button1.Size = new System.Drawing.Size(314, 115);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add Machine";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,10 +97,10 @@
             // 
             this.button2.AutoSize = true;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(61, 909);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(601, 835);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 59);
+            this.button2.Size = new System.Drawing.Size(314, 115);
             this.button2.TabIndex = 7;
             this.button2.Text = "Main Menu";
             this.button2.UseVisualStyleBackColor = true;
@@ -247,7 +251,7 @@
             "Under Restoration",
             "Awaiting Restoration",
             "Scrapped"});
-            this.comboBox1.Location = new System.Drawing.Point(1105, 1);
+            this.comboBox1.Location = new System.Drawing.Point(1409, 157);
             this.comboBox1.MaxDropDownItems = 20;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(319, 37);
@@ -260,7 +264,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(842, 9);
+            this.label8.Location = new System.Drawing.Point(1146, 165);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(214, 29);
             this.label8.TabIndex = 23;
@@ -271,7 +275,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(842, 58);
+            this.label9.Location = new System.Drawing.Point(1146, 214);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(195, 29);
             this.label9.TabIndex = 24;
@@ -292,7 +296,7 @@
             "Workshop",
             "In Storage - On-Site",
             "In Storage - Off-Site"});
-            this.comboBox2.Location = new System.Drawing.Point(1105, 53);
+            this.comboBox2.Location = new System.Drawing.Point(1409, 209);
             this.comboBox2.MaxDropDownItems = 20;
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(319, 37);
@@ -303,7 +307,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(831, 174);
+            this.button3.Location = new System.Drawing.Point(1135, 330);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(239, 44);
             this.button3.TabIndex = 26;
@@ -315,7 +319,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(1105, 169);
+            this.pictureBox1.Location = new System.Drawing.Point(1409, 325);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(319, 184);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -332,7 +336,7 @@
             this.comboBox3.Items.AddRange(new object[] {
             "Donated",
             "Loaned"});
-            this.comboBox3.Location = new System.Drawing.Point(1105, 116);
+            this.comboBox3.Location = new System.Drawing.Point(1409, 272);
             this.comboBox3.MaxDropDownItems = 20;
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(319, 37);
@@ -345,7 +349,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(842, 121);
+            this.label10.Location = new System.Drawing.Point(1146, 277);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(230, 29);
             this.label10.TabIndex = 28;
@@ -382,13 +386,55 @@
             this.label11.TabIndex = 32;
             this.label11.Text = "Maintainence Information:";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1146, 29);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 29);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Make:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(1409, 95);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(319, 34);
+            this.textBox5.TabIndex = 33;
+            this.textBox5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox5_MouseClick);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1146, 98);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 29);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "Model:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(1409, 24);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(319, 34);
+            this.textBox6.TabIndex = 35;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1833, 1055);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.MessageBoxDisplay);
@@ -416,6 +462,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -456,5 +503,9 @@
         private System.Windows.Forms.TextBox MessageBoxDisplay;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

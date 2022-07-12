@@ -61,6 +61,8 @@ namespace User_Interface_For_Vintage_Club_Database
             textBox2.BackColor = Color.White;
             textBox3.BackColor = Color.White;
             textBox4.BackColor = Color.White;
+            textBox5.BackColor = Color.White;
+            textBox6.BackColor = Color.White;
             comboBox1.BackColor = Color.White;
             comboBox2.BackColor = Color.White;
             comboBox3.BackColor = Color.White;
@@ -134,7 +136,17 @@ namespace User_Interface_For_Vintage_Club_Database
                 MessageBoxDisplay.Text = "Yes";
                 Duh++;
             }
-            if (Duh == 11)
+            if (textBox5.Text == "")
+            {
+                MessageBoxDisplay.Text = "Yes";
+                Duh++;
+            }
+            if (textBox6.Text == "")
+            {
+                MessageBoxDisplay.Text = "Yes";
+                Duh++;
+            }
+            if (Duh == 13)
             {
                 DialogResult Blank = MessageBox.Show("You didn't even fill out any of the boxes, you old fool!","Empty Boxes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (Blank == DialogResult.OK)
@@ -155,6 +167,8 @@ namespace User_Interface_For_Vintage_Club_Database
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
             richTextBox1.Text = "";
             richTextBox2.Text = "";
             numericUpDown1.Text = "";
@@ -178,6 +192,14 @@ namespace User_Interface_For_Vintage_Club_Database
             if (textBox4.Text == "")
             {
                 textBox4.BackColor = Color.Red;
+            }
+            if (textBox5.Text == "")
+            {
+                textBox5.BackColor = Color.Red;
+            }
+            if (textBox6.Text == "")
+            {
+                textBox6.BackColor = Color.Red;
             }
             if (comboBox1.Text == "")
             {
@@ -227,17 +249,21 @@ namespace User_Interface_For_Vintage_Club_Database
                 string MachineLocation = comboBox2.Text;
                 string DonatedOrLoaned = comboBox3.Text;
                 string LinkToTractorData = textBox4.Text;
-                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MaintenenceInformation, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData)");
-                insertcommand.Parameters.AddWithValue("@MachineType", textBox1.ToString());
+                string Models = textBox5.Text;
+                string Make = textBox6.Text;
+                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MaintenenceInformation, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make)");
+                insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
                 insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.Value);
                 insertcommand.Parameters.AddWithValue("@OriginalOwner", textBox2.Text);
                 insertcommand.Parameters.AddWithValue("@DateAcquired", textBox3.Text);
                 insertcommand.Parameters.AddWithValue("@Description", richTextBox1.Text);
                 insertcommand.Parameters.AddWithValue("@MaintenenceInformation", richTextBox2.Text);
-                insertcommand.Parameters.AddWithValue("@RestorationStatus", comboBox1.ToString());
-                insertcommand.Parameters.AddWithValue("@MachineLocation", comboBox2.ToString());
+                insertcommand.Parameters.AddWithValue("@RestorationStatus", comboBox1.Text);
+                insertcommand.Parameters.AddWithValue("@MachineLocation", comboBox2.Text);
                 insertcommand.Parameters.AddWithValue("@DonatedOrLoaned", comboBox3.Text);
                 insertcommand.Parameters.AddWithValue("@LinkToTractorData", textBox4.Text);
+                insertcommand.Parameters.AddWithValue("@Model", textBox5.Text);
+                insertcommand.Parameters.AddWithValue("@Make", textBox6.Text);
 
                 int row = objDBAccess.executeQuery(insertcommand);
 
@@ -382,6 +408,11 @@ namespace User_Interface_For_Vintage_Club_Database
         }
 
         private void comboBox3_MouseHover(object sender, EventArgs e)
+        {
+            ColourReset();
+        }
+
+        private void textBox5_MouseClick(object sender, MouseEventArgs e)
         {
             ColourReset();
         }
