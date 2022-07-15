@@ -79,5 +79,21 @@ namespace User_Interface_For_Vintage_Club_Database
             Form5 f5 = new Form5();
             f5.ShowDialog();
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            button4.Visible = false;
+            button4.Enabled = false;
+            button1.Visible = true;
+            button1.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Visible = false;
+            button1.Enabled = false;
+            button4.Visible = true;
+            button4.Enabled = true;
+        }
     }
 }

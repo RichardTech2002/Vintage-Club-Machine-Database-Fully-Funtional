@@ -146,15 +146,6 @@ namespace User_Interface_For_Vintage_Club_Database
                 MessageBoxDisplay.Text = "Yes";
                 Duh++;
             }
-            if (Duh == 13)
-            {
-                DialogResult Blank = MessageBox.Show("You didn't even fill out any of the boxes, you old fool!","Empty Boxes", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (Blank == DialogResult.OK)
-                {
-                    Duh = 0;
-                    ColourReset();
-                }
-            }
         }
 
         public void ClearBoxes()
@@ -267,25 +258,43 @@ namespace User_Interface_For_Vintage_Club_Database
 
                 int row = objDBAccess.executeQuery(insertcommand);
 
-                if(row == 1)
+//---------------------------------MessageBox Validation Logic Gate------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                BoxChecker();
+
+                if (MessageBoxDisplay.Text == "No")
                 {
-                    DialogResult Submit = MessageBox.Show("Information Submitted to the database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearBoxes();
+                    if (Duh == 12)
+                    {
+                        DialogResult Blank = MessageBox.Show("You didn't even fill out any of the boxes, you old fool!", "Empty Boxes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (Blank == DialogResult.OK)
+                        {
+                            MessageBoxDisplay.Text = "No";
+                            Duh = 0;
+                            ColourReset();
+                        }
+                    }
+
+                    else
+                    {
+                        if (row == 1)
+                        {
+                            DialogResult Submit = MessageBox.Show("Information Submitted to the database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearBoxes();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something went wrong. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ShowMessageBox();
                 }
-
-            }
-
-            if (MessageBoxDisplay.Text == "Yes")
-            {
-                ShowMessageBox();
             }
         }
 
-        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+        //---------------------------------End Of Button Logic-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
         private void Form2_Load(object sender, EventArgs e)
         {

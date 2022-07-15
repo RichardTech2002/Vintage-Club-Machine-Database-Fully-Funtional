@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -70,6 +73,14 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -87,20 +98,29 @@
             this.linktoTractorDataDataGridViewTextBoxColumn,
             this.donatedOrLoanedDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.generalTableBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(12, 402);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1831, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(1954, 370);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // button2
             // 
@@ -131,6 +151,8 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.idDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
@@ -147,17 +169,18 @@
             // machineTypeDataGridViewTextBoxColumn
             // 
             this.machineTypeDataGridViewTextBoxColumn.DataPropertyName = "Machine_Type";
-            this.machineTypeDataGridViewTextBoxColumn.HeaderText = "Machine_Type";
+            this.machineTypeDataGridViewTextBoxColumn.HeaderText = "Machine Type";
             this.machineTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.machineTypeDataGridViewTextBoxColumn.Name = "machineTypeDataGridViewTextBoxColumn";
-            this.machineTypeDataGridViewTextBoxColumn.Width = 250;
+            this.machineTypeDataGridViewTextBoxColumn.Width = 260;
             // 
             // yearBuiltDataGridViewTextBoxColumn
             // 
             this.yearBuiltDataGridViewTextBoxColumn.DataPropertyName = "Year_Built";
-            this.yearBuiltDataGridViewTextBoxColumn.HeaderText = "Year_Built";
+            this.yearBuiltDataGridViewTextBoxColumn.HeaderText = "Year Built";
             this.yearBuiltDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.yearBuiltDataGridViewTextBoxColumn.Name = "yearBuiltDataGridViewTextBoxColumn";
+            this.yearBuiltDataGridViewTextBoxColumn.Width = 200;
             // 
             // makeDataGridViewTextBoxColumn
             // 
@@ -165,6 +188,7 @@
             this.makeDataGridViewTextBoxColumn.HeaderText = "Make";
             this.makeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.makeDataGridViewTextBoxColumn.Name = "makeDataGridViewTextBoxColumn";
+            this.makeDataGridViewTextBoxColumn.ReadOnly = true;
             this.makeDataGridViewTextBoxColumn.Width = 200;
             // 
             // modelDataGridViewTextBoxColumn
@@ -178,7 +202,7 @@
             // machineLocationDataGridViewTextBoxColumn
             // 
             this.machineLocationDataGridViewTextBoxColumn.DataPropertyName = "Machine_Location";
-            this.machineLocationDataGridViewTextBoxColumn.HeaderText = "Machine_Location";
+            this.machineLocationDataGridViewTextBoxColumn.HeaderText = "Machine Location";
             this.machineLocationDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.machineLocationDataGridViewTextBoxColumn.Name = "machineLocationDataGridViewTextBoxColumn";
             this.machineLocationDataGridViewTextBoxColumn.Width = 400;
@@ -186,7 +210,7 @@
             // restorationStatusDataGridViewTextBoxColumn
             // 
             this.restorationStatusDataGridViewTextBoxColumn.DataPropertyName = "Restoration_Status";
-            this.restorationStatusDataGridViewTextBoxColumn.HeaderText = "Restoration_Status";
+            this.restorationStatusDataGridViewTextBoxColumn.HeaderText = "Restoration Status";
             this.restorationStatusDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.restorationStatusDataGridViewTextBoxColumn.Name = "restorationStatusDataGridViewTextBoxColumn";
             this.restorationStatusDataGridViewTextBoxColumn.Visible = false;
@@ -250,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1855, 1055);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
