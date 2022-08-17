@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -35,15 +36,12 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,31 +57,47 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.Form4IDTaker = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.generalTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.MenuLock = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Form4IDTaker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1101, 830);
+            this.button2.Location = new System.Drawing.Point(1279, 903);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(359, 115);
+            this.button2.Size = new System.Drawing.Size(580, 89);
             this.button2.TabIndex = 9;
-            this.button2.Text = "Back To Database";
+            this.button2.Text = "< Back To Database";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1557, 830);
+            this.button1.Location = new System.Drawing.Point(886, 790);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(314, 115);
+            this.button1.Size = new System.Drawing.Size(364, 89);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Save Changes";
+            this.button1.Text = "Save...";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -93,7 +107,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(992, 78);
+            this.label13.Location = new System.Drawing.Point(1079, 75);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 29);
             this.label13.TabIndex = 48;
@@ -101,8 +115,9 @@
             // 
             // textBox6
             // 
+            this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(1154, 17);
+            this.textBox6.Location = new System.Drawing.Point(1184, 14);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(716, 34);
             this.textBox6.TabIndex = 47;
@@ -112,7 +127,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(992, 17);
+            this.label12.Location = new System.Drawing.Point(1079, 14);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 29);
             this.label12.TabIndex = 46;
@@ -120,42 +135,24 @@
             // 
             // textBox5
             // 
+            this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(1154, 78);
+            this.textBox5.Location = new System.Drawing.Point(1184, 75);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(716, 34);
             this.textBox5.TabIndex = 45;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(992, 303);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(287, 29);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Maintainence Information:";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(1306, 303);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(564, 306);
-            this.richTextBox2.TabIndex = 43;
-            this.richTextBox2.Text = "";
-            // 
             // comboBox3
             // 
             this.comboBox3.AllowDrop = true;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Enabled = false;
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "Donated",
-            "Loaned"});
-            this.comboBox3.Location = new System.Drawing.Point(1306, 255);
+            "Loaned",
+            "Special Conditions Apply"});
+            this.comboBox3.Location = new System.Drawing.Point(1336, 252);
             this.comboBox3.MaxDropDownItems = 20;
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(564, 37);
@@ -166,7 +163,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(992, 252);
+            this.label10.Location = new System.Drawing.Point(1079, 252);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(230, 29);
             this.label10.TabIndex = 41;
@@ -175,7 +172,7 @@
             // comboBox2
             // 
             this.comboBox2.AllowDrop = true;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Enabled = false;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
@@ -187,7 +184,7 @@
             "Workshop",
             "In Storage - On-Site",
             "In Storage - Off-Site"});
-            this.comboBox2.Location = new System.Drawing.Point(1306, 198);
+            this.comboBox2.Location = new System.Drawing.Point(1336, 195);
             this.comboBox2.MaxDropDownItems = 20;
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(564, 37);
@@ -198,7 +195,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(992, 195);
+            this.label9.Location = new System.Drawing.Point(1114, 195);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(195, 29);
             this.label9.TabIndex = 39;
@@ -209,7 +206,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(992, 140);
+            this.label8.Location = new System.Drawing.Point(1095, 137);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(214, 29);
             this.label8.TabIndex = 38;
@@ -218,7 +215,7 @@
             // comboBox1
             // 
             this.comboBox1.AllowDrop = true;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Enabled = false;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -227,37 +224,28 @@
             "Under Restoration",
             "Awaiting Restoration",
             "Scrapped"});
-            this.comboBox1.Location = new System.Drawing.Point(1306, 140);
+            this.comboBox1.Location = new System.Drawing.Point(1336, 137);
             this.comboBox1.MaxDropDownItems = 20;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(564, 37);
             this.comboBox1.TabIndex = 37;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(291, 592);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(574, 329);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
-            // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(17, 592);
+            this.button3.Location = new System.Drawing.Point(1234, 577);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(239, 44);
+            this.button3.Size = new System.Drawing.Size(239, 85);
             this.button3.TabIndex = 62;
-            this.button3.Text = "Upload Picture...";
+            this.button3.Text = "Update Second Picture...";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // textBox1
             // 
             this.textBox1.AllowDrop = true;
-            this.textBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.FormattingEnabled = true;
             this.textBox1.Items.AddRange(new object[] {
@@ -290,10 +278,11 @@
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(344, 295);
+            this.textBox4.Location = new System.Drawing.Point(395, 295);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(511, 34);
+            this.textBox4.Size = new System.Drawing.Size(460, 34);
             this.textBox4.TabIndex = 59;
             // 
             // label2
@@ -303,9 +292,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(23, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 29);
+            this.label2.Size = new System.Drawing.Size(123, 29);
             this.label2.TabIndex = 58;
-            this.label2.Text = "Year Built";
+            this.label2.Text = "Year Built:";
             // 
             // label3
             // 
@@ -320,6 +309,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(291, 200);
             this.textBox3.Name = "textBox3";
@@ -339,6 +329,7 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Enabled = false;
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.Location = new System.Drawing.Point(291, 73);
             this.numericUpDown1.Maximum = new decimal(new int[] {
@@ -385,6 +376,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(291, 130);
             this.textBox2.Name = "textBox2";
@@ -393,30 +385,190 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(170, 363);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(695, 199);
+            this.richTextBox1.Size = new System.Drawing.Size(695, 153);
             this.richTextBox1.TabIndex = 49;
             this.richTextBox1.Text = "";
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1557, 830);
+            this.button4.Location = new System.Drawing.Point(886, 790);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(314, 115);
+            this.button4.Size = new System.Drawing.Size(364, 89);
             this.button4.TabIndex = 64;
             this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Enabled = false;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(46, 577);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(239, 79);
+            this.button5.TabIndex = 65;
+            this.button5.Text = "Update Picture...";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button6
+            // 
+            this.button6.AutoSize = true;
+            this.button6.BackColor = System.Drawing.Color.Red;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button6.Location = new System.Drawing.Point(886, 903);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(364, 89);
+            this.button6.TabIndex = 67;
+            this.button6.Text = "Delete Machine";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1105, 340);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(204, 29);
+            this.label14.TabIndex = 74;
+            this.label14.Text = "Other Information:";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Enabled = false;
+            this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox3.Location = new System.Drawing.Point(1336, 337);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(564, 213);
+            this.richTextBox3.TabIndex = 73;
+            this.richTextBox3.Text = "";
+            // 
+            // Form4IDTaker
+            // 
+            this.Form4IDTaker.Enabled = false;
+            this.Form4IDTaker.Location = new System.Drawing.Point(1876, -2);
+            this.Form4IDTaker.Name = "Form4IDTaker";
+            this.Form4IDTaker.ReadOnly = true;
+            this.Form4IDTaker.Size = new System.Drawing.Size(91, 22);
+            this.Form4IDTaker.TabIndex = 76;
+            this.Form4IDTaker.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Gray;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2.Location = new System.Drawing.Point(1495, 577);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(342, 179);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 66;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(316, 577);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(342, 179);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // generalTableBindingSource
+            // 
+            this.generalTableBindingSource.DataMember = "General_Table";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.AllowDrop = true;
+            this.comboBox4.Enabled = false;
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "In Stock",
+            "Sold",
+            "Something Else"});
+            this.comboBox4.Location = new System.Drawing.Point(245, 790);
+            this.comboBox4.MaxDropDownItems = 20;
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(413, 37);
+            this.comboBox4.TabIndex = 80;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(36, 793);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(156, 29);
+            this.label15.TabIndex = 81;
+            this.label15.Text = "Is this sold?...";
+            // 
+            // button7
+            // 
+            this.button7.AutoSize = true;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(1281, 790);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(578, 92);
+            this.button7.TabIndex = 82;
+            this.button7.Text = "Maintenence Information >";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // MenuLock
+            // 
+            this.MenuLock.Enabled = false;
+            this.MenuLock.Location = new System.Drawing.Point(-13, 528);
+            this.MenuLock.Name = "MenuLock";
+            this.MenuLock.ReadOnly = true;
+            this.MenuLock.Size = new System.Drawing.Size(12, 22);
+            this.MenuLock.TabIndex = 83;
+            this.MenuLock.Text = "Unlocked";
+            this.MenuLock.Visible = false;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(291, 295);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(89, 34);
+            this.button8.TabIndex = 84;
+            this.button8.Text = "Copy link";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1871, 1055);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.MenuLock);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.Form4IDTaker);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
@@ -436,8 +588,6 @@
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox2);
@@ -445,16 +595,23 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form4";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Machine Information";
+            this.Text = "Machine Information Editing Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form4_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Form4IDTaker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,8 +625,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -492,5 +647,26 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.NumericUpDown Form4IDTaker;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn machineTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearBuiltDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn machineLocationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn restorationStatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn makeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn originalOwnerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateAcquiredDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource generalTableBindingSource;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox MenuLock;
+        private System.Windows.Forms.Button button8;
     }
 }

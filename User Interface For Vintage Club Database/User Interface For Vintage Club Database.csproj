@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
@@ -83,10 +85,33 @@
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Machine_DatabaseDataSet.Designer.cs">
+    <Compile Include="Machine_Database_FixedDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Machine_DatabaseDataSet.xsd</DependentUpon>
+      <DependentUpon>Machine_Database_FixedDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Machine_Database_FixedDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Machine_Database_FixedDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenenceForm.Designer.cs">
+      <DependentUpon>MaintenenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenenceForm_Print_Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenenceForm_Print_Preview.Designer.cs">
+      <DependentUpon>MaintenenceForm_Print_Preview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenenceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenenceView.Designer.cs">
+      <DependentUpon>MaintenenceView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +130,15 @@
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaintenenceForm.resx">
+      <DependentUpon>MaintenenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenenceForm_Print_Preview.resx">
+      <DependentUpon>MaintenenceForm_Print_Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenenceView.resx">
+      <DependentUpon>MaintenenceView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -115,16 +149,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Machine_DatabaseDataSet.xsc">
-      <DependentUpon>Machine_DatabaseDataSet.xsd</DependentUpon>
+    <None Include="Machine_Database_FixedDataSet.xsc">
+      <DependentUpon>Machine_Database_FixedDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Machine_DatabaseDataSet.xsd">
+    <None Include="Machine_Database_FixedDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Machine_DatabaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>Machine_Database_FixedDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Machine_DatabaseDataSet.xss">
-      <DependentUpon>Machine_DatabaseDataSet.xsd</DependentUpon>
+    <None Include="Machine_Database_FixedDataSet.xss">
+      <DependentUpon>Machine_Database_FixedDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Machine_Database_FixedDataSet1.xsc">
+      <DependentUpon>Machine_Database_FixedDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Machine_Database_FixedDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Machine_Database_FixedDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Machine_Database_FixedDataSet1.xss">
+      <DependentUpon>Machine_Database_FixedDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,6 +187,9 @@
   <ItemGroup>
     <None Include="Resources\Untitled.jpg" />
     <Content Include="Tractor Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
