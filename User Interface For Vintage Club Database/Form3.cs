@@ -27,8 +27,6 @@ namespace User_Interface_For_Vintage_Club_Database
         {
             // TODO: This line of code loads data into the 'machine_Database_FixedDataSet1.General_Table' table. You can move, or remove it, as needed.
             this.general_TableTableAdapter1.Fill(this.machine_Database_FixedDataSet1.General_Table);
-
-
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -52,8 +50,8 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //try
-           // {
+            try
+            {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
                     dataGridView1.CurrentRow.Selected = true;
@@ -65,12 +63,11 @@ namespace User_Interface_For_Vintage_Club_Database
 
                 Form4 f4 = new Form4(this);
                 f4.ShowDialog();
-                this.Close();
-           // }
-          //  catch
-          //  {
-          //      MessageBox.Show("You need to click on the data. Not whatever it is you tried to click.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
-           // }
+            }
+            catch
+            {
+                MessageBox.Show("You need to click on the data. Not whatever it is you tried to click.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -78,7 +75,6 @@ namespace User_Interface_For_Vintage_Club_Database
         {
             Form1 f1 = new Form1();
             f1.Show();
-            this.Close();
         }
     }
 }

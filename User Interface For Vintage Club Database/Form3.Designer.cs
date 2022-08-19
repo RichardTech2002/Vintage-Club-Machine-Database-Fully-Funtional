@@ -39,10 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Form3IDTaker = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.generalTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.machine_Database_FixedDataSet1 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet1();
-            this.general_TableTableAdapter1 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet1TableAdapters.General_TableTableAdapter();
-            this.generalTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +55,10 @@
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generalTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.machine_Database_FixedDataSet1 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet1();
+            this.general_TableTableAdapter1 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet1TableAdapters.General_TableTableAdapter();
+            this.generalTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Form3IDTaker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -110,9 +110,9 @@
             // 
             // Form3IDTaker
             // 
-            this.Form3IDTaker.Location = new System.Drawing.Point(12, 2);
+            this.Form3IDTaker.Location = new System.Drawing.Point(-25, -9);
             this.Form3IDTaker.Name = "Form3IDTaker";
-            this.Form3IDTaker.Size = new System.Drawing.Size(120, 22);
+            this.Form3IDTaker.Size = new System.Drawing.Size(24, 22);
             this.Form3IDTaker.TabIndex = 11;
             this.Form3IDTaker.Visible = false;
             // 
@@ -121,6 +121,8 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,24 +174,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1890, 424);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // generalTableBindingSource
-            // 
-            this.generalTableBindingSource.DataMember = "General_Table";
-            this.generalTableBindingSource.DataSource = this.machine_Database_FixedDataSet1;
-            // 
-            // machine_Database_FixedDataSet1
-            // 
-            this.machine_Database_FixedDataSet1.DataSetName = "Machine_Database_FixedDataSet1";
-            this.machine_Database_FixedDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // general_TableTableAdapter1
-            // 
-            this.general_TableTableAdapter1.ClearBeforeFill = true;
-            // 
-            // generalTableBindingSource1
-            // 
-            this.generalTableBindingSource1.DataMember = "General_Table";
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -340,6 +324,24 @@
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             this.dataGridViewTextBoxColumn28.ReadOnly = true;
             this.dataGridViewTextBoxColumn28.Width = 125;
+            // 
+            // generalTableBindingSource
+            // 
+            this.generalTableBindingSource.DataMember = "General_Table";
+            this.generalTableBindingSource.DataSource = this.machine_Database_FixedDataSet1;
+            // 
+            // machine_Database_FixedDataSet1
+            // 
+            this.machine_Database_FixedDataSet1.DataSetName = "Machine_Database_FixedDataSet1";
+            this.machine_Database_FixedDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // general_TableTableAdapter1
+            // 
+            this.general_TableTableAdapter1.ClearBeforeFill = true;
+            // 
+            // generalTableBindingSource1
+            // 
+            this.generalTableBindingSource1.DataMember = "General_Table";
             // 
             // Form3
             // 

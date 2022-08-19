@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,9 +61,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -81,7 +81,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(176, 358);
+            this.richTextBox1.Location = new System.Drawing.Point(199, 356);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(695, 166);
             this.richTextBox1.TabIndex = 1;
@@ -94,7 +94,7 @@
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(297, 125);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(564, 34);
+            this.textBox2.Size = new System.Drawing.Size(597, 34);
             this.textBox2.TabIndex = 4;
             this.textBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseClick);
             // 
@@ -143,26 +143,12 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Description:";
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(297, 68);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            2040,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(564, 34);
-            this.numericUpDown1.TabIndex = 13;
-            this.numericUpDown1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.numericUpDown1_MouseClick);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(97, 195);
+            this.label6.Location = new System.Drawing.Point(97, 209);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(171, 29);
             this.label6.TabIndex = 15;
@@ -171,9 +157,10 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(297, 195);
+            this.textBox3.Location = new System.Drawing.Point(297, 209);
+            this.textBox3.MaxLength = 10;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(564, 34);
+            this.textBox3.Size = new System.Drawing.Size(597, 34);
             this.textBox3.TabIndex = 16;
             this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
             this.textBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox3_MouseDown);
@@ -183,7 +170,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 233);
+            this.label3.Location = new System.Drawing.Point(292, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 25);
             this.label3.TabIndex = 17;
@@ -216,7 +203,7 @@
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(297, 282);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(564, 34);
+            this.textBox4.Size = new System.Drawing.Size(597, 34);
             this.textBox4.TabIndex = 19;
             this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
             this.textBox4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox4_MouseDown);
@@ -224,6 +211,7 @@
             // textBox1
             // 
             this.textBox1.AllowDrop = true;
+            this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.FormattingEnabled = true;
@@ -243,7 +231,7 @@
             this.textBox1.Location = new System.Drawing.Point(297, 12);
             this.textBox1.MaxDropDownItems = 20;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(564, 37);
+            this.textBox1.Size = new System.Drawing.Size(597, 37);
             this.textBox1.TabIndex = 21;
             this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
             this.textBox1.MouseHover += new System.EventHandler(this.textBox1_MouseHover_1);
@@ -251,6 +239,7 @@
             // comboBox1
             // 
             this.comboBox1.AllowDrop = true;
+            this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
@@ -295,6 +284,7 @@
             // comboBox2
             // 
             this.comboBox2.AllowDrop = true;
+            this.comboBox2.BackColor = System.Drawing.Color.White;
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
@@ -320,6 +310,7 @@
             // comboBox3
             // 
             this.comboBox3.AllowDrop = true;
+            this.comboBox3.BackColor = System.Drawing.Color.White;
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
@@ -478,6 +469,21 @@
             this.textBox7.Text = "In Stock";
             this.textBox7.Visible = false;
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(297, 68);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            2040,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(597, 34);
+            this.numericUpDown1.TabIndex = 13;
+            this.numericUpDown1.Click += new System.EventHandler(this.numericUpDown1_Click);
+            this.numericUpDown1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.numericUpDown1_MouseClick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -527,9 +533,9 @@
             this.Text = "Add Machines";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -544,7 +550,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
@@ -570,5 +575,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

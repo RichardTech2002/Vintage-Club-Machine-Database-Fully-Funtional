@@ -26,12 +26,6 @@ namespace User_Interface_For_Vintage_Club_Database
 
         public int Duh = 0;
 
-
-        public void AdddataModule()
-        {
-
-        }
-
         public void ShowMessageBox()
         {
             DialogResult msg = MessageBox.Show("There are empty fields! Would you like to continue?", "Empty Box", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -68,6 +62,8 @@ namespace User_Interface_For_Vintage_Club_Database
             label14.BackColor = Color.White;
             button3.BackColor = Color.LightGray;
             button5.BackColor = Color.LightGray;
+            pictureBox1.BackColor = Color.LightGray;
+            pictureBox2.BackColor = Color.LightGray;
         }
 
 
@@ -123,12 +119,7 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 MessageBoxDisplay.Text = "Yes";
             }
-            if (numericUpDown1.Text == "0")
-            {
-                MessageBoxDisplay.Text = "Yes";
-                Duh++;
-            }
-            if (numericUpDown1.Text == "")
+            if (numericUpDown1.Value == 0)
             {
                 MessageBoxDisplay.Text = "Yes";
                 Duh++;
@@ -164,7 +155,7 @@ namespace User_Interface_For_Vintage_Club_Database
             textBox6.Text = "";
             richTextBox1.Text = "";
             richTextBox3.Text = "";
-            numericUpDown1.Text = "";
+            numericUpDown1.Value = 0;
             pictureBox1.Image = null;
             pictureBox2.Image = null;
         }
@@ -184,6 +175,7 @@ namespace User_Interface_For_Vintage_Club_Database
             if (textBox3.Text == "")
             {
                 label3.BackColor = Color.Red;
+                label6.BackColor = Color.Red;
             }
             if (textBox4.Text == "")
             {
@@ -195,7 +187,7 @@ namespace User_Interface_For_Vintage_Club_Database
             }
             if (textBox5.Text == "")
             {
-                label6.BackColor = Color.Red;
+                label13.BackColor = Color.Red;
             }
             if (textBox6.Text == "")
             {
@@ -619,6 +611,11 @@ namespace User_Interface_For_Vintage_Club_Database
         private void richTextBox3_Click(object sender, EventArgs e)
         {
             ColourReset();
+        }
+
+        private void numericUpDown1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

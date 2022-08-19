@@ -10,6 +10,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Machine Database", "Machine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User Interface For Vintage Club Database", "User Interface For Vintage Club Database\User Interface For Vintage Club Database.csproj", "{50F43101-BFDF-40C5-B2FF-E40E00AE52B7}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Maintenence_Table", "Maintenence_Table\Maintenence_Table.sqlproj", "{C95E1C49-F688-474F-B07C-B47109FBB915}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,12 @@ Global
 		{50F43101-BFDF-40C5-B2FF-E40E00AE52B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50F43101-BFDF-40C5-B2FF-E40E00AE52B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50F43101-BFDF-40C5-B2FF-E40E00AE52B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C95E1C49-F688-474F-B07C-B47109FBB915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C95E1C49-F688-474F-B07C-B47109FBB915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C95E1C49-F688-474F-B07C-B47109FBB915}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C95E1C49-F688-474F-B07C-B47109FBB915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C95E1C49-F688-474F-B07C-B47109FBB915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C95E1C49-F688-474F-B07C-B47109FBB915}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

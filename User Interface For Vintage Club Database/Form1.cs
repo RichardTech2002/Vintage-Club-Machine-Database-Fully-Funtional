@@ -30,6 +30,7 @@ namespace User_Interface_For_Vintage_Club_Database
         {
             Form3 f3 = new Form3();
             f3.ShowDialog();
+            this.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 {
                     try
                     {
-                        string cmd = "BACKUP DATABASE [" + database + "] TO DISK = '" + textBox1.Text + "\\" + "Kaipara Heritage Machinery Club Database Backup" + ".bak'";
+                        string cmd = "BACKUP DATABASE [" + database + "] TO DISK = '" + textBox1.Text + "\\" + "Kaipara Heritage Machinery Club Database Backup" + " -- " + DateTime.Now.ToString("g--HH--ss") + ".bak'";
                         con.Open();
                         SqlCommand command = new SqlCommand(cmd, con);
                         command.ExecuteNonQuery();

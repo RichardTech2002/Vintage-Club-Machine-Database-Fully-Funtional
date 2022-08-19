@@ -10,20 +10,14 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
-using DatabaseProject;
 using System.Drawing.Imaging;
+using DatabaseProject;
 
 namespace User_Interface_For_Vintage_Club_Database
 {
     public partial class Form4 : Form
     {
         public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, FirstImage, SecondImage, IfSold;
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            MaintenenceView mtnv = new MaintenenceView();
-            mtnv.Show();
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -98,6 +92,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         public Form4()
         {
+            InitializeComponent();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -114,11 +109,7 @@ namespace User_Interface_For_Vintage_Club_Database
             richTextBox1.Enabled = false;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Form5 f5 = new Form5();
-            f5.ShowDialog();
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -229,8 +220,13 @@ namespace User_Interface_For_Vintage_Club_Database
             DialogResult UpdatedData = MessageBox.Show("Are you sure you want to delete this row? This can only be brought back if you have a backup. It is otherwise removed entirely from the database.", "Delete Row", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (DialogResult.OK == UpdatedData)
             {
+                SqlConnection Fakeconn = new SqlConnection("Data Source=LAPTOP-BT59QU4U;Initial Catalog=Machine_Database_Fixed;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                Fakeconn.Open();
                 string query = "DELETE From General_Table where ID = '" + Form4IDTaker.Value +  "'";
+                string query1 = "DELETE From Maintenence_Information where ID_Grabber = '" + Form4IDTaker.Value + "'";
                 SqlCommand deletecommand = new SqlCommand(query);
+                SqlCommand deletecommand1 = new SqlCommand(query1,Fakeconn);
+                deletecommand1.ExecuteNonQuery();
 
                 int row = objDBAccess.executeQuery(deletecommand);
 
@@ -275,16 +271,16 @@ namespace User_Interface_For_Vintage_Club_Database
                     Make = dtUsers.Rows[0]["Make"].ToString();
                     Other_Notes = dtUsers.Rows[0]["Other_Notes"].ToString();
                     IfSold = dtUsers.Rows[0]["IfSold"].ToString();
-                    byte[] img1 = (byte[])(dtUsers.Rows[0][14]);
-                    byte[] img2 = (byte[])(dtUsers.Rows[0][15]);
+                    //byte[] img1 = (byte[])(dtUsers.Rows[0][14]);
+                    //byte[] img2 = (byte[])(dtUsers.Rows[0][15]);
 
-                    MemoryStream ms1 = new MemoryStream(img1);
-                    pictureBox1.Image = Image.FromStream(ms1);
-                    dtUsers.Dispose();
+                    //MemoryStream ms1 = new MemoryStream(img1);
+                    //pictureBox1.Image = Image.FromStream(ms1);
+                    //dtUsers.Dispose();
 
-                    MemoryStream ms2 = new MemoryStream(img2);
-                    pictureBox2.Image = Image.FromStream(ms2);
-                    dtUsers.Dispose();
+                    //MemoryStream ms2 = new MemoryStream(img2);
+                    //pictureBox2.Image = Image.FromStream(ms2);
+                    //dtUsers.Dispose();
 
 
                     textBox1.Text = Machine_Type;
@@ -349,6 +345,11 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MaintenenceView mtnv = new MaintenenceView();
+            mtnv.Show();
         }
     }
 }

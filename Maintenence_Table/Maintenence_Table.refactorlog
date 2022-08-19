@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="ce263537-88ac-4604-8dce-0659787fcdc3" ChangeDateTime="08/17/2022 04:41:03">
+    <Property Name="ElementName" Value="[dbo].[Maintenence_Table].[Maintenence_Information]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Maintenence_Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Who_By" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c564d96e-0c10-4ff2-96bd-6332feeb873b" ChangeDateTime="08/18/2022 12:23:40">
+    <Property Name="ElementName" Value="[dbo].[Maintenence_Table].[Basic Title]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Maintenence_Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Basic_Title" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e47ea951-e7c0-4d66-abe4-050a931a743f" ChangeDateTime="08/18/2022 12:29:11">
+    <Property Name="ElementName" Value="[dbo].[Maintenence_Table].[ID Grabber]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Maintenence_Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID_Grabber" />
+  </Operation>
+</Operations>
