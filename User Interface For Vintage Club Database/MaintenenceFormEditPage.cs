@@ -47,7 +47,7 @@ namespace User_Interface_For_Vintage_Club_Database
             DialogResult UpdatedData = MessageBox.Show("Are you sure you want to delete this row? This can only be brought back if you have a backup. It is otherwise removed entirely from the database.", "Delete Row", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (DialogResult.OK == UpdatedData)
             {
-                string query = "DELETE From Maintenence_Information where ID == '" + IDval + "'";
+                string query = "DELETE From Maintenence_Information where ID == '" + MainIdTaker.Value + "'";
                 SqlCommand deletecommand = new SqlCommand(query);
 
                 int row = objDBAccess.executeQuery(deletecommand);
@@ -85,6 +85,31 @@ namespace User_Interface_For_Vintage_Club_Database
             dateTimePicker1.Enabled = false;
             textBox1.Visible = true;
             textBox1.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string UpdatedDate = textBox1.Text;
+            string UpdatedBasic_Title = textBox7.Text;
+            string UpdatedWho_By = textBox2.Text;
+            string UpdatedMaintenence_Information = richTextBox1.Text;
+
+            string query = "Update General_Table SET Date = '" + @UpdatedDate + "', Basic_Title = " + @UpdatedBasic_Title + "', Who_By = " + @UpdatedWho_By + "', Maintenence_Information = " + @UpdatedMaintenence_Information + "'Where ID = '" + MainIdTaker.Value + "'";
+
+            SqlCommand updatecommand = new SqlCommand(query);
+
+            updatecommand.Parameters.AddWithValue("@Date", UpdatedDate);
+            updatecommand.Parameters.AddWithValue("@Basic_Title", UpdatedBasic_Title);
+            updatecommand.Parameters.AddWithValue("@Who_By", UpdatedWho_By);
+            updatecommand.Parameters.AddWithValue("@Maintenence_Information", UpdatedMaintenence_Information);
+
+            int row = objDBAccess.executeQuery(updatecommand);
+
+            MessageBox.Show("Maintenance Details Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(DialogResult == DialogResult.OK)
+            {
+                this.Hide();
+            }
         }
     }
 }

@@ -178,7 +178,7 @@ namespace User_Interface_For_Vintage_Club_Database
             byte[] UpdatedImage1 = img1;
             byte[] UpdatedImage2 = img2;
 
-            string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata +"', Description = '" + @UpdatedDescription +"', Make = '" + @UpdatedMake +"', Model = '" + @UpdatedModel +"', Restoration_Status = '" + @UpdatedRestorationStatus +"', Machine_Location = '" + @UpdatedDisplayLocation +"', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned +"', IfSold = '" + @UpdatedIfSold +"', Other_Notes = '" + @UpdatedOtherInformation +"',Image = '" + @UpdatedImage1 +"',SecondImage = '" + @UpdatedImage2 +"'Where ID = '" + Form4IDTaker.Value + "'";
+            string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata +"', Description = '" + @UpdatedDescription +"', Make = '" + @UpdatedMake +"', Model = '" + @UpdatedModel +"', Restoration_Status = '" + @UpdatedRestorationStatus +"', Machine_Location = '" + @UpdatedDisplayLocation +"', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned +"', IfSold = '" + @UpdatedIfSold +"', Other_Notes = '" + @UpdatedOtherInformation +"',Image = '" + @UpdatedImage1 +"',SecondImage = '" + @UpdatedImage2 + "'Where ID = '" + Form4IDTaker.Value + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
 
@@ -196,8 +196,8 @@ namespace User_Interface_For_Vintage_Club_Database
             updatecommand.Parameters.AddWithValue("@Make", @UpdatedMake);
             updatecommand.Parameters.AddWithValue("@Other_Notes", @UpdatedOtherInformation);
             updatecommand.Parameters.AddWithValue("@IfSold", @UpdatedIfSold);
-            updatecommand.Parameters.AddWithValue("@Image", @UpdatedImage1);
-            updatecommand.Parameters.AddWithValue("@SecondImage", @UpdatedImage2);
+            //updatecommand.Parameters.AddWithValue("@Image", @UpdatedImage1);
+            //updatecommand.Parameters.AddWithValue("@SecondImage", @UpdatedImage2);
 
             int row = objDBAccess.executeQuery(updatecommand);
 
