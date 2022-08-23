@@ -242,7 +242,6 @@ CREATE TABLE [dbo].[General_Table] (
     [Date_Acquired]           VARCHAR (50)  NULL,
     [Description]             VARCHAR (MAX) NULL,
     [Image]                   IMAGE         NULL,
-    [Maintenence_Information] VARCHAR (MAX) NULL,
     [Model]                   VARCHAR (25)  NULL,
     [Machine_Location]        VARCHAR (50)  NULL,
     [Restoration_Status]      VARCHAR (50)  NULL,
@@ -252,6 +251,7 @@ CREATE TABLE [dbo].[General_Table] (
     [SecondImage]             IMAGE         NULL,
     [Other_Notes]             VARCHAR (MAX) NULL,
     [IfSold]                  VARCHAR (10)  NULL,
+    [Maintenence_Information] VARCHAR (MAX) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

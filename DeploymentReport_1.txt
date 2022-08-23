@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[General_Table]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column Maintenence_Information in table [dbo].[General_Table] is currently  NVARCHAR (MAX) NULL but is
+         being changed to  VARCHAR (MAX) NULL. Data loss could occur and deployment may fail if the column contains data that is
+         incompatible with type  VARCHAR (MAX) NULL.
+
+** User actions
+     Table rebuild
+       [dbo].[General_Table] (Table)
+
+** Supporting actions
+
+The type for column Maintenence_Information in table [dbo].[General_Table] is currently  NVARCHAR (MAX) NULL but is being changed to  VARCHAR (MAX) NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  VARCHAR (MAX) NULL.
+

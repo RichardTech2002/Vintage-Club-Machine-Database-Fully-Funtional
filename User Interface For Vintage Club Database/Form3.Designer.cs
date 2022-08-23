@@ -42,29 +42,25 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generalTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.machine_Database_FixedDataSet1 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet1();
-            this.general_TableTableAdapter1 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet1TableAdapters.General_TableTableAdapter();
-            this.generalTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.generalTableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.machine_Database_FixedDataSet4 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet4();
+            this.general_TableTableAdapter = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet4TableAdapters.General_TableTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Form3IDTaker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet4)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -120,7 +116,6 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -137,20 +132,18 @@
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19,
             this.dataGridViewImageColumn2,
             this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn23,
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewImageColumn3,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28});
-            this.dataGridView1.DataSource = this.generalTableBindingSource;
+            this.dataGridViewTextBoxColumn27});
+            this.dataGridView1.DataSource = this.generalTableBindingSource2;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,7 +172,7 @@
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn14.HeaderText = "ID";
             this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
@@ -192,7 +185,7 @@
             this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 350;
+            this.dataGridViewTextBoxColumn15.Width = 125;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -201,25 +194,16 @@
             this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 250;
+            this.dataGridViewTextBoxColumn16.Width = 125;
             // 
-            // dataGridViewTextBoxColumn26
+            // dataGridViewTextBoxColumn17
             // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "Make";
-            this.dataGridViewTextBoxColumn26.HeaderText = "Make";
-            this.dataGridViewTextBoxColumn26.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            this.dataGridViewTextBoxColumn26.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "Model";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Model";
-            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Width = 300;
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Original_Owner";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Original Owner";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 125;
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -228,7 +212,7 @@
             this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Width = 350;
+            this.dataGridViewTextBoxColumn18.Width = 125;
             // 
             // dataGridViewTextBoxColumn19
             // 
@@ -238,7 +222,7 @@
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.ReadOnly = true;
             this.dataGridViewTextBoxColumn19.Visible = false;
-            this.dataGridViewTextBoxColumn19.Width = 10;
+            this.dataGridViewTextBoxColumn19.Width = 125;
             // 
             // dataGridViewImageColumn2
             // 
@@ -252,50 +236,50 @@
             // 
             // dataGridViewTextBoxColumn20
             // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "Maintenence_Information";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Maintenence Information";
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Model";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Model";
             this.dataGridViewTextBoxColumn20.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             this.dataGridViewTextBoxColumn20.ReadOnly = true;
             this.dataGridViewTextBoxColumn20.Visible = false;
             this.dataGridViewTextBoxColumn20.Width = 125;
             // 
-            // dataGridViewTextBoxColumn23
+            // dataGridViewTextBoxColumn21
             // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "Restoration_Status";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Restoration Status";
-            this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.ReadOnly = true;
-            this.dataGridViewTextBoxColumn23.Width = 400;
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Machine_Location";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Machine Location";
+            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Width = 125;
             // 
             // dataGridViewTextBoxColumn22
             // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Machine_Location";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Machine Location";
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Restoration_Status";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Restoration Status";
             this.dataGridViewTextBoxColumn22.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.Width = 400;
+            this.dataGridViewTextBoxColumn22.Width = 125;
             // 
-            // dataGridViewTextBoxColumn24
+            // dataGridViewTextBoxColumn23
             // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "Link_to_TractorData";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Link To TractorData";
-            this.dataGridViewTextBoxColumn24.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            this.dataGridViewTextBoxColumn24.Visible = false;
-            this.dataGridViewTextBoxColumn24.Width = 125;
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Link_to_TractorData";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Link to TractorData";
+            this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.Visible = false;
+            this.dataGridViewTextBoxColumn23.Width = 125;
             // 
             // dataGridViewTextBoxColumn25
             // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "Donated_Or_Loaned";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Donated Or Loaned";
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Make";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Make";
             this.dataGridViewTextBoxColumn25.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            this.dataGridViewTextBoxColumn25.Width = 250;
+            this.dataGridViewTextBoxColumn25.Width = 125;
             // 
             // dataGridViewImageColumn3
             // 
@@ -309,40 +293,26 @@
             // 
             // dataGridViewTextBoxColumn27
             // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "Other_Notes";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Other_Notes";
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "IfSold";
+            this.dataGridViewTextBoxColumn27.HeaderText = "IfSold";
             this.dataGridViewTextBoxColumn27.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
             this.dataGridViewTextBoxColumn27.ReadOnly = true;
-            this.dataGridViewTextBoxColumn27.Visible = false;
             this.dataGridViewTextBoxColumn27.Width = 125;
             // 
-            // dataGridViewTextBoxColumn28
+            // generalTableBindingSource2
             // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "IfSold";
-            this.dataGridViewTextBoxColumn28.HeaderText = "IfSold";
-            this.dataGridViewTextBoxColumn28.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
-            this.dataGridViewTextBoxColumn28.Width = 125;
+            this.generalTableBindingSource2.DataMember = "General_Table";
+            this.generalTableBindingSource2.DataSource = this.machine_Database_FixedDataSet4;
             // 
-            // generalTableBindingSource
+            // machine_Database_FixedDataSet4
             // 
-            this.generalTableBindingSource.DataMember = "General_Table";
-            this.generalTableBindingSource.DataSource = this.machine_Database_FixedDataSet1;
+            this.machine_Database_FixedDataSet4.DataSetName = "Machine_Database_FixedDataSet4";
+            this.machine_Database_FixedDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // machine_Database_FixedDataSet1
+            // general_TableTableAdapter
             // 
-            this.machine_Database_FixedDataSet1.DataSetName = "Machine_Database_FixedDataSet1";
-            this.machine_Database_FixedDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // general_TableTableAdapter1
-            // 
-            this.general_TableTableAdapter1.ClearBeforeFill = true;
-            // 
-            // generalTableBindingSource1
-            // 
-            this.generalTableBindingSource1.DataMember = "General_Table";
+            this.general_TableTableAdapter.ClearBeforeFill = true;
             // 
             // Form3
             // 
@@ -368,9 +338,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Form3IDTaker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalTableBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,25 +385,24 @@
         private System.Windows.Forms.DataGridViewImageColumn secondImageDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn otherNotesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ifSoldDataGridViewTextBoxColumn;
-        private Machine_Database_FixedDataSet1 machine_Database_FixedDataSet1;
-        private Machine_Database_FixedDataSet1TableAdapters.General_TableTableAdapter general_TableTableAdapter1;
-        private System.Windows.Forms.BindingSource generalTableBindingSource1;
-        private System.Windows.Forms.BindingSource generalTableBindingSource;
+        private Machine_Database_FixedDataSet4 machine_Database_FixedDataSet4;
+        private System.Windows.Forms.BindingSource generalTableBindingSource2;
+        private Machine_Database_FixedDataSet4TableAdapters.General_TableTableAdapter general_TableTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
     }
 }
