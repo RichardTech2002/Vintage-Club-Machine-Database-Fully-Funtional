@@ -50,8 +50,8 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
                     dataGridView1.CurrentRow.Selected = true;
@@ -66,16 +66,18 @@ namespace User_Interface_For_Vintage_Club_Database
                 this.Close();
             }
 
+            catch
+            {
+                MessageBox.Show("You need to click on the data. Not whatever it is you tried to click.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
             f1.Show();
             this.Hide();
         }
-        //catch
-        //{
-        //    MessageBox.Show("You need to click on the data. Not whatever it is you tried to click.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
     }
 }
 
