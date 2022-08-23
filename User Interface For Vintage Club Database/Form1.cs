@@ -139,38 +139,5 @@ namespace User_Interface_For_Vintage_Club_Database
                 }
             }
         }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //string database = con.Database.ToString();
-            //con.Open();
-
-            //try
-            //{
-            //    string str1 = string.Format("Alter Database [" + database + "] set single_user with rollback immediate;");
-            //    SqlCommand cmd1 = new SqlCommand(str1, con);
-            //    cmd1.ExecuteNonQuery();
-
-            //    string str2 = "use master restore database[" + database + "] from disk = '" + textBox2.Text + "' with replace;";
-            //    SqlCommand cmd2 = new SqlCommand(str2, con);
-            //    cmd2.ExecuteNonQuery();
-
-            //    string str3 = string.Format("Alter database[" + database + "] set multi_user");
-            //    SqlCommand cmd3 = new SqlCommand(str3, con);
-            //    cmd3.ExecuteNonQuery();
-
-            //    MessageBox.Show("Database fully restored!","Success!",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            //    con.Close();
-            //}
-            //catch
-            //{
-            //    string str4 = string.Format("Alter database[" + database + "] set multi_user");
-            //    SqlCommand cmd4 = new SqlCommand(str4, con);
-            //    cmd4.ExecuteNonQuery();
-
-            //    con.Close();
-            //    MessageBox.Show("Something went wrong.", "Restoration Failed");
-            //}
-        }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenenceFormEditPage));
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.MainIdTaker = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -53,16 +53,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).BeginInit();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // MainIdTaker
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(1120, 214);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 45;
-            this.numericUpDown1.Visible = false;
+            this.MainIdTaker.Location = new System.Drawing.Point(1106, 214);
+            this.MainIdTaker.Name = "MainIdTaker";
+            this.MainIdTaker.Size = new System.Drawing.Size(120, 22);
+            this.MainIdTaker.TabIndex = 45;
             // 
             // label9
             // 
@@ -202,6 +201,7 @@
             this.radioButton2.TabIndex = 28;
             this.radioButton2.Text = "Manual Date:";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -215,6 +215,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Automatic Date:";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label1
             // 
@@ -312,7 +313,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.MainIdTaker);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox7);
@@ -343,7 +344,7 @@
             this.Text = "MaintenenceFormEditPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MaintenenceFormEditPage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,7 +352,7 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown MainIdTaker;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;

@@ -543,7 +543,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(578, 92);
             this.button7.TabIndex = 82;
-            this.button7.Text = "Maintenence Information >";
+            this.button7.Text = "Maintenance Information >";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 

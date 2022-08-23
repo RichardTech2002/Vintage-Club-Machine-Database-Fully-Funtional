@@ -64,11 +64,11 @@
             this.button7.AutoSize = true;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(1221, 964);
+            this.button7.Location = new System.Drawing.Point(1225, 937);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(716, 92);
             this.button7.TabIndex = 84;
-            this.button7.Text = "Maintenence Information Form >";
+            this.button7.Text = "Maintenance Information Form >";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -77,7 +77,7 @@
             this.button2.AutoSize = true;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(300, 964);
+            this.button2.Location = new System.Drawing.Point(304, 937);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(686, 89);
             this.button2.TabIndex = 83;
@@ -89,7 +89,7 @@
             // 
             this.button3.AutoSize = true;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(868, 889);
+            this.button3.Location = new System.Drawing.Point(872, 862);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(527, 60);
             this.button3.TabIndex = 86;
@@ -228,7 +228,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(575, 69);
             this.label1.TabIndex = 89;
-            this.label1.Text = "Maintenence History";
+            this.label1.Text = "Maintenance History";
             // 
             // MainIdTaker
             // 
