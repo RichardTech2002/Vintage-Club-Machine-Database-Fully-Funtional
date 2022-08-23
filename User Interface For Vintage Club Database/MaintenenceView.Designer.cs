@@ -233,10 +233,11 @@
             // MainIdTaker
             // 
             this.MainIdTaker.Enabled = false;
-            this.MainIdTaker.Location = new System.Drawing.Point(39, 39);
+            this.MainIdTaker.Location = new System.Drawing.Point(-89, -8);
             this.MainIdTaker.Name = "MainIdTaker";
-            this.MainIdTaker.Size = new System.Drawing.Size(120, 22);
+            this.MainIdTaker.Size = new System.Drawing.Size(84, 22);
             this.MainIdTaker.TabIndex = 90;
+            this.MainIdTaker.Visible = false;
             // 
             // MaintenenceView
             // 

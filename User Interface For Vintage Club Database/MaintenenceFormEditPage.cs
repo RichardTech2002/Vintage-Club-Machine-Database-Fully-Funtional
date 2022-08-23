@@ -38,8 +38,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MaintenenceView mtnv = new MaintenenceView();
-            mtnv.Show();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -62,6 +62,7 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown1.TabIndex = 45;
+            this.numericUpDown1.Visible = false;
             // 
             // label9
             // 

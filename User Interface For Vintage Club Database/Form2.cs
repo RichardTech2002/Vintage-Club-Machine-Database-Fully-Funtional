@@ -18,6 +18,10 @@ namespace User_Interface_For_Vintage_Club_Database
     public partial class Form2 : Form
     {
         DBAccess objDBAccess = new DBAccess();
+        string ImageLocation1 = "";
+        string ImageLocation2 = "";
+        public byte[] img1;
+        public byte[] img2;
 
         public Form2()
         {
@@ -65,8 +69,6 @@ namespace User_Interface_For_Vintage_Club_Database
             pictureBox1.BackColor = Color.LightGray;
             pictureBox2.BackColor = Color.LightGray;
         }
-
-
 
         public void BoxChecker()
         {
@@ -138,6 +140,45 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 MessageBoxDisplay.Text = "Yes";
                 Duh++;
+            }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ColourReset();
+            try
+            {
+                OpenFileDialog Dialog = new OpenFileDialog();
+                Dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png) |*.png";
+
+                if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    ImageLocation2 = Dialog.FileName;
+                    pictureBox2.ImageLocation = ImageLocation2;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            ColourReset();
+            try
+            {
+                OpenFileDialog Dialog = new OpenFileDialog();
+                Dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png) |*.png";
+
+                if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    ImageLocation1 = Dialog.FileName;
+                    pictureBox1.ImageLocation = ImageLocation1;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -230,6 +271,7 @@ namespace User_Interface_For_Vintage_Club_Database
             MessageBoxDisplay.Text = "No";
             BoxChecker();
 
+
             if(Duh == 13)
             {
                 DialogResult Blank = MessageBox.Show("You didn't even fill out any of the boxes, you old fool!", "Empty Boxes", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -239,21 +281,75 @@ namespace User_Interface_For_Vintage_Club_Database
                     ColourReset();
                 }
             }
-            else if (Duh > 0)
+            else if (Duh != 13)
             {
                 DialogResult DoubleCheck = MessageBox.Show("This form is not complete. Are you sure you want to submit this data how it is? Remember you can change it later.", "Incomplete Form", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (DialogResult == DialogResult.OK)
+                if (DoubleCheck == DialogResult.OK)
                 {
-                    SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold ) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MaintenenceInformation, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold)");
+                    if (textBox1.Text == "")
+                    {
+                        textBox1.Text = "N/A";
+                    }
+                    if (textBox2.Text == "")
+                    {
+                        textBox2.Text = "N/A";
+                    }
+                    if (textBox3.Text == "")
+                    {
+                        textBox3.Text = "N/A";
+                    }
+                    if (textBox4.Text == "")
+                    {
+                        textBox4.Text = "N/A";
+                    }
+                    if (comboBox1.Text == "")
+                    {
+                        comboBox1.Text = "N/A";
+                    }
+                    if (comboBox2.Text == "")
+                    {
+                        comboBox2.Text = "N/A";
+                    }
+                    if (comboBox3.Text == "")
+                    {
+                        comboBox3.Text = "N/A";
+                    }
+                    if (richTextBox1.Text == "")
+                    {
+                        richTextBox1.Text = "N/A";
+                    }
+                    if (pictureBox1.Image == null)
+                    {
+                        pictureBox1.Image = pictureBox3.Image;
+                    }
+                    if (pictureBox2.Image == null)
+                    {
+                        pictureBox2.Image = pictureBox3.Image;
+                    }
+                    if (textBox5.Text == "")
+                    {
+                        textBox5.Text = "N/A";
+                    }
+                    if (textBox6.Text == "")
+                    {
+                        textBox6.Text = "N/A";
+                    }
+                    if (richTextBox3.Text == "")
+                    {
+                        richTextBox3.Text = "N/A";
+                    }
 
+                    SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold ) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold)");
 
-                    Image Pic = pictureBox1.Image;
-                    ImageConverter Changer = new ImageConverter();
-                    var ImageConvert = Changer.ConvertTo(Pic, typeof(byte[]));
+                    byte[] img1 = null;
+                    FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
+                    BinaryReader br1 = new BinaryReader(fs1);
+                    img1 = br1.ReadBytes((int)fs1.Length);
 
-                    Image Pic2 = pictureBox2.Image;
-                    ImageConverter Changer2 = new ImageConverter();
-                    var ImageConvert2 = Changer2.ConvertTo(Pic2, typeof(byte[]));
+                    byte[] img2 = null;
+                    FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
+                    BinaryReader br2 = new BinaryReader(fs2);
+                    img2 = br2.ReadBytes((int)fs2.Length);
 
                     insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
                     insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.Value);
@@ -267,11 +363,14 @@ namespace User_Interface_For_Vintage_Club_Database
                     insertcommand.Parameters.AddWithValue("@Model", textBox5.Text);
                     insertcommand.Parameters.AddWithValue("@Make", textBox6.Text);
                     insertcommand.Parameters.AddWithValue("@Other_Notes", richTextBox3.Text);
-                    insertcommand.Parameters.AddWithValue("@Image", ImageConvert);
-                    insertcommand.Parameters.AddWithValue("@SecondImage", ImageConvert2);
+                    insertcommand.Parameters.AddWithValue("@Image", img1);
+                    insertcommand.Parameters.AddWithValue("@SecondImage", img2);
                     insertcommand.Parameters.AddWithValue("@IfSold", textBox7.Text);
 
                     int row = objDBAccess.executeQuery(insertcommand);
+
+                    MessageBox.Show("Information saved to the database!", "Success!", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    ClearBoxes();
                 }
                 else
                 {
@@ -282,14 +381,15 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold ) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold)");
 
+                byte[] img1 = null;
+                FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
+                BinaryReader br1 = new BinaryReader(fs1);
+                img1 = br1.ReadBytes((int)fs1.Length);
 
-                Image Pic = pictureBox1.Image;
-                ImageConverter Changer = new ImageConverter();
-                var ImageConvert = Changer.ConvertTo(Pic, typeof(byte[]));
-
-                Image Pic2 = pictureBox2.Image;
-                ImageConverter Changer2 = new ImageConverter();
-                var ImageConvert2 = Changer2.ConvertTo(Pic2, typeof(byte[]));
+                byte[] img2 = null;
+                FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
+                BinaryReader br2 = new BinaryReader(fs2);
+                img2 = br2.ReadBytes((int)fs2.Length);
 
 
                 insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
@@ -304,8 +404,8 @@ namespace User_Interface_For_Vintage_Club_Database
                 insertcommand.Parameters.AddWithValue("@Model", textBox5.Text);
                 insertcommand.Parameters.AddWithValue("@Make", textBox6.Text);
                 insertcommand.Parameters.AddWithValue("@Other_Notes", richTextBox3.Text);
-                insertcommand.Parameters.AddWithValue("@Image", ImageConvert);
-                insertcommand.Parameters.AddWithValue("@SecondImage", ImageConvert2);
+                insertcommand.Parameters.AddWithValue("@Image", img1);
+                insertcommand.Parameters.AddWithValue("@SecondImage", img2);
                 insertcommand.Parameters.AddWithValue("@IfSold", textBox7.Text);
 
                 int row = objDBAccess.executeQuery(insertcommand);
@@ -345,7 +445,7 @@ namespace User_Interface_For_Vintage_Club_Database
                         if (msg1 == DialogResult.OK)
                         {
                             Duh = 0;
-                            this.Close();
+                            this.Hide();
                         }
                         else
                         {
@@ -353,48 +453,6 @@ namespace User_Interface_For_Vintage_Club_Database
                         }
                     }
                 }
-            }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            ColourReset();
-            string ImageLocation2 = "";
-            try
-            {
-                OpenFileDialog Dialog = new OpenFileDialog();
-                Dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png) |*.png";
-
-                if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    ImageLocation2 = Dialog.FileName;
-                    pictureBox2.ImageLocation = ImageLocation2;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            ColourReset();
-            string ImageLocation1 = "";
-            try
-            {
-                OpenFileDialog Dialog = new OpenFileDialog();
-                Dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png) |*.png";
-
-                if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    ImageLocation1 = Dialog.FileName;
-                    pictureBox1.ImageLocation = ImageLocation1;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -47,37 +47,55 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult SaveExit =  MessageBox.Show("Maintenence Saved", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if(SaveExit == DialogResult.OK)
+            if (textBox7.Text == "" && textBox2.Text == "" && richTextBox1.Text == "")
             {
-                SqlCommand insertcommand = new SqlCommand("insert into Maintenence_Information(Date, Basic_Title, Who_By, Maintenence_Information, Id_Grabber ) values (@Date, @Basic_Title, @Who_By, @Maintenence_Information,@ID_Grabber)");
-
-                if (radioButton1.Checked)
+                this.Hide();
+            }
+            else
+            {
+                DialogResult SaveExit = MessageBox.Show("Maintenence Saved", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (SaveExit == DialogResult.OK)
                 {
-                    insertcommand.Parameters.AddWithValue("@Date", dateTimePicker1.Text);
-                    insertcommand.Parameters.AddWithValue("@Basic_Title", textBox7.Text);
-                    insertcommand.Parameters.AddWithValue("@Who_By", textBox2.Text);
-                    insertcommand.Parameters.AddWithValue("@Maintenence_Information", richTextBox1.Text);
-                    insertcommand.Parameters.AddWithValue("@ID_Grabber", numericUpDown1.Value);
+                    SqlCommand insertcommand = new SqlCommand("insert into Maintenence_Information(Date, Basic_Title, Who_By, Maintenence_Information, Id_Grabber ) values (@Date, @Basic_Title, @Who_By, @Maintenence_Information,@ID_Grabber)");
 
+                    if (radioButton1.Checked)
+                    {
+                        insertcommand.Parameters.AddWithValue("@Date", dateTimePicker1.Text);
+                        insertcommand.Parameters.AddWithValue("@Basic_Title", textBox7.Text);
+                        insertcommand.Parameters.AddWithValue("@Who_By", textBox2.Text);
+                        insertcommand.Parameters.AddWithValue("@Maintenence_Information", richTextBox1.Text);
+                        insertcommand.Parameters.AddWithValue("@ID_Grabber", numericUpDown1.Value);
+
+                    }
+                    if (radioButton2.Checked)
+                    {
+                        if(textBox1.Text == "")
+                        {
+                            insertcommand.Parameters.AddWithValue("@Date", dateTimePicker1.Text);
+                            insertcommand.Parameters.AddWithValue("@Basic_Title", textBox7.Text);
+                            insertcommand.Parameters.AddWithValue("@Who_By", textBox2.Text);
+                            insertcommand.Parameters.AddWithValue("@Maintenence_Information", richTextBox1.Text);
+                            insertcommand.Parameters.AddWithValue("@ID_Grabber", numericUpDown1.Value);
+                        }
+                        else
+                        {
+                            insertcommand.Parameters.AddWithValue("@Date", textBox1.Text);
+                            insertcommand.Parameters.AddWithValue("@Basic_Title", textBox7.Text);
+                            insertcommand.Parameters.AddWithValue("@Who_By", textBox2.Text);
+                            insertcommand.Parameters.AddWithValue("@Maintenence_Information", richTextBox1.Text);
+                            insertcommand.Parameters.AddWithValue("@ID_Grabber", numericUpDown1.Value);
+                        }
+                    }
+
+
+                    int row = objDBAccess.executeQuery(insertcommand);
+
+                    //Exit the form part.
+
+                    MaintenenceView mtnv = new MaintenenceView();
+                    mtnv.Show();
+                    this.Close();
                 }
-                if (radioButton2.Checked)
-                {
-                    insertcommand.Parameters.AddWithValue("@Date", textBox1.Text);
-                    insertcommand.Parameters.AddWithValue("@Basic_Title", textBox7.Text);
-                    insertcommand.Parameters.AddWithValue("@Who_By", textBox2.Text);
-                    insertcommand.Parameters.AddWithValue("@Maintenence_Information", richTextBox1.Text);
-                    insertcommand.Parameters.AddWithValue("@ID_Grabber", numericUpDown1.Value);
-                }
-
-
-                int row = objDBAccess.executeQuery(insertcommand);
-
-                //Exit the form part.
-
-                MaintenenceView mtnv = new MaintenenceView();
-                mtnv.Show();
-                this.Close();
             }
         }
 

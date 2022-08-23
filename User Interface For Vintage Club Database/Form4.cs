@@ -18,6 +18,10 @@ namespace User_Interface_For_Vintage_Club_Database
     public partial class Form4 : Form
     {
         public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, FirstImage, SecondImage, IfSold;
+        public byte [] img1;
+        public byte [] img2;
+        string ImageLocation1 = "";
+        string ImageLocation2 = "";
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -26,9 +30,9 @@ namespace User_Interface_For_Vintage_Club_Database
                 DialogResult dlg1 = MessageBox.Show("We are currently in edit mode. If you back out now, you will need to redo any changes you made. Would you like to continue?", "Edit Mode", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dlg1 == DialogResult.Yes)
                 {
+                    this.Hide();
                     Form3 f3 = new Form3();
                     f3.Show();
-                    this.Close();
                 }
                 else
                 {
@@ -37,6 +41,7 @@ namespace User_Interface_For_Vintage_Club_Database
             }
             else
             {
+                this.Hide();
                 Form3 f3 = new Form3();
                 f3.Show();
             }
@@ -134,33 +139,48 @@ namespace User_Interface_For_Vintage_Club_Database
             button5.Enabled = false;
             comboBox4.Enabled = false;
 
+            if(ImageLocation1 == "")
+            {
+                ImageLocation1 = pictureBox3.ImageLocation;
+            }
+            else
+            {
+                byte[] img1 = null;
+                FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
+                BinaryReader br1 = new BinaryReader(fs1);
+                img1 = br1.ReadBytes((int)fs1.Length);
+            }
+            if(ImageLocation2 == "")
+            {
+                ImageLocation2 = pictureBox3.ImageLocation;
+            }
+            else
+            {
+                byte[] img2 = null;
+                FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
+                BinaryReader br2 = new BinaryReader(fs2);
+                img2 = br2.ReadBytes((int)fs2.Length);
+            }
+
             string UpdatedMachineType = textBox1.Text;
             string UpdatedYearBuilt = numericUpDown1.Value.ToString();
             string UpdatedOriginal_Owner = textBox2.Text;
             string UpdatedDateAcquired = textBox3.Text;
             string UpdatedLinkToTractordata = textBox4.Text;
-            string UpdatedModel  = textBox5.Text;
-            string UpdatedMake  = textBox6.Text;
+            string UpdatedModel = textBox5.Text;
+            string UpdatedMake = textBox6.Text;
             string UpdatedDescription = richTextBox1.Text;
             string UpdatedOtherInformation = richTextBox3.Text;
             string UpdatedRestorationStatus = comboBox1.Text;
             string UpdatedDisplayLocation = comboBox2.Text;
             string UpdatedDonatedOrLoaned = comboBox3.Text;
             string UpdatedIfSold = comboBox4.Text;
-            Image UpdatedImage1 = pictureBox1.Image;
-            Image UpdatedImage2 = pictureBox2.Image;
+            byte[] UpdatedImage1 = img1;
+            byte[] UpdatedImage2 = img2;
 
             string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata +"', Description = '" + @UpdatedDescription +"', Make = '" + @UpdatedMake +"', Model = '" + @UpdatedModel +"', Restoration_Status = '" + @UpdatedRestorationStatus +"', Machine_Location = '" + @UpdatedDisplayLocation +"', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned +"', IfSold = '" + @UpdatedIfSold +"', Other_Notes = '" + @UpdatedOtherInformation +"',Image = '" + @UpdatedImage1 +"',SecondImage = '" + @UpdatedImage2 +"'Where ID = '" + Form4IDTaker.Value + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
-
-            Image Pic = pictureBox1.Image;
-            ImageConverter Changer = new ImageConverter();
-            var ImageConvert1 = Changer.ConvertTo(Pic, typeof(byte[]));
-
-            Image Pic2 = pictureBox2.Image;
-            ImageConverter Changer2 = new ImageConverter();
-            var ImageConvert2 = Changer2.ConvertTo(Pic2, typeof(byte[]));
 
             updatecommand.Parameters.AddWithValue("@MachineType", @UpdatedMachineType);
             updatecommand.Parameters.AddWithValue("@YearBuilt", @UpdatedYearBuilt);
@@ -176,8 +196,8 @@ namespace User_Interface_For_Vintage_Club_Database
             updatecommand.Parameters.AddWithValue("@Make", @UpdatedMake);
             updatecommand.Parameters.AddWithValue("@Other_Notes", @UpdatedOtherInformation);
             updatecommand.Parameters.AddWithValue("@IfSold", @UpdatedIfSold);
-            updatecommand.Parameters.AddWithValue("@Image", @ImageConvert1);
-            updatecommand.Parameters.AddWithValue("@SecondImage", @ImageConvert2);
+            updatecommand.Parameters.AddWithValue("@Image", @UpdatedImage1);
+            updatecommand.Parameters.AddWithValue("@SecondImage", @UpdatedImage2);
 
             int row = objDBAccess.executeQuery(updatecommand);
 
@@ -233,17 +253,42 @@ namespace User_Interface_For_Vintage_Club_Database
                 if (row == 1)
                 {
                     DialogResult Submit = MessageBox.Show("This Machine/Tool has now been deleted.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if(Submit == DialogResult.OK)
+                    {
+                        if (MenuLock.Text == "Locked")
+                        {
+                            DialogResult dlg2 = MessageBox.Show("We are currently in edit mode. If you back out now, you will need to redo any changes you made. Would you like to continue?", "Edit Mode", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (dlg2 == DialogResult.Yes)
+                            {
+                                this.Hide();
+                                Form3 f3 = new Form3();
+                                f3.Show();
+                            }
+                            else
+                            {
+                                //Do Nothing
+                            }
+                        }
+                        else
+                        {
+                            this.Hide();
+                            Form3 f3 = new Form3();
+                            f3.Show();
+                        }
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Something went wrong. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if(DialogResult == DialogResult.OK)
+                    {
+                        this.Hide();
+                    }
                 }
-
-                this.Close();
             }
             if (DialogResult.Cancel == UpdatedData)
             {
-                
+                //Do Nothing
             }
         }
         private void Form4_Load(object sender, EventArgs e)
@@ -254,7 +299,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 string query = "Select id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold from General_Table where Id = '" + Form4IDTaker.Value + "'";
                 objDBAccess.readDatathroughAdapter(query, dtUsers);
 
-                if(dtUsers.Rows.Count == 1)
+                if (dtUsers.Rows.Count == 1)
                 {
                     id = dtUsers.Rows[0]["ID"].ToString();
                     Machine_Type = dtUsers.Rows[0]["Machine_Type"].ToString();
@@ -271,17 +316,14 @@ namespace User_Interface_For_Vintage_Club_Database
                     Make = dtUsers.Rows[0]["Make"].ToString();
                     Other_Notes = dtUsers.Rows[0]["Other_Notes"].ToString();
                     IfSold = dtUsers.Rows[0]["IfSold"].ToString();
-                    //byte[] img1 = (byte[])(dtUsers.Rows[0][14]);
-                    //byte[] img2 = (byte[])(dtUsers.Rows[0][15]);
+                    byte[] img1 = (byte[])(dtUsers.Rows[0]["Image"]);
+                    byte[] img2 = (byte[])(dtUsers.Rows[0]["SecondImage"]);
 
-                    //MemoryStream ms1 = new MemoryStream(img1);
-                    //pictureBox1.Image = Image.FromStream(ms1);
-                    //dtUsers.Dispose();
+                    MemoryStream ms = new MemoryStream(img1);
+                    pictureBox1.Image = Image.FromStream(ms);
 
-                    //MemoryStream ms2 = new MemoryStream(img2);
-                    //pictureBox2.Image = Image.FromStream(ms2);
-                    //dtUsers.Dispose();
-
+                    MemoryStream ms1 = new MemoryStream(img2);
+                    pictureBox2.Image = Image.FromStream(ms1);
 
                     textBox1.Text = Machine_Type;
                     numericUpDown1.Value = Int32.Parse(Year_Built);
@@ -298,6 +340,11 @@ namespace User_Interface_For_Vintage_Club_Database
                     comboBox4.Text = IfSold;
 
                     objDBAccess.closeConn();
+                }
+                if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "" && pictureBox1.Image == null && pictureBox2.Image == null && richTextBox1.Text == "" && richTextBox3.Text == "" && comboBox1.Text == "" && comboBox2.Text == "" && comboBox3.Text == "" && comboBox4.Text == "")
+                {
+                    MessageBox.Show("This record has been deleted. Go back to the database page.", "Illegal Entry!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
                 }
             }
         }
@@ -349,7 +396,7 @@ namespace User_Interface_For_Vintage_Club_Database
         private void button7_Click(object sender, EventArgs e)
         {
             MaintenenceView mtnv = new MaintenenceView();
-            mtnv.Show();
+            mtnv.ShowDialog();
         }
     }
 }

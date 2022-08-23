@@ -63,6 +63,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
                 Form4 f4 = new Form4(this);
                 f4.ShowDialog();
+                this.Close();
             }
             catch
             {
@@ -75,6 +76,7 @@ namespace User_Interface_For_Vintage_Club_Database
         {
             Form1 f1 = new Form1();
             f1.Show();
+            this.Hide();
         }
     }
 }

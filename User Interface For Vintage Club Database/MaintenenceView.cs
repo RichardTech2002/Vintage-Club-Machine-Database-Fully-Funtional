@@ -52,14 +52,13 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             MaintenenceForm mtnf = new MaintenenceForm();
-            mtnf.Show();
-            this.Close();
+            mtnf.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,7 +83,7 @@ namespace User_Interface_For_Vintage_Club_Database
                     MainIdTaker.Value = IDInt1;
                 }
                 MaintenenceFormEditPage mfep = new MaintenenceFormEditPage();
-                mfep.Show();
+                mfep.ShowDialog();
             }
             catch
             {
