@@ -47,10 +47,11 @@ namespace User_Interface_For_Vintage_Club_Database
             DialogResult UpdatedData = MessageBox.Show("Are you sure you want to delete this row? This can only be brought back if you have a backup. It is otherwise removed entirely from the database.", "Delete Row", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (DialogResult.OK == UpdatedData)
             {
+                SqlConnection conn = new SqlConnection("");
                 string query = "DELETE From Maintenence_Information where ID == '" + MainIdTaker.Value + "'";
-                SqlCommand deletecommand = new SqlCommand(query);
+                SqlCommand deletecommand = new SqlCommand(query, conn);
 
-                int row = objDBAccess.executeQuery(deletecommand);
+                int row = deletecommand.ExecuteNonQuery();
 
                 if (row == 1)
                 {
