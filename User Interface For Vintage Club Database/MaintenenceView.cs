@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
+﻿using DatabaseProject;
+using System;
 using System.Configuration;
-using DatabaseProject;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace User_Interface_For_Vintage_Club_Database
 {
@@ -19,10 +13,10 @@ namespace User_Interface_For_Vintage_Club_Database
         public MaintenenceView(Form4 f4)
         {
             InitializeComponent();
-            this.f4 = f4;   
+            this.f4 = f4;
         }
         Form3 f3;
-        public MaintenenceView (Form3 f3)
+        public MaintenenceView(Form3 f3)
         {
             InitializeComponent();
             this.f3 = f3;

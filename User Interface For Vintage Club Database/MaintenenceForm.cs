@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DatabaseProject;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Configuration;
-using DatabaseProject;
 
 namespace User_Interface_For_Vintage_Club_Database
 {
@@ -69,7 +62,7 @@ namespace User_Interface_For_Vintage_Club_Database
                     }
                     if (radioButton2.Checked)
                     {
-                        if(textBox1.Text == "")
+                        if (textBox1.Text == "")
                         {
                             insertcommand.Parameters.AddWithValue("@Date", dateTimePicker1.Text);
                             insertcommand.Parameters.AddWithValue("@Basic_Title", textBox7.Text);

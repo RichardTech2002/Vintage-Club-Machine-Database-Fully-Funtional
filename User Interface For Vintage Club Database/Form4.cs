@@ -1,31 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DatabaseProject;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
-using System.Drawing.Imaging;
-using DatabaseProject;
+using System.Windows.Forms;
 
 namespace User_Interface_For_Vintage_Club_Database
 {
     public partial class Form4 : Form
     {
         public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, FirstImage, SecondImage, IfSold;
-        public byte [] img1;
-        public byte [] img2;
+        public byte[] img1;
+        public byte[] img2;
         string ImageLocation1 = "";
         string ImageLocation2 = "";
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(MenuLock.Text == "Locked")
+            if (MenuLock.Text == "Locked")
             {
                 DialogResult dlg1 = MessageBox.Show("We are currently in edit mode. If you back out now, you will need to redo any changes you made. Would you like to continue?", "Edit Mode", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dlg1 == DialogResult.Yes)
@@ -51,12 +44,12 @@ namespace User_Interface_For_Vintage_Club_Database
         private void button8_Click_1(object sender, EventArgs e)
         {
             Clipboard.SetText(textBox4.Text);
-            MessageBox.Show("Link Copied! Click on Google search bar and then press CTRL and V at the same time to put the link into your browser.","Link Copied");
+            MessageBox.Show("Link Copied! Click on Google search bar and then press CTRL and V at the same time to put the link into your browser.", "Link Copied");
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if(pictureBox2 != null)
+            if (pictureBox2 != null)
             {
                 DialogResult dlgpic2 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgpic2 == DialogResult.Yes)
@@ -72,7 +65,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            if(pictureBox1 != null)
+            if (pictureBox1 != null)
             {
                 DialogResult dlgpic1 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgpic1 == DialogResult.Yes)
@@ -139,7 +132,7 @@ namespace User_Interface_For_Vintage_Club_Database
             button5.Enabled = false;
             comboBox4.Enabled = false;
 
-            if(ImageLocation1 == "")
+            if (ImageLocation1 == "")
             {
                 ImageLocation1 = pictureBox3.ImageLocation;
             }
@@ -150,7 +143,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 BinaryReader br1 = new BinaryReader(fs1);
                 img1 = br1.ReadBytes((int)fs1.Length);
             }
-            if(ImageLocation2 == "")
+            if (ImageLocation2 == "")
             {
                 ImageLocation2 = pictureBox3.ImageLocation;
             }
@@ -178,7 +171,7 @@ namespace User_Interface_For_Vintage_Club_Database
             byte[] UpdatedImage1 = img1;
             byte[] UpdatedImage2 = img2;
 
-            string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata +"', Description = '" + @UpdatedDescription +"', Make = '" + @UpdatedMake +"', Model = '" + @UpdatedModel +"', Restoration_Status = '" + @UpdatedRestorationStatus +"', Machine_Location = '" + @UpdatedDisplayLocation +"', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned +"', IfSold = '" + @UpdatedIfSold +"', Other_Notes = '" + @UpdatedOtherInformation +"',Image = '" + @UpdatedImage1 +"',SecondImage = '" + @UpdatedImage2 + "'Where ID = '" + Form4IDTaker.Value + "'";
+            string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata + "', Description = '" + @UpdatedDescription + "', Make = '" + @UpdatedMake + "', Model = '" + @UpdatedModel + "', Restoration_Status = '" + @UpdatedRestorationStatus + "', Machine_Location = '" + @UpdatedDisplayLocation + "', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned + "', IfSold = '" + @UpdatedIfSold + "', Other_Notes = '" + @UpdatedOtherInformation + "',Image = '" + @UpdatedImage1 + "',SecondImage = '" + @UpdatedImage2 + "'Where ID = '" + Form4IDTaker.Value + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
 
@@ -242,10 +235,10 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 SqlConnection Fakeconn = new SqlConnection("Data Source=LAPTOP-BT59QU4U;Initial Catalog=Machine_Database_Fixed;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 Fakeconn.Open();
-                string query = "DELETE From General_Table where ID = '" + Form4IDTaker.Value +  "'";
+                string query = "DELETE From General_Table where ID = '" + Form4IDTaker.Value + "'";
                 string query1 = "DELETE From Maintenence_Information where ID_Grabber = '" + Form4IDTaker.Value + "'";
                 SqlCommand deletecommand = new SqlCommand(query);
-                SqlCommand deletecommand1 = new SqlCommand(query1,Fakeconn);
+                SqlCommand deletecommand1 = new SqlCommand(query1, Fakeconn);
                 deletecommand1.ExecuteNonQuery();
 
                 int row = objDBAccess.executeQuery(deletecommand);
@@ -253,7 +246,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 if (row == 1)
                 {
                     DialogResult Submit = MessageBox.Show("This Machine/Tool has now been deleted.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if(Submit == DialogResult.OK)
+                    if (Submit == DialogResult.OK)
                     {
                         if (MenuLock.Text == "Locked")
                         {
@@ -280,7 +273,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 else
                 {
                     MessageBox.Show("Something went wrong. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    if(DialogResult == DialogResult.OK)
+                    if (DialogResult == DialogResult.OK)
                     {
                         this.Hide();
                     }
@@ -294,7 +287,7 @@ namespace User_Interface_For_Vintage_Club_Database
         private void Form4_Load(object sender, EventArgs e)
         {
             Form4IDTaker.Value = Int32.Parse(f3.IdString);
-            if(Form4IDTaker.Value != 0)
+            if (Form4IDTaker.Value != 0)
             {
                 string query = "Select id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold from General_Table where Id = '" + Form4IDTaker.Value + "'";
                 objDBAccess.readDatathroughAdapter(query, dtUsers);

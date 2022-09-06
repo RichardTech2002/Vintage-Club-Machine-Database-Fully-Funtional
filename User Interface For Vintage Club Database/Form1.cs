@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace User_Interface_For_Vintage_Club_Database
@@ -73,29 +67,11 @@ namespace User_Interface_For_Vintage_Club_Database
                     }
                     catch
                     {
-                        MessageBox.Show("Can't backup the database for whatever reason.", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("Can't backup the database for whatever reason.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
             }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //string database = con.Database.ToString();
-            //if(textBox1.Text == string.Empty)
-            //{
-            //    MessageBox.Show("You need to select a place or folder to put the back up file.", "Enter Location");
-            //}
-            //else
-            //{
-            //    string cmd = "BACKUP DATABASE [" + database + "] TO DISK = '" + textBox1.Text + "\\" + "SQL SERVER Database Backup File" + "-" + DateTime.Now.ToString("DD-MM-YYYY--hh-mm-ss") + ".bak'";
-            //    con.Open();
-            //    SqlCommand command = new SqlCommand(cmd, con);
-            //    command.ExecuteNonQuery();
-            //    MessageBox.Show("Database successfully backed up!", "Backed Up");
-            //    con.Close();
-            //}
         }
 
         private void button5_Click(object sender, EventArgs e)

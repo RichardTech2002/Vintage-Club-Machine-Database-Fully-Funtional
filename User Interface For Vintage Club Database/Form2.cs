@@ -1,8 +1,9 @@
-﻿using System;
+﻿using DatabaseProject;
+using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
-using DatabaseProject;
-using System.Configuration;
+using System.Windows.Forms;
 
 
 namespace User_Interface_For_Vintage_Club_Database
@@ -238,7 +239,7 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 label10.BackColor = Color.Red;
             }
-            if(numericUpDown1.Value == 0)
+            if (numericUpDown1.Value == 0)
             {
                 label12.BackColor = Color.Red;
             }
@@ -264,7 +265,7 @@ namespace User_Interface_For_Vintage_Club_Database
             BoxChecker();
 
 
-            if(Duh == 13)
+            if (Duh == 13)
             {
                 DialogResult Blank = MessageBox.Show("You didn't even fill out any of the boxes, you old fool!", "Empty Boxes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (Blank == DialogResult.OK)
@@ -273,7 +274,7 @@ namespace User_Interface_For_Vintage_Club_Database
                     ColourReset();
                 }
             }
-            else if (Duh != 13)
+            else if (Duh > 13)
             {
                 DialogResult DoubleCheck = MessageBox.Show("This form is not complete. Are you sure you want to submit this data how it is? Remember you can change it later.", "Incomplete Form", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (DoubleCheck == DialogResult.OK)
@@ -361,7 +362,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
                     int row = objDBAccess.executeQuery(insertcommand);
 
-                    MessageBox.Show("Information saved to the database!", "Success!", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Information saved to the database!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearBoxes();
                 }
                 else
@@ -462,7 +463,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 {
                     if (pictureBox1.Image == null)
                     {
-                        MessageBox.Show("That doesn't look like an image to me...","Incorrect file", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("That doesn't look like an image to me...", "Incorrect file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -569,7 +570,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if(pictureBox1 != null)
+            if (pictureBox1 != null)
             {
                 DialogResult dlgpic1 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgpic1 == DialogResult.Yes)
@@ -587,7 +588,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if(pictureBox2 != null)
+            if (pictureBox2 != null)
             {
                 DialogResult dlgpic2 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgpic2 == DialogResult.Yes)
