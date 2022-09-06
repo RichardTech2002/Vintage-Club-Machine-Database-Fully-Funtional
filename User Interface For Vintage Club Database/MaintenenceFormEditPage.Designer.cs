@@ -53,12 +53,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.MainIDTakerMechInfo = new System.Windows.Forms.NumericUpDown();
+            this.IsFormEdited = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainIDTakerMechInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // MainIdTaker
             // 
-            this.MainIdTaker.Location = new System.Drawing.Point(1106, 214);
+            this.MainIdTaker.Location = new System.Drawing.Point(1106, 188);
             this.MainIdTaker.Name = "MainIdTaker";
             this.MainIdTaker.Size = new System.Drawing.Size(120, 22);
             this.MainIdTaker.TabIndex = 45;
@@ -92,6 +95,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(630, 34);
             this.textBox7.TabIndex = 41;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label6
             // 
@@ -105,7 +109,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
+            this.textBox6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(1362, 80);
             this.textBox6.Name = "textBox6";
@@ -145,7 +149,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
+            this.textBox5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(271, 82);
             this.textBox5.Name = "textBox5";
@@ -155,7 +159,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(1362, 25);
             this.textBox4.Name = "textBox4";
@@ -165,7 +169,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(271, 25);
             this.textBox3.Name = "textBox3";
@@ -190,6 +194,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(629, 34);
             this.textBox2.TabIndex = 31;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // radioButton2
             // 
@@ -236,6 +241,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(1840, 413);
             this.richTextBox1.TabIndex = 25;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label8
             // 
@@ -257,6 +263,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(751, 34);
             this.dateTimePicker1.TabIndex = 29;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox1
             // 
@@ -269,7 +276,6 @@
             // 
             // button1
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(173, 935);
             this.button1.Name = "button1";
@@ -305,12 +311,32 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // MainIDTakerMechInfo
+            // 
+            this.MainIDTakerMechInfo.Location = new System.Drawing.Point(1106, 240);
+            this.MainIDTakerMechInfo.Name = "MainIDTakerMechInfo";
+            this.MainIDTakerMechInfo.Size = new System.Drawing.Size(120, 22);
+            this.MainIDTakerMechInfo.TabIndex = 50;
+            // 
+            // IsFormEdited
+            // 
+            this.IsFormEdited.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsFormEdited.Location = new System.Drawing.Point(59, 321);
+            this.IsFormEdited.MaxLength = 100;
+            this.IsFormEdited.Name = "IsFormEdited";
+            this.IsFormEdited.Size = new System.Drawing.Size(98, 34);
+            this.IsFormEdited.TabIndex = 51;
+            this.IsFormEdited.Text = "No";
+            this.IsFormEdited.Visible = false;
+            // 
             // MaintenenceFormEditPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.Controls.Add(this.IsFormEdited);
+            this.Controls.Add(this.MainIDTakerMechInfo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -346,6 +372,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MaintenenceFormEditPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainIDTakerMechInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,5 +404,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NumericUpDown MainIDTakerMechInfo;
+        private System.Windows.Forms.TextBox IsFormEdited;
     }
 }

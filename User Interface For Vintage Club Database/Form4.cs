@@ -13,8 +13,8 @@ namespace User_Interface_For_Vintage_Club_Database
         public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, FirstImage, SecondImage, IfSold;
         public byte[] img1;
         public byte[] img2;
-        string ImageLocation1 = "";
-        string ImageLocation2 = "";
+        string ImageLocation1 = @"E:\Database General Folder\No Image Icon.jpg";
+        string ImageLocation2 = @"E:\Database General Folder\No Image Icon.jpg";
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -132,28 +132,19 @@ namespace User_Interface_For_Vintage_Club_Database
             button5.Enabled = false;
             comboBox4.Enabled = false;
 
-            if (ImageLocation1 == "")
-            {
-                ImageLocation1 = pictureBox3.ImageLocation;
-            }
-            else
-            {
-                byte[] img1 = null;
-                FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
-                BinaryReader br1 = new BinaryReader(fs1);
-                img1 = br1.ReadBytes((int)fs1.Length);
-            }
-            if (ImageLocation2 == "")
-            {
-                ImageLocation2 = pictureBox3.ImageLocation;
-            }
-            else
-            {
-                byte[] img2 = null;
-                FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
-                BinaryReader br2 = new BinaryReader(fs2);
-                img2 = br2.ReadBytes((int)fs2.Length);
-            }
+            //Update the data
+
+            byte[] img1 = null;
+            FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
+            BinaryReader br1 = new BinaryReader(fs1);
+            img1 = br1.ReadBytes((int)fs1.Length);
+
+
+
+            byte[] img2 = null;
+            FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
+            BinaryReader br2 = new BinaryReader(fs2);
+            img2 = br2.ReadBytes((int)fs2.Length);
 
             string UpdatedMachineType = textBox1.Text;
             string UpdatedYearBuilt = numericUpDown1.Value.ToString();
@@ -189,8 +180,7 @@ namespace User_Interface_For_Vintage_Club_Database
             updatecommand.Parameters.AddWithValue("@Make", @UpdatedMake);
             updatecommand.Parameters.AddWithValue("@Other_Notes", @UpdatedOtherInformation);
             updatecommand.Parameters.AddWithValue("@IfSold", @UpdatedIfSold);
-            //updatecommand.Parameters.AddWithValue("@Image", @UpdatedImage1);
-            //updatecommand.Parameters.AddWithValue("@SecondImage", @UpdatedImage2);
+            updatecommand.Parameters.AddWithValue("@SecondImage", @UpdatedImage2);
 
             int row = objDBAccess.executeQuery(updatecommand);
 

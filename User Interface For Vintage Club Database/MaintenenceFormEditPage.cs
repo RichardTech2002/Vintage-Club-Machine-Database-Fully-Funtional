@@ -27,11 +27,40 @@ namespace User_Interface_For_Vintage_Club_Database
             textBox5.Text = Form4.Make;
             textBox6.Text = Form4.Model;
             MainIdTaker.Value = Int32.Parse(Form4.id);
+            string BasicTitle = textBox7.Text;
+            string DateManual = textBox1.Text;
+            string DateAutomatic = dateTimePicker1.Text;
+            if(dtUsers.Rows.Count == 1)
+            {
+
+
+                textBox3.Text = Form4.Machine_Type;
+                textBox4.Text = Form4.Year_Built;
+                textBox5.Text = Form4.Make;
+                textBox6.Text = Form4.Model;
+                MainIdTaker.Value = Int32.Parse(Form4.id);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if(IsFormEdited.Text == "No")
+            {
+                this.Hide();
+            }
+            else
+            {
+                DialogResult ExitCheck = MessageBox.Show("There are unsaved changes. Would you like to continiue?", "Check the form", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (ExitCheck == DialogResult.Yes)
+                {
+                    IsFormEdited.Text = "No";
+                    this.Hide();
+                }
+                else
+                {
+                    //Do Nothing
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -83,6 +112,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button2_Click(object sender, EventArgs e)
         {
+            IsFormEdited.Text = "No";
             string UpdatedDate = textBox1.Text;
             string UpdatedBasic_Title = textBox7.Text;
             string UpdatedWho_By = textBox2.Text;
@@ -104,6 +134,26 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 this.Hide();
             }
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            IsFormEdited.Text = "Yes";
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            IsFormEdited.Text = "Yes";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            IsFormEdited.Text = "Yes";
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            IsFormEdited.Text = "Yes";
         }
     }
 }

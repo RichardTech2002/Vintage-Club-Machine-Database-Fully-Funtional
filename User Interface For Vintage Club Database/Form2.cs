@@ -11,8 +11,8 @@ namespace User_Interface_For_Vintage_Club_Database
     public partial class Form2 : Form
     {
         DBAccess objDBAccess = new DBAccess();
-        string ImageLocation1 = "";
-        string ImageLocation2 = "";
+        string ImageLocation1 = @"E:\Database General Folder\No Image Icon.jpg";
+        string ImageLocation2 = @"E:\Database General Folder\No Image Icon.jpg";
         public byte[] img1;
         public byte[] img2;
 
@@ -247,11 +247,11 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 label14.BackColor = Color.Red;
             }
-            if (pictureBox1.Image == null)
+            if (pictureBox1.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg")
             {
                 pictureBox1.BackColor = Color.Red;
             }
-            if (pictureBox2.Image == null)
+            if (pictureBox2.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg")
             {
                 pictureBox2.BackColor = Color.Red;
             }
@@ -311,14 +311,6 @@ namespace User_Interface_For_Vintage_Club_Database
                     {
                         richTextBox1.Text = "N/A";
                     }
-                    if (pictureBox1.Image == null)
-                    {
-                        pictureBox1.Image = pictureBox3.Image;
-                    }
-                    if (pictureBox2.Image == null)
-                    {
-                        pictureBox2.Image = pictureBox3.Image;
-                    }
                     if (textBox5.Text == "")
                     {
                         textBox5.Text = "N/A";
@@ -338,11 +330,13 @@ namespace User_Interface_For_Vintage_Club_Database
                     FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
                     BinaryReader br1 = new BinaryReader(fs1);
                     img1 = br1.ReadBytes((int)fs1.Length);
+                    insertcommand.Parameters.AddWithValue("@Image", img1);
 
                     byte[] img2 = null;
                     FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
                     BinaryReader br2 = new BinaryReader(fs2);
                     img2 = br2.ReadBytes((int)fs2.Length);
+                    insertcommand.Parameters.AddWithValue("@SecondImage", img2);
 
                     insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
                     insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.Value);
@@ -356,8 +350,6 @@ namespace User_Interface_For_Vintage_Club_Database
                     insertcommand.Parameters.AddWithValue("@Model", textBox5.Text);
                     insertcommand.Parameters.AddWithValue("@Make", textBox6.Text);
                     insertcommand.Parameters.AddWithValue("@Other_Notes", richTextBox3.Text);
-                    insertcommand.Parameters.AddWithValue("@Image", img1);
-                    insertcommand.Parameters.AddWithValue("@SecondImage", img2);
                     insertcommand.Parameters.AddWithValue("@IfSold", textBox7.Text);
 
                     int row = objDBAccess.executeQuery(insertcommand);
@@ -384,7 +376,6 @@ namespace User_Interface_For_Vintage_Club_Database
                 BinaryReader br2 = new BinaryReader(fs2);
                 img2 = br2.ReadBytes((int)fs2.Length);
 
-
                 insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
                 insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.Value);
                 insertcommand.Parameters.AddWithValue("@OriginalOwner", textBox2.Text);
@@ -397,9 +388,9 @@ namespace User_Interface_For_Vintage_Club_Database
                 insertcommand.Parameters.AddWithValue("@Model", textBox5.Text);
                 insertcommand.Parameters.AddWithValue("@Make", textBox6.Text);
                 insertcommand.Parameters.AddWithValue("@Other_Notes", richTextBox3.Text);
+                insertcommand.Parameters.AddWithValue("@IfSold", textBox7.Text);
                 insertcommand.Parameters.AddWithValue("@Image", img1);
                 insertcommand.Parameters.AddWithValue("@SecondImage", img2);
-                insertcommand.Parameters.AddWithValue("@IfSold", textBox7.Text);
 
                 int row = objDBAccess.executeQuery(insertcommand);
 

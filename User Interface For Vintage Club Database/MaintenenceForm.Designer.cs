@@ -151,7 +151,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(275, 12);
             this.textBox3.Name = "textBox3";
@@ -161,7 +161,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(1366, 12);
             this.textBox4.Name = "textBox4";
@@ -171,7 +171,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
+            this.textBox5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(275, 69);
             this.textBox5.Name = "textBox5";
@@ -221,12 +221,12 @@
             // 
             // textBox6
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
+            this.textBox6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(1366, 67);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(751, 49);
+            this.textBox6.Size = new System.Drawing.Size(629, 49);
             this.textBox6.TabIndex = 17;
             // 
             // label7

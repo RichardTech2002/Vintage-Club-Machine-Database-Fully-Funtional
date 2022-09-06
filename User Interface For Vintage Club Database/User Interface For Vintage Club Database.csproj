@@ -270,6 +270,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled.jpg" />
+    <Content Include="No Image Icon.jpg" />
     <Content Include="Tractor Icon.ico" />
   </ItemGroup>
   <ItemGroup>
