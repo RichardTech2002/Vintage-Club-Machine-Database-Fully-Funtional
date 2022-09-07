@@ -13,8 +13,8 @@ namespace User_Interface_For_Vintage_Club_Database
         public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, FirstImage, SecondImage, IfSold;
         public byte[] img1;
         public byte[] img2;
-        string ImageLocation1 = @"E:\Database General Folder\No Image Icon.jpg";
-        string ImageLocation2 = @"E:\Database General Folder\No Image Icon.jpg";
+        string ImageLocation1 = @"E:\Database General Folder";
+        string ImageLocation2 = @"E:\Database General Folder";
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 DialogResult dlgpic2 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgpic2 == DialogResult.Yes)
                 {
-                    pictureBox2.Image = null;
+                    pictureBox2.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
                 }
                 else
                 {
@@ -70,7 +70,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 DialogResult dlgpic1 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgpic1 == DialogResult.Yes)
                 {
-                    pictureBox1.Image = null;
+                    pictureBox1.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
                 }
                 else
                 {
@@ -139,8 +139,6 @@ namespace User_Interface_For_Vintage_Club_Database
             BinaryReader br1 = new BinaryReader(fs1);
             img1 = br1.ReadBytes((int)fs1.Length);
 
-
-
             byte[] img2 = null;
             FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
             BinaryReader br2 = new BinaryReader(fs2);
@@ -180,6 +178,7 @@ namespace User_Interface_For_Vintage_Club_Database
             updatecommand.Parameters.AddWithValue("@Make", @UpdatedMake);
             updatecommand.Parameters.AddWithValue("@Other_Notes", @UpdatedOtherInformation);
             updatecommand.Parameters.AddWithValue("@IfSold", @UpdatedIfSold);
+            updatecommand.Parameters.AddWithValue("@Image", UpdatedImage1);
             updatecommand.Parameters.AddWithValue("@SecondImage", @UpdatedImage2);
 
             int row = objDBAccess.executeQuery(updatecommand);

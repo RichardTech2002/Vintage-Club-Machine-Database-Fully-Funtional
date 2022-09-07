@@ -190,8 +190,8 @@ namespace User_Interface_For_Vintage_Club_Database
             richTextBox1.Text = "";
             richTextBox3.Text = "";
             numericUpDown1.Value = 0;
-            pictureBox1.Image = null;
-            pictureBox2.Image = null;
+            pictureBox1.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
+            pictureBox2.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
         }
 
 
@@ -566,7 +566,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 DialogResult dlgpic1 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgpic1 == DialogResult.Yes)
                 {
-                    pictureBox1.Image = null;
+                    pictureBox1.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
                     Duh -= 1;
                 }
                 else
@@ -584,7 +584,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 DialogResult dlgpic2 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgpic2 == DialogResult.Yes)
                 {
-                    pictureBox1.Image = null;
+                    pictureBox1.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
                     Duh -= 1;
                 }
                 else
