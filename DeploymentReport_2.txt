@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[General_Table]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[General_Table].[FileLocation1] is being dropped, data loss could occur.
+       The column [dbo].[General_Table].[FileLocation2] is being dropped, data loss could occur.
+
+** User actions
+     Table rebuild
+       [dbo].[General_Table] (Table)
+
+** Supporting actions
+
+The column [dbo].[General_Table].[FileLocation1] is being dropped, data loss could occur.
+The column [dbo].[General_Table].[FileLocation2] is being dropped, data loss could occur.
+

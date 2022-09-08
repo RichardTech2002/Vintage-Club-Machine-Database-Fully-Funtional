@@ -13,8 +13,8 @@ namespace User_Interface_For_Vintage_Club_Database
         public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, FirstImage, SecondImage, IfSold;
         public byte[] img1;
         public byte[] img2;
-        string ImageLocation1 = @"E:\Database General Folder";
-        string ImageLocation2 = @"E:\Database General Folder";
+        string ImageLocation1 = "";
+        string ImageLocation2 = "";
 
         private void button2_Click(object sender, EventArgs e)
         {

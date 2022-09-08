@@ -324,7 +324,7 @@ namespace User_Interface_For_Vintage_Club_Database
                         richTextBox3.Text = "N/A";
                     }
 
-                    SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold ) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold)");
+                    SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold, FileLocation1, FileLocation2) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold, @FileLocation1, FileLocation2)");
 
                     byte[] img1 = null;
                     FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
@@ -351,6 +351,8 @@ namespace User_Interface_For_Vintage_Club_Database
                     insertcommand.Parameters.AddWithValue("@Make", textBox6.Text);
                     insertcommand.Parameters.AddWithValue("@Other_Notes", richTextBox3.Text);
                     insertcommand.Parameters.AddWithValue("@IfSold", textBox7.Text);
+                    insertcommand.Parameters.AddWithValue("@FileLocation1", ImageLocation1);
+                    insertcommand.Parameters.AddWithValue("@FileLocation2", ImageLocation2);
 
                     int row = objDBAccess.executeQuery(insertcommand);
 
@@ -364,7 +366,7 @@ namespace User_Interface_For_Vintage_Club_Database
             }
             else
             {
-                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold ) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold)");
+                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold, FileLocation1, FileLocation2) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold, @FileLocation1, @FileLocation2)");
 
                 byte[] img1 = null;
                 FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
@@ -391,6 +393,8 @@ namespace User_Interface_For_Vintage_Club_Database
                 insertcommand.Parameters.AddWithValue("@IfSold", textBox7.Text);
                 insertcommand.Parameters.AddWithValue("@Image", img1);
                 insertcommand.Parameters.AddWithValue("@SecondImage", img2);
+                insertcommand.Parameters.AddWithValue("@FileLocation1", ImageLocation1);
+                insertcommand.Parameters.AddWithValue("@FileLocation2", ImageLocation2);
 
                 int row = objDBAccess.executeQuery(insertcommand);
 
@@ -661,3 +665,4 @@ namespace User_Interface_For_Vintage_Club_Database
         }
     }
 }
+// If you're reading this, fuck off before you ruin the program!
