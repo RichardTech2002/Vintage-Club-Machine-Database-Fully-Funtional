@@ -324,7 +324,7 @@ namespace User_Interface_For_Vintage_Club_Database
                         richTextBox3.Text = "N/A";
                     }
 
-                    SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold, FileLocation1, FileLocation2) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold, @FileLocation1, FileLocation2)");
+                    SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold, FileLocation1, FileLocation2) Values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold, @FileLocation1, @FileLocation2)");
 
                     byte[] img1 = null;
                     FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
@@ -366,7 +366,7 @@ namespace User_Interface_For_Vintage_Club_Database
             }
             else
             {
-                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold, FileLocation1, FileLocation2) values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold, @FileLocation1, @FileLocation2)");
+                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold, FileLocation1, FileLocation2) Values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold, @FileLocation1, @FileLocation2)");
 
                 byte[] img1 = null;
                 FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);

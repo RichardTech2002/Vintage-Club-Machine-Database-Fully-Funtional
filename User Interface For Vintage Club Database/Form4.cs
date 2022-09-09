@@ -10,7 +10,7 @@ namespace User_Interface_For_Vintage_Club_Database
 {
     public partial class Form4 : Form
     {
-        public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, FirstImage, SecondImage, IfSold;
+        public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, FirstImage, SecondImage, IfSold, FileLocation1, FileLocation2;
         public byte[] img1;
         public byte[] img2;
         string ImageLocation1 = "";
@@ -38,7 +38,6 @@ namespace User_Interface_For_Vintage_Club_Database
                 Form3 f3 = new Form3();
                 f3.Show();
             }
-
         }
 
         private void button8_Click_1(object sender, EventArgs e)
@@ -157,10 +156,12 @@ namespace User_Interface_For_Vintage_Club_Database
             string UpdatedDisplayLocation = comboBox2.Text;
             string UpdatedDonatedOrLoaned = comboBox3.Text;
             string UpdatedIfSold = comboBox4.Text;
+            string UpdatedFileLocation1 = ImageLocation1;
+            string UpdatedFileLocation2 = ImageLocation2;
             byte[] UpdatedImage1 = img1;
             byte[] UpdatedImage2 = img2;
 
-            string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata + "', Description = '" + @UpdatedDescription + "', Make = '" + @UpdatedMake + "', Model = '" + @UpdatedModel + "', Restoration_Status = '" + @UpdatedRestorationStatus + "', Machine_Location = '" + @UpdatedDisplayLocation + "', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned + "', IfSold = '" + @UpdatedIfSold + "', Other_Notes = '" + @UpdatedOtherInformation + "',Image = '" + @UpdatedImage1 + "',SecondImage = '" + @UpdatedImage2 + "'Where ID = '" + Form4IDTaker.Value + "'";
+            string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata + "', Description = '" + @UpdatedDescription + "', Make = '" + @UpdatedMake + "', Model = '" + @UpdatedModel + "', Restoration_Status = '" + @UpdatedRestorationStatus + "', Machine_Location = '" + @UpdatedDisplayLocation + "', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned + "', IfSold = '" + @UpdatedIfSold + "', Other_Notes = '" + @UpdatedOtherInformation + "',Image = '" + @UpdatedImage1 + "',SecondImage = '" + @UpdatedImage2 + "',FileLocation1 = '" + @UpdatedFileLocation1 + "',FileLocation2'" + @UpdatedFileLocation2 + "'Where ID = '" + Form4IDTaker.Value + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
 
@@ -178,8 +179,10 @@ namespace User_Interface_For_Vintage_Club_Database
             updatecommand.Parameters.AddWithValue("@Make", @UpdatedMake);
             updatecommand.Parameters.AddWithValue("@Other_Notes", @UpdatedOtherInformation);
             updatecommand.Parameters.AddWithValue("@IfSold", @UpdatedIfSold);
-            updatecommand.Parameters.AddWithValue("@Image", UpdatedImage1);
+            updatecommand.Parameters.AddWithValue("@Image", @UpdatedImage1);
             updatecommand.Parameters.AddWithValue("@SecondImage", @UpdatedImage2);
+            updatecommand.Parameters.AddWithValue("@FileLocation1", @UpdatedFileLocation1);
+            updatecommand.Parameters.AddWithValue("@FileLocation2", @UpdatedFileLocation2);
 
             int row = objDBAccess.executeQuery(updatecommand);
 
@@ -278,7 +281,7 @@ namespace User_Interface_For_Vintage_Club_Database
             Form4IDTaker.Value = Int32.Parse(f3.IdString);
             if (Form4IDTaker.Value != 0)
             {
-                string query = "Select id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold from General_Table where Id = '" + Form4IDTaker.Value + "'";
+                string query = "Select id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold, FileLocation1, FileLocation2 from General_Table where Id = '" + Form4IDTaker.Value + "'";
                 objDBAccess.readDatathroughAdapter(query, dtUsers);
 
                 if (dtUsers.Rows.Count == 1)
@@ -298,14 +301,11 @@ namespace User_Interface_For_Vintage_Club_Database
                     Make = dtUsers.Rows[0]["Make"].ToString();
                     Other_Notes = dtUsers.Rows[0]["Other_Notes"].ToString();
                     IfSold = dtUsers.Rows[0]["IfSold"].ToString();
-                    byte[] img1 = (byte[])(dtUsers.Rows[0]["Image"]);
-                    byte[] img2 = (byte[])(dtUsers.Rows[0]["SecondImage"]);
+                    FileLocation1 = dtUsers.Rows[0]["FileLocation1"].ToString();
+                    FileLocation2 = dtUsers.Rows[0]["FileLocation2"].ToString();
 
-                    MemoryStream ms = new MemoryStream(img1);
-                    pictureBox1.Image = Image.FromStream(ms);
-
-                    MemoryStream ms1 = new MemoryStream(img2);
-                    pictureBox2.Image = Image.FromStream(ms1);
+                    pictureBox1.ImageLocation = FileLocation1;
+                    pictureBox2.ImageLocation = FileLocation2;
 
                     textBox1.Text = Machine_Type;
                     numericUpDown1.Value = Int32.Parse(Year_Built);
@@ -320,10 +320,12 @@ namespace User_Interface_For_Vintage_Club_Database
                     textBox6.Text = Model;
                     richTextBox3.Text = Other_Notes;
                     comboBox4.Text = IfSold;
+                    ImageLocation1 = FileLocation1;
+                    ImageLocation2 = FileLocation2;
 
                     objDBAccess.closeConn();
                 }
-                if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "" && pictureBox1.Image == null && pictureBox2.Image == null && richTextBox1.Text == "" && richTextBox3.Text == "" && comboBox1.Text == "" && comboBox2.Text == "" && comboBox3.Text == "" && comboBox4.Text == "")
+                if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "" && richTextBox1.Text == "" && richTextBox3.Text == "" && comboBox1.Text == "" && comboBox2.Text == "" && comboBox3.Text == "" && comboBox4.Text == "")
                 {
                     MessageBox.Show("This record has been deleted. Go back to the database page.", "Illegal Entry!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
@@ -338,7 +340,6 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            string ImageLocation = "";
             try
             {
                 OpenFileDialog Dialog = new OpenFileDialog();
@@ -346,8 +347,8 @@ namespace User_Interface_For_Vintage_Club_Database
 
                 if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    ImageLocation = Dialog.FileName;
-                    pictureBox1.ImageLocation = ImageLocation;
+                    ImageLocation1 = Dialog.FileName;
+                    pictureBox1.ImageLocation = ImageLocation1;
                 }
             }
             catch
@@ -358,7 +359,6 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            string ImageLocation = "";
             try
             {
                 OpenFileDialog Dialog = new OpenFileDialog();
@@ -366,8 +366,8 @@ namespace User_Interface_For_Vintage_Club_Database
 
                 if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    ImageLocation = Dialog.FileName;
-                    pictureBox2.ImageLocation = ImageLocation;
+                    ImageLocation2 = Dialog.FileName;
+                    pictureBox2.ImageLocation = ImageLocation2;
                 }
             }
             catch
