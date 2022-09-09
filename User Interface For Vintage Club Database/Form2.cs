@@ -2,7 +2,6 @@
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 
@@ -13,8 +12,6 @@ namespace User_Interface_For_Vintage_Club_Database
         DBAccess objDBAccess = new DBAccess();
         string ImageLocation1 = @"E:\Database General Folder\No Image Icon.jpg";
         string ImageLocation2 = @"E:\Database General Folder\No Image Icon.jpg";
-        public byte[] img1;
-        public byte[] img2;
 
         public Form2()
         {
@@ -367,16 +364,6 @@ namespace User_Interface_For_Vintage_Club_Database
             else
             {
                 SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2) Values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @IfSold, @FileLocation1, @FileLocation2)");
-
-                //byte[] img1 = null;
-                //FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
-                //BinaryReader br1 = new BinaryReader(fs1);
-                //img1 = br1.ReadBytes((int)fs1.Length);
-
-                //byte[] img2 = null;
-                //FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
-                //BinaryReader br2 = new BinaryReader(fs2);
-                //img2 = br2.ReadBytes((int)fs2.Length);
 
                 insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
                 insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.Value);

@@ -673,15 +673,33 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.NumericUpDown Form4IDTaker;
+#pragma warning disable CS0169 // The field 'Form4.idDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form4.idDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form4.machineTypeDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn machineTypeDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form4.machineTypeDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form4.yearBuiltDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn yearBuiltDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form4.yearBuiltDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form4.modelDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form4.modelDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form4.machineLocationDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn machineLocationDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form4.machineLocationDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form4.restorationStatusDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn restorationStatusDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form4.restorationStatusDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form4.makeDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn makeDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form4.makeDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form4.originalOwnerDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn originalOwnerDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form4.originalOwnerDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form4.dateAcquiredDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dateAcquiredDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form4.dateAcquiredDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.BindingSource generalTableBindingSource;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label15;

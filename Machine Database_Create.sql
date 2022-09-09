@@ -252,6 +252,8 @@ CREATE TABLE [dbo].[General_Table] (
     [Other_Notes]             VARCHAR (MAX) NULL,
     [IfSold]                  VARCHAR (10)  NULL,
     [Maintenence_Information] VARCHAR (MAX) NULL,
+    [FileLocation1]           VARCHAR (MAX) NULL,
+    [FileLocation2]           VARCHAR (MAX) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

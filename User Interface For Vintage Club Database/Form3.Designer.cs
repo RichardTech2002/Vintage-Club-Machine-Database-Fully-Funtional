@@ -349,47 +349,115 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
+#pragma warning disable CS0169 // The field 'Form3.idDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.idDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.imageDataGridViewImageColumn' is never used
         private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
+#pragma warning restore CS0169 // The field 'Form3.imageDataGridViewImageColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.machineTypeDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn machineTypeDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.machineTypeDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.yearBuiltDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn yearBuiltDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.yearBuiltDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.makeDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn makeDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.makeDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.modelDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.modelDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.machineLocationDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn machineLocationDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.machineLocationDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.restorationStatusDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn restorationStatusDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.restorationStatusDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.originalOwnerDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn originalOwnerDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.originalOwnerDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.dateAcquiredDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dateAcquiredDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.dateAcquiredDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.descriptionDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.descriptionDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.maintenenceInformationDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn maintenenceInformationDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.maintenenceInformationDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.linktoTractorDataDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn linktoTractorDataDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.linktoTractorDataDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.donatedOrLoanedDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn donatedOrLoanedDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.donatedOrLoanedDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown Form3IDTaker;
+#pragma warning disable CS0169 // The field 'Form3.donatedByDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn donatedByDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.donatedByDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridView dataGridView1;
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn1' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn1' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn2' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn2' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn3' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn3' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn4' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn4' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn5' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn5' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn6' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn6' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewImageColumn1' is never used
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewImageColumn1' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn7' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn7' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn8' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn8' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn9' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn9' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn10' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn10' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn11' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn11' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn12' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn12' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn13' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn13' is never used
+#pragma warning disable CS0169 // The field 'Form3.secondImageDataGridViewImageColumn' is never used
         private System.Windows.Forms.DataGridViewImageColumn secondImageDataGridViewImageColumn;
+#pragma warning restore CS0169 // The field 'Form3.secondImageDataGridViewImageColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.otherNotesDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn otherNotesDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.otherNotesDataGridViewTextBoxColumn' is never used
+#pragma warning disable CS0169 // The field 'Form3.ifSoldDataGridViewTextBoxColumn' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn ifSoldDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // The field 'Form3.ifSoldDataGridViewTextBoxColumn' is never used
         private Machine_Database_FixedDataSet4 machine_Database_FixedDataSet4;
         private System.Windows.Forms.BindingSource generalTableBindingSource2;
         private Machine_Database_FixedDataSet4TableAdapters.General_TableTableAdapter general_TableTableAdapter;
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn24' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn24' is never used
+#pragma warning disable CS0169 // The field 'Form3.dataGridViewTextBoxColumn26' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+#pragma warning restore CS0169 // The field 'Form3.dataGridViewTextBoxColumn26' is never used
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;

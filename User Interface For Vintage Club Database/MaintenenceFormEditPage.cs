@@ -31,7 +31,7 @@ namespace User_Interface_For_Vintage_Club_Database
             string BasicTitle = textBox7.Text;
             string DateManual = textBox1.Text;
             string DateAutomatic = dateTimePicker1.Text;
-            if(dtUsers.Rows.Count == 1)
+            if (dtUsers.Rows.Count == 1)
             {
 
 
@@ -45,7 +45,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(IsFormEdited.Text == "No")
+            if (IsFormEdited.Text == "No")
             {
                 this.Hide();
             }

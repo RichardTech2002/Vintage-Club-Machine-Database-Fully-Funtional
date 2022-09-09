@@ -2,8 +2,6 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace User_Interface_For_Vintage_Club_Database
@@ -11,8 +9,6 @@ namespace User_Interface_For_Vintage_Club_Database
     public partial class Form4 : Form
     {
         public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2;
-        public byte[] img1;
-        public byte[] img2;
         string ImageLocation1 = @"E:\Database General Folder\No Image Icon.jpg";
         string ImageLocation2 = @"E:\Database General Folder\No Image Icon.jpg";
 
@@ -133,16 +129,6 @@ namespace User_Interface_For_Vintage_Club_Database
 
             //Update the data
 
-            //byte[] img1 = null;
-            //FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
-            //BinaryReader br1 = new BinaryReader(fs1);
-            //img1 = br1.ReadBytes((int)fs1.Length);
-
-            //byte[] img2 = null;
-            //FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
-            //BinaryReader br2 = new BinaryReader(fs2);
-            //img2 = br2.ReadBytes((int)fs2.Length);
-
             string UpdatedMachineType = textBox1.Text;
             string UpdatedYearBuilt = numericUpDown1.Value.ToString();
             string UpdatedOriginal_Owner = textBox2.Text;
@@ -158,24 +144,23 @@ namespace User_Interface_For_Vintage_Club_Database
             string UpdatedIfSold = comboBox4.Text;
             string UpdatedFileLocation1 = ImageLocation1.ToString();
             string UpdatedFileLocation2 = ImageLocation2.ToString();
-            //byte[] UpdatedImage1 = img1;
-            //byte[] UpdatedImage2 = img2;
 
-                string query = "Update General_Table SET Machine_Type = '" +
-                @UpdatedMachineType + "', Year_Built = '" + 
-                @UpdatedYearBuilt + "', Original_Owner = '" + 
-                @UpdatedOriginal_Owner + "', Date_Acquired = '" + 
-                @UpdatedDateAcquired + "', Link_To_Tractordata = '" + 
-                @UpdatedLinkToTractordata + "', Description = '" + 
-                @UpdatedDescription + "', Make = '" + @UpdatedMake + "', Model = '" + 
-                @UpdatedModel + "', Restoration_Status = '" + 
-                @UpdatedRestorationStatus + "', Machine_Location = '" + 
-                @UpdatedDisplayLocation + "', Donated_Or_Loaned = '" + 
-                @UpdatedDonatedOrLoaned + "', IfSold = '" + 
-                @UpdatedIfSold + "', Other_Notes = '" + 
-                @UpdatedOtherInformation + "',FileLocation1 = '" + 
-                @UpdatedFileLocation1 + "',FileLocation2 = '" + 
-                @UpdatedFileLocation2 + "'Where ID = '" + Form4IDTaker.Value + "'";
+            string query = "Update General_Table SET Machine_Type = '" +
+            @UpdatedMachineType + "', Year_Built = '" +
+            @UpdatedYearBuilt + "', Original_Owner = '" +
+            @UpdatedOriginal_Owner + "', Date_Acquired = '" +
+            @UpdatedDateAcquired + "', Link_To_Tractordata = '" +
+            @UpdatedLinkToTractordata + "', Description = '" +
+            @UpdatedDescription + "', Make = '" +
+            @UpdatedMake + "', Model = '" +
+            @UpdatedModel + "', Restoration_Status = '" +
+            @UpdatedRestorationStatus + "', Machine_Location = '" +
+            @UpdatedDisplayLocation + "', Donated_Or_Loaned = '" +
+            @UpdatedDonatedOrLoaned + "', IfSold = '" +
+            @UpdatedIfSold + "', Other_Notes = '" +
+            @UpdatedOtherInformation + "',FileLocation1 = '" +
+            @UpdatedFileLocation1 + "',FileLocation2 = '" +
+            @UpdatedFileLocation2 + "'Where ID = '" + Form4IDTaker.Value + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
 
@@ -195,14 +180,12 @@ namespace User_Interface_For_Vintage_Club_Database
             updatecommand.Parameters.AddWithValue("@IfSold", @UpdatedIfSold);
             updatecommand.Parameters.AddWithValue("@FileLocation1", @UpdatedFileLocation1);
             updatecommand.Parameters.AddWithValue("@FileLocation2", @UpdatedFileLocation2);
-            //updatecommand.Parameters.AddWithValue("@Image", @UpdatedImage1);
-            //updatecommand.Parameters.AddWithValue("@SecondImage", @UpdatedImage2);
 
             int row = objDBAccess.executeQuery(updatecommand);
 
             if (row == 1)
             {
-                DialogResult Submit = MessageBox.Show("All data seen here has now been updated!", "Updated!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult Submit = MessageBox.Show("Information successfully updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -317,14 +300,7 @@ namespace User_Interface_For_Vintage_Club_Database
                     IfSold = dtUsers.Rows[0]["IfSold"].ToString();
                     FileLocation1 = dtUsers.Rows[0]["FileLocation1"].ToString();
                     FileLocation2 = dtUsers.Rows[0]["FileLocation2"].ToString();
-                    //byte[] img1 = (byte[])(dtUsers.Rows[0]["Image"]);
-                    //byte[] img2 = (byte[])(dtUsers.Rows[0]["SecondImage"]);
 
-                    //MemoryStream ms = new MemoryStream(img1);
-                    //pictureBox1.Image = Image.FromStream(ms);
-
-                    //MemoryStream ms1 = new MemoryStream(img2);
-                    //pictureBox2.Image = Image.FromStream(ms1);
                     textBox1.Text = Machine_Type;
                     numericUpDown1.Value = Int32.Parse(Year_Built);
                     textBox2.Text = Original_Owner;
@@ -345,7 +321,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
                     objDBAccess.closeConn();
                 }
-                if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "" && richTextBox1.Text == "" && richTextBox3.Text == "" && comboBox1.Text == "" && comboBox2.Text == "" && comboBox3.Text == "" && comboBox4.Text == "")
+                if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "" && richTextBox1.Text == "" && richTextBox3.Text == "" && comboBox1.Text == "" && comboBox2.Text == "" && comboBox3.Text == "" && comboBox4.Text == "" && pictureBox1.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg" && pictureBox2.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg")
                 {
                     MessageBox.Show("This record has been deleted. Go back to the database page.", "Illegal Entry!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
