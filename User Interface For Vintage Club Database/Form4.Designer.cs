@@ -81,7 +81,7 @@
             // 
             this.button2.AutoSize = true;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1279, 903);
+            this.button2.Location = new System.Drawing.Point(45, 939);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(580, 89);
             this.button2.TabIndex = 9;
@@ -93,9 +93,9 @@
             // 
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(886, 790);
+            this.button1.Location = new System.Drawing.Point(700, 939);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(364, 89);
+            this.button1.Size = new System.Drawing.Size(542, 89);
             this.button1.TabIndex = 8;
             this.button1.Text = "Save...";
             this.button1.UseVisualStyleBackColor = true;
@@ -408,9 +408,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(886, 790);
+            this.button4.Location = new System.Drawing.Point(700, 939);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(364, 89);
+            this.button4.Size = new System.Drawing.Size(542, 89);
             this.button4.TabIndex = 64;
             this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = true;
@@ -434,7 +434,7 @@
             this.button6.BackColor = System.Drawing.Color.Red;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Location = new System.Drawing.Point(886, 903);
+            this.button6.Location = new System.Drawing.Point(1473, 792);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(364, 89);
             this.button6.TabIndex = 67;
@@ -521,7 +521,7 @@
             "In Stock",
             "Sold",
             "Something Else"});
-            this.comboBox4.Location = new System.Drawing.Point(245, 790);
+            this.comboBox4.Location = new System.Drawing.Point(245, 778);
             this.comboBox4.MaxDropDownItems = 20;
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(413, 37);
@@ -532,7 +532,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(36, 793);
+            this.label15.Location = new System.Drawing.Point(36, 781);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(156, 29);
             this.label15.TabIndex = 81;
@@ -543,7 +543,7 @@
             this.button7.AutoSize = true;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(1281, 790);
+            this.button7.Location = new System.Drawing.Point(1293, 939);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(578, 92);
             this.button7.TabIndex = 82;

@@ -5,5 +5,6 @@
     [Date] VARCHAR(MAX) NULL, 
     [Who_By] VARCHAR(MAX) NULL, 
     [Maintenence_Information] VARCHAR(MAX) NULL, 
-    [Basic_Title] VARCHAR(100) NULL
+    [Basic_Title] VARCHAR(100) NULL, 
+    [AutoManual] NCHAR(10) NULL
 )

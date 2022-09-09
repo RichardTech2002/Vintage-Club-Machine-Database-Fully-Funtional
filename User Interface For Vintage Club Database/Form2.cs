@@ -263,7 +263,7 @@ namespace User_Interface_For_Vintage_Club_Database
             BoxChecker();
 
 
-            if (Duh == 13)
+            if (Duh == 14)
             {
                 DialogResult Blank = MessageBox.Show("You didn't even fill out any of the boxes, you old fool!", "Empty Boxes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (Blank == DialogResult.OK)
@@ -272,7 +272,7 @@ namespace User_Interface_For_Vintage_Club_Database
                     ColourReset();
                 }
             }
-            else if (Duh > 13)
+            else if (Duh > 14)
             {
                 DialogResult DoubleCheck = MessageBox.Show("This form is not complete. Are you sure you want to submit this data how it is? Remember you can change it later.", "Incomplete Form", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (DoubleCheck == DialogResult.OK)
@@ -367,8 +367,6 @@ namespace User_Interface_For_Vintage_Club_Database
                 insertcommand.Parameters.AddWithValue("@Make", textBox6.Text);
                 insertcommand.Parameters.AddWithValue("@Other_Notes", richTextBox3.Text);
                 insertcommand.Parameters.AddWithValue("@IfSold", textBox7.Text);
-                //insertcommand.Parameters.AddWithValue("@Image", img1);
-                //insertcommand.Parameters.AddWithValue("@SecondImage", img2);
                 insertcommand.Parameters.AddWithValue("@FileLocation1", ImageLocation1);
                 insertcommand.Parameters.AddWithValue("@FileLocation2", ImageLocation2);
 
@@ -396,14 +394,14 @@ namespace User_Interface_For_Vintage_Club_Database
             BoxChecker();
             if (Duh != 0)
             {
-                if (Duh == 13)
+                if (Duh == 14)
                 {
                     Duh = 0;
                     this.Close();
                 }
                 if (Duh > 0)
                 {
-                    if (Duh < 13)
+                    if (Duh < 14)
                     {
                         DialogResult msg1 = MessageBox.Show("This form is incomplete. If you go back now, you will need to fill out the form again. Would you like to continue?", "Incomplete Form", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                         if (msg1 == DialogResult.OK)
@@ -533,12 +531,6 @@ namespace User_Interface_For_Vintage_Club_Database
             ColourReset();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MaintenenceForm mtnf = new MaintenenceForm();
-            mtnf.Show();
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (pictureBox1 != null)
@@ -554,7 +546,6 @@ namespace User_Interface_For_Vintage_Club_Database
                     //Do Nothing
                 }
             }
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

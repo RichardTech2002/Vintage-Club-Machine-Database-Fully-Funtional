@@ -12,6 +12,7 @@ namespace User_Interface_For_Vintage_Club_Database
         {
             InitializeComponent();
         }
+        public static string BasicTitle, Date, WhoBy, MaintenanceInformation, IDGrabber;
         MaintenenceView mtn;
         public MaintenenceFormEditPage(MaintenenceView mtn)
         {
@@ -28,12 +29,20 @@ namespace User_Interface_For_Vintage_Club_Database
             textBox6.Text = Form4.Model;
             MainIdTaker.Value = Int32.Parse(Form4.id);
             //MainIDTakerMechInfo.Value =
-            string BasicTitle = textBox7.Text;
             string DateManual = textBox1.Text;
             string DateAutomatic = dateTimePicker1.Text;
             if (dtUsers.Rows.Count == 1)
             {
+                BasicTitle = dtUsers.Rows[0]["Basic_Title"].ToString();
+                Date = dtUsers.Rows[0]["Date"].ToString();
+                WhoBy = dtUsers.Rows[0]["Who_By"].ToString();
+                MaintenanceInformation = dtUsers.Rows[0]["Maintenence_Information"].ToString();
+                IDGrabber = dtUsers.Rows[0]["ID_Grabber"].ToString();
 
+                textBox7.Text = BasicTitle;
+                textBox1.Text = Date;
+                textBox2.Text = WhoBy;
+                richTextBox1.Text = MaintenanceInformation;
 
                 textBox3.Text = Form4.Machine_Type;
                 textBox4.Text = Form4.Year_Built;
@@ -119,7 +128,7 @@ namespace User_Interface_For_Vintage_Club_Database
             string UpdatedWho_By = textBox2.Text;
             string UpdatedMaintenence_Information = richTextBox1.Text;
 
-            string query = "Update General_Table SET Date = '" + @UpdatedDate + "', Basic_Title = " + @UpdatedBasic_Title + "', Who_By = " + @UpdatedWho_By + "', Maintenence_Information = " + @UpdatedMaintenence_Information + "'Where ID = '" + MainIdTaker.Value + "'";
+            string query = "Update General_Table SET Date = '" + @UpdatedDate + "', Basic_Title = " + @UpdatedBasic_Title + "', Who_By = " + @UpdatedWho_By + "', Maintenence_Information = " + @UpdatedMaintenence_Information + "'Where ID = '" + MainIdTaker.Value + MainIDTakerMechInfo.Value + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
 

@@ -43,26 +43,26 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //try
-            //{
-            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
-                dataGridView1.CurrentRow.Selected = true;
-                IdString = dataGridView1.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn14"].FormattedValue.ToString();
-                var IDInt = Int32.Parse(IdString);
-                Form3IDTaker.Value = IDInt;
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    dataGridView1.CurrentRow.Selected = true;
+                    IdString = dataGridView1.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn14"].FormattedValue.ToString();
+                    var IDInt = Int32.Parse(IdString);
+                    Form3IDTaker.Value = IDInt;
+                }
+                //Open Form 4 data editing page
+
+                Form4 f4 = new Form4(this);
+                f4.ShowDialog();
+                this.Close();
             }
-            //Open Form 4 data editing page
 
-            Form4 f4 = new Form4(this);
-            f4.ShowDialog();
-            this.Close();
-            //}
-
-            //catch
-            //{
-            //    MessageBox.Show("You need to click on the data. Not whatever it is you tried to click.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            catch
+            {
+                MessageBox.Show("You need to click on the data. Not whatever it is you tried to click.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

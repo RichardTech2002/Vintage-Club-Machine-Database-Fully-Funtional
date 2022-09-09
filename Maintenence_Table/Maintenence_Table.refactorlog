@@ -21,4 +21,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ID_Grabber" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="3c8cca30-e5db-43e3-83da-53e6c4109d8e" ChangeDateTime="09/09/2022 20:59:48">
+    <Property Name="ElementName" Value="[dbo].[Maintenence_Table].[Automanual]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Maintenence_Table]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AutoManual" />
+  </Operation>
 </Operations>

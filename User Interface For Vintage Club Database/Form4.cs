@@ -16,7 +16,7 @@ namespace User_Interface_For_Vintage_Club_Database
         {
             if (MenuLock.Text == "Locked")
             {
-                DialogResult dlg1 = MessageBox.Show("We are currently in edit mode. If you back out now, you will need to redo any changes you made. Would you like to continue?", "Edit Mode", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dlg1 = MessageBox.Show("This is currently in edit mode. Any changes that you may have done will not been saved unless you press the save button. If you back out now, you will need to re-do any changes you made. Would you like to continue?", "Edit Mode", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dlg1 == DialogResult.Yes)
                 {
                     this.Hide();
@@ -306,8 +306,8 @@ namespace User_Interface_For_Vintage_Club_Database
                     textBox2.Text = Original_Owner;
                     textBox3.Text = Date_Acquired;
                     richTextBox1.Text = Description;
-                    comboBox1.Text = Machine_Location;
-                    comboBox2.Text = Restoration_Status;
+                    comboBox1.Text = Restoration_Status;
+                    comboBox2.Text = Machine_Location;
                     comboBox3.Text = Donated_Or_Loaned;
                     textBox4.Text = Link_To_TractorData;
                     textBox5.Text = Make;
@@ -378,3 +378,5 @@ namespace User_Interface_For_Vintage_Club_Database
         }
     }
 }
+
+// If you're reading this, fuck off before you ruin the program!

@@ -321,7 +321,7 @@
             // IsFormEdited
             // 
             this.IsFormEdited.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IsFormEdited.Location = new System.Drawing.Point(59, 321);
+            this.IsFormEdited.Location = new System.Drawing.Point(-2, -9);
             this.IsFormEdited.MaxLength = 100;
             this.IsFormEdited.Name = "IsFormEdited";
             this.IsFormEdited.Size = new System.Drawing.Size(98, 34);
@@ -359,8 +359,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dateTimePicker1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
