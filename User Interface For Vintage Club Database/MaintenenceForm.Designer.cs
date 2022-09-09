@@ -62,7 +62,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(666, 93);
             this.button1.TabIndex = 2;
-            this.button1.Text = "< Save and go back to Machine Form";
+            this.button1.Text = "Go back to Machine Form";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -256,7 +256,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(666, 93);
             this.button2.TabIndex = 21;
-            this.button2.Text = "Print Out...";
+            this.button2.Text = "Save Data";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
@@ -288,6 +288,7 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown1.TabIndex = 24;
+            this.numericUpDown1.Visible = false;
             // 
             // MaintenenceForm
             // 

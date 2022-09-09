@@ -102,14 +102,15 @@ namespace User_Interface_For_Vintage_Club_Database
                 MessageBoxDisplay.Text = "Yes";
                 Duh++;
             }
-            if (pictureBox1.Image == null)
+            if (pictureBox1.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg")
             {
                 MessageBoxDisplay.Text = "Yes";
                 Duh++;
             }
-            if (pictureBox1.Image == null)
+            if (pictureBox2.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg")
             {
                 MessageBoxDisplay.Text = "Yes";
+                Duh++;
             }
             if (numericUpDown1.Value == 0)
             {
@@ -322,18 +323,6 @@ namespace User_Interface_For_Vintage_Club_Database
                     }
 
                     SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2) Values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @IfSold, @FileLocation1, @FileLocation2)");
-
-                    //byte[] img1 = null;
-                    //FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
-                    //BinaryReader br1 = new BinaryReader(fs1);
-                    //img1 = br1.ReadBytes((int)fs1.Length);
-                    //insertcommand.Parameters.AddWithValue("@Image", img1);
-
-                    //byte[] img2 = null;
-                    //FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
-                    //BinaryReader br2 = new BinaryReader(fs2);
-                    //img2 = br2.ReadBytes((int)fs2.Length);
-                    //insertcommand.Parameters.AddWithValue("@SecondImage", img2);
 
                     insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
                     insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.Value);

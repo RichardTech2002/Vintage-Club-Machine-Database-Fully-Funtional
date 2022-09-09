@@ -71,7 +71,7 @@ namespace User_Interface_For_Vintage_Club_Database
             if (DialogResult.OK == UpdatedData)
             {
                 SqlConnection conn = new SqlConnection("");
-                string query = "DELETE From Maintenence_Information where ID == '" + MainIDTakerMechInfo.Value + "'";
+                string query = "DELETE From Maintenence_Information where ID == '" + MainIDTakerMechInfo.Value + MainIDTakerMechInfo.Value + "'";
                 SqlCommand deletecommand = new SqlCommand(query, conn);
 
                 int row = deletecommand.ExecuteNonQuery();
