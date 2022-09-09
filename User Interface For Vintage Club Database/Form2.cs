@@ -324,19 +324,19 @@ namespace User_Interface_For_Vintage_Club_Database
                         richTextBox3.Text = "N/A";
                     }
 
-                    SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold, FileLocation1, FileLocation2) Values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold, @FileLocation1, @FileLocation2)");
+                    SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2) Values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @IfSold, @FileLocation1, @FileLocation2)");
 
-                    byte[] img1 = null;
-                    FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
-                    BinaryReader br1 = new BinaryReader(fs1);
-                    img1 = br1.ReadBytes((int)fs1.Length);
-                    insertcommand.Parameters.AddWithValue("@Image", img1);
+                    //byte[] img1 = null;
+                    //FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
+                    //BinaryReader br1 = new BinaryReader(fs1);
+                    //img1 = br1.ReadBytes((int)fs1.Length);
+                    //insertcommand.Parameters.AddWithValue("@Image", img1);
 
-                    byte[] img2 = null;
-                    FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
-                    BinaryReader br2 = new BinaryReader(fs2);
-                    img2 = br2.ReadBytes((int)fs2.Length);
-                    insertcommand.Parameters.AddWithValue("@SecondImage", img2);
+                    //byte[] img2 = null;
+                    //FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
+                    //BinaryReader br2 = new BinaryReader(fs2);
+                    //img2 = br2.ReadBytes((int)fs2.Length);
+                    //insertcommand.Parameters.AddWithValue("@SecondImage", img2);
 
                     insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
                     insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.Value);
@@ -366,17 +366,17 @@ namespace User_Interface_For_Vintage_Club_Database
             }
             else
             {
-                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, Image, SecondImage, IfSold, FileLocation1, FileLocation2) Values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @Image, @SecondImage, @IfSold, @FileLocation1, @FileLocation2)");
+                SqlCommand insertcommand = new SqlCommand("insert into General_Table(Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2) Values (@Machinetype, @YearBuilt, @OriginalOwner, @DateAcquired, @Description, @MachineLocation, @RestorationStatus, @DonatedOrLoaned, @LinkToTractorData, @Model, @Make, @Other_Notes, @IfSold, @FileLocation1, @FileLocation2)");
 
-                byte[] img1 = null;
-                FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
-                BinaryReader br1 = new BinaryReader(fs1);
-                img1 = br1.ReadBytes((int)fs1.Length);
+                //byte[] img1 = null;
+                //FileStream fs1 = new FileStream(ImageLocation1, FileMode.Open, FileAccess.Read);
+                //BinaryReader br1 = new BinaryReader(fs1);
+                //img1 = br1.ReadBytes((int)fs1.Length);
 
-                byte[] img2 = null;
-                FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
-                BinaryReader br2 = new BinaryReader(fs2);
-                img2 = br2.ReadBytes((int)fs2.Length);
+                //byte[] img2 = null;
+                //FileStream fs2 = new FileStream(ImageLocation2, FileMode.Open, FileAccess.Read);
+                //BinaryReader br2 = new BinaryReader(fs2);
+                //img2 = br2.ReadBytes((int)fs2.Length);
 
                 insertcommand.Parameters.AddWithValue("@MachineType", textBox1.Text);
                 insertcommand.Parameters.AddWithValue("@YearBuilt", numericUpDown1.Value);
@@ -391,8 +391,8 @@ namespace User_Interface_For_Vintage_Club_Database
                 insertcommand.Parameters.AddWithValue("@Make", textBox6.Text);
                 insertcommand.Parameters.AddWithValue("@Other_Notes", richTextBox3.Text);
                 insertcommand.Parameters.AddWithValue("@IfSold", textBox7.Text);
-                insertcommand.Parameters.AddWithValue("@Image", img1);
-                insertcommand.Parameters.AddWithValue("@SecondImage", img2);
+                //insertcommand.Parameters.AddWithValue("@Image", img1);
+                //insertcommand.Parameters.AddWithValue("@SecondImage", img2);
                 insertcommand.Parameters.AddWithValue("@FileLocation1", ImageLocation1);
                 insertcommand.Parameters.AddWithValue("@FileLocation2", ImageLocation2);
 
@@ -571,7 +571,7 @@ namespace User_Interface_For_Vintage_Club_Database
                 if (dlgpic1 == DialogResult.Yes)
                 {
                     pictureBox1.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
-                    Duh -= 1;
+                    //Duh -= 1;
                 }
                 else
                 {
@@ -665,4 +665,5 @@ namespace User_Interface_For_Vintage_Club_Database
         }
     }
 }
+
 // If you're reading this, fuck off before you ruin the program!
