@@ -53,8 +53,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.MainIDTakerMechInfo = new System.Windows.Forms.NumericUpDown();
             this.IsFormEdited = new System.Windows.Forms.TextBox();
+            this.MainIDTakerMechInfo = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainIDTakerMechInfo)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,11 @@
             // MainIdTaker
             // 
             this.MainIdTaker.Location = new System.Drawing.Point(1106, 188);
+            this.MainIdTaker.Maximum = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            0});
             this.MainIdTaker.Name = "MainIdTaker";
             this.MainIdTaker.Size = new System.Drawing.Size(120, 22);
             this.MainIdTaker.TabIndex = 45;
@@ -277,7 +282,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(173, 935);
+            this.button1.Location = new System.Drawing.Point(687, 931);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(588, 93);
             this.button1.TabIndex = 46;
@@ -288,10 +293,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1564, 935);
+            this.button3.Location = new System.Drawing.Point(59, 931);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(335, 93);
             this.button3.TabIndex = 48;
@@ -303,20 +307,13 @@
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(977, 935);
+            this.button2.Location = new System.Drawing.Point(1542, 931);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(357, 93);
             this.button2.TabIndex = 49;
             this.button2.Text = "Save Data";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // MainIDTakerMechInfo
-            // 
-            this.MainIDTakerMechInfo.Location = new System.Drawing.Point(1106, 240);
-            this.MainIDTakerMechInfo.Name = "MainIDTakerMechInfo";
-            this.MainIDTakerMechInfo.Size = new System.Drawing.Size(120, 22);
-            this.MainIDTakerMechInfo.TabIndex = 50;
             // 
             // IsFormEdited
             // 
@@ -329,14 +326,26 @@
             this.IsFormEdited.Text = "No";
             this.IsFormEdited.Visible = false;
             // 
+            // MainIDTakerMechInfo
+            // 
+            this.MainIDTakerMechInfo.Location = new System.Drawing.Point(1106, 235);
+            this.MainIDTakerMechInfo.Maximum = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            0});
+            this.MainIDTakerMechInfo.Name = "MainIDTakerMechInfo";
+            this.MainIDTakerMechInfo.Size = new System.Drawing.Size(120, 22);
+            this.MainIDTakerMechInfo.TabIndex = 52;
+            // 
             // MaintenenceFormEditPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
-            this.Controls.Add(this.IsFormEdited);
             this.Controls.Add(this.MainIDTakerMechInfo);
+            this.Controls.Add(this.IsFormEdited);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -404,7 +413,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NumericUpDown MainIDTakerMechInfo;
         private System.Windows.Forms.TextBox IsFormEdited;
+        private System.Windows.Forms.NumericUpDown MainIDTakerMechInfo;
     }
 }

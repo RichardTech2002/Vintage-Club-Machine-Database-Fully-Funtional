@@ -21,7 +21,6 @@ namespace User_Interface_For_Vintage_Club_Database
             InitializeComponent();
             this.f3 = f3;
         }
-        string IDstring1;
         DBAccess objDBAccess = new DBAccess();
         DataTable dtUsers = new DataTable();
         public MaintenenceView()
@@ -72,16 +71,16 @@ namespace User_Interface_For_Vintage_Club_Database
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
                     dataGridView1.CurrentRow.Selected = true;
-                    IDstring1 = dataGridView1.Rows[e.RowIndex].Cells["iDGrabberDataGridViewTextBoxColumn"].FormattedValue.ToString();
-                    var IDInt1 = Int32.Parse(IDstring1);
+                    IDstring1.Text = dataGridView1.Rows[e.RowIndex].Cells["Column1"].FormattedValue.ToString();
+                    var IDInt1 = Int32.Parse(IDstring1.Text);
                     MainIdTaker.Value = IDInt1;
                 }
-                MaintenenceFormEditPage mfep = new MaintenenceFormEditPage();
-                mfep.ShowDialog();
+                MaintenenceFormEditPage mtnfp = new MaintenenceFormEditPage();
+                mtnfp.ShowDialog();
             }
             catch
             {
-                MessageBox.Show("You need to click on the data. Not whatever it is you tried to click.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Something went wrong. The data cannot be accessed at the moment. Or you clicked the header!", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

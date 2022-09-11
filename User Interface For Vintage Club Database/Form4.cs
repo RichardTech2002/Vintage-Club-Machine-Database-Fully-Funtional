@@ -234,7 +234,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
                 if (row == 1)
                 {
-                    DialogResult Submit = MessageBox.Show("This Machine/Tool has now been deleted.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult Submit = MessageBox.Show("This Machine/Tool has now been deleted! Going back to the main machine database page now.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (Submit == DialogResult.OK)
                     {
                         if (MenuLock.Text == "Locked")
@@ -339,7 +339,7 @@ namespace User_Interface_For_Vintage_Club_Database
             try
             {
                 OpenFileDialog Dialog = new OpenFileDialog();
-                Dialog.Filter = "All Files(*.*)|*.*| PNG files(*.png) |*.png|jpg files(*.jpg)|*.jpg";
+                Dialog.Filter = "jpg files(*.jpg)|*.jpg|PNG files(*.png) |*.png";
 
                 if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -358,7 +358,7 @@ namespace User_Interface_For_Vintage_Club_Database
             try
             {
                 OpenFileDialog Dialog = new OpenFileDialog();
-                Dialog.Filter = "All Files(*.*)|*.*| PNG files(*.png) |*.png|jpg files(*.jpg)|*.jpg";
+                Dialog.Filter = "jpg files(*.jpg)|*.jpg|PNG files(*.png) |*.png";
 
                 if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -374,7 +374,7 @@ namespace User_Interface_For_Vintage_Club_Database
         private void button7_Click(object sender, EventArgs e)
         {
             MaintenenceView mtnv = new MaintenenceView();
-            mtnv.ShowDialog();
+            mtnv.Show();
         }
     }
 }

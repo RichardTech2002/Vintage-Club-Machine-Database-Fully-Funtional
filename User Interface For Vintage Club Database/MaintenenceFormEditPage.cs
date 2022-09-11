@@ -7,48 +7,53 @@ using System.Windows.Forms;
 namespace User_Interface_For_Vintage_Club_Database
 {
     public partial class MaintenenceFormEditPage : Form
+
     {
-        public MaintenenceFormEditPage()
-        {
-            InitializeComponent();
-        }
-        public static string BasicTitle, Date, WhoBy, MaintenanceInformation, IDGrabber;
         MaintenenceView mtn;
         public MaintenenceFormEditPage(MaintenenceView mtn)
         {
             InitializeComponent();
             this.mtn = mtn;
         }
+
+        public MaintenenceFormEditPage()
+        {
+            InitializeComponent();
+        }
+
+        public static string ID, BasicTitle, Date, WhoBy, MaintenanceInformation, IDGrabber;
+
         DBAccess objDBAccess = new DBAccess();
         DataTable dtUsers = new DataTable();
         private void MaintenenceFormEditPage_Load(object sender, EventArgs e)
         {
+            MainIDTakerMechInfo.Value =
+            MainIdTaker.Value = Int32.Parse(Form4.id);
             textBox3.Text = Form4.Machine_Type;
             textBox4.Text = Form4.Year_Built;
             textBox5.Text = Form4.Make;
             textBox6.Text = Form4.Model;
-            MainIdTaker.Value = Int32.Parse(Form4.id);
-            //MainIDTakerMechInfo.Value =
             string DateManual = textBox1.Text;
             string DateAutomatic = dateTimePicker1.Text;
-            if (dtUsers.Rows.Count == 1)
+            if (MainIdTaker.Value != 0)
             {
-                BasicTitle = dtUsers.Rows[0]["Basic_Title"].ToString();
-                Date = dtUsers.Rows[0]["Date"].ToString();
-                WhoBy = dtUsers.Rows[0]["Who_By"].ToString();
-                MaintenanceInformation = dtUsers.Rows[0]["Maintenence_Information"].ToString();
-                IDGrabber = dtUsers.Rows[0]["ID_Grabber"].ToString();
+                string query = "Select ID, Date, Basic_Title, Who_By, Maintenence_Information, ID_Grabber, AutoManual from Maintenence_Information where ID = '" + MainIdTaker.Value + "'";
+                objDBAccess.readDatathroughAdapter(query, dtUsers);
 
-                textBox7.Text = BasicTitle;
-                textBox1.Text = Date;
-                textBox2.Text = WhoBy;
-                richTextBox1.Text = MaintenanceInformation;
+                if (dtUsers.Rows.Count == 1)
+                {
+                    ID = dtUsers.Rows[0]["ID"].ToString();
+                    BasicTitle = dtUsers.Rows[0]["Basic_Title"].ToString();
+                    Date = dtUsers.Rows[0]["Date"].ToString();
+                    WhoBy = dtUsers.Rows[0]["Who_By"].ToString();
+                    MaintenanceInformation = dtUsers.Rows[0]["Maintenence_Information"].ToString();
 
-                textBox3.Text = Form4.Machine_Type;
-                textBox4.Text = Form4.Year_Built;
-                textBox5.Text = Form4.Make;
-                textBox6.Text = Form4.Model;
-                MainIdTaker.Value = Int32.Parse(Form4.id);
+                    //MainIDTakerMechInfo.Text = ID;
+                    //textBox7.Text = BasicTitle;
+                    //textBox1.Text = Date;
+                    //textBox2.Text = WhoBy;
+                    //richTextBox1.Text = MaintenanceInformation;
+                }
             }
         }
 
@@ -75,30 +80,30 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int IDval = (int)MainIdTaker.Value;
-            DialogResult UpdatedData = MessageBox.Show("Are you sure you want to delete this row? This can only be brought back if you have a backup. It is otherwise removed entirely from the database.", "Delete Row", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (DialogResult.OK == UpdatedData)
+            DialogResult DeleteData = MessageBox.Show("Are you sure you want to delete this row? This can only be brought back if you have a backup. It is otherwise removed entirely from the database.", "Delete Row", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (DialogResult.OK == DeleteData)
             {
-                SqlConnection conn = new SqlConnection("");
-                string query = "DELETE From Maintenence_Information where ID == '" + MainIDTakerMechInfo.Value + MainIDTakerMechInfo.Value + "'";
+                SqlConnection conn = new SqlConnection("Data Source=LAPTOP-BT59QU4U;Initial Catalog=Machine_Database_Fixed;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                conn.Open();
+                string query = "DELETE from dbo.Maintenence_Information where ID = '" + MainIdTaker.Value + "'";
                 SqlCommand deletecommand = new SqlCommand(query, conn);
 
                 int row = deletecommand.ExecuteNonQuery();
 
                 if (row == 1)
                 {
-                    DialogResult Submit = MessageBox.Show("This Machine/Tool has now been deleted.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult Submit = MessageBox.Show("This data has now been deleted. Going back to the Maintenance Information Page now!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conn.Close();
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Something went wrong. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                this.Close();
             }
-            if (DialogResult.Cancel == UpdatedData)
+            if (DialogResult.Cancel == DeleteData)
             {
-
+                //Do Nothing
             }
         }
 
@@ -128,7 +133,7 @@ namespace User_Interface_For_Vintage_Club_Database
             string UpdatedWho_By = textBox2.Text;
             string UpdatedMaintenence_Information = richTextBox1.Text;
 
-            string query = "Update General_Table SET Date = '" + @UpdatedDate + "', Basic_Title = " + @UpdatedBasic_Title + "', Who_By = " + @UpdatedWho_By + "', Maintenence_Information = " + @UpdatedMaintenence_Information + "'Where ID = '" + MainIdTaker.Value + MainIDTakerMechInfo.Value + "'";
+            string query = "Update General_Table SET Date = '" + @UpdatedDate + "', Basic_Title = " + @UpdatedBasic_Title + "', Who_By = " + @UpdatedWho_By + "', Maintenence_Information = " + @UpdatedMaintenence_Information + "'Where ID = '" + MainIdTaker.Value + MainIDTakerMechInfo.Text + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
 
