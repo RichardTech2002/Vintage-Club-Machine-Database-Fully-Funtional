@@ -121,6 +121,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Machine_Database_FixedDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Machine_Database_FixedDataSet3.cs">
+      <DependentUpon>Machine_Database_FixedDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Machine_Database_FixedDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -130,6 +133,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Machine_Database_FixedDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Machine_Database_FixedDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Machine_Database_FixedDataSet5.xsd</DependentUpon>
     </Compile>
     <Compile Include="Machine_Database_FixedDataSet_for_Maintenence.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -241,6 +249,17 @@
     </None>
     <None Include="Machine_Database_FixedDataSet4.xss">
       <DependentUpon>Machine_Database_FixedDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Machine_Database_FixedDataSet5.xsc">
+      <DependentUpon>Machine_Database_FixedDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Machine_Database_FixedDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Machine_Database_FixedDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Machine_Database_FixedDataSet5.xss">
+      <DependentUpon>Machine_Database_FixedDataSet5.xsd</DependentUpon>
     </None>
     <None Include="Machine_Database_FixedDataSet_for_Maintenence.xsc">
       <DependentUpon>Machine_Database_FixedDataSet_for_Maintenence.xsd</DependentUpon>

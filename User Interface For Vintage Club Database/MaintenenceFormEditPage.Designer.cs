@@ -54,9 +54,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.IsFormEdited = new System.Windows.Forms.TextBox();
-            this.MainIDTakerMechInfo = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MainIDTakerMechInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // MainIdTaker
@@ -326,25 +324,12 @@
             this.IsFormEdited.Text = "No";
             this.IsFormEdited.Visible = false;
             // 
-            // MainIDTakerMechInfo
-            // 
-            this.MainIDTakerMechInfo.Location = new System.Drawing.Point(1106, 235);
-            this.MainIDTakerMechInfo.Maximum = new decimal(new int[] {
-            1316134911,
-            2328,
-            0,
-            0});
-            this.MainIDTakerMechInfo.Name = "MainIDTakerMechInfo";
-            this.MainIDTakerMechInfo.Size = new System.Drawing.Size(120, 22);
-            this.MainIDTakerMechInfo.TabIndex = 52;
-            // 
             // MaintenenceFormEditPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
-            this.Controls.Add(this.MainIDTakerMechInfo);
             this.Controls.Add(this.IsFormEdited);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -381,7 +366,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MaintenenceFormEditPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MainIDTakerMechInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,6 +398,5 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox IsFormEdited;
-        private System.Windows.Forms.NumericUpDown MainIDTakerMechInfo;
     }
 }

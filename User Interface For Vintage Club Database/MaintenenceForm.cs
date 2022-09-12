@@ -117,6 +117,7 @@ namespace User_Interface_For_Vintage_Club_Database
                         }
                         else
                         {
+                            insertcommand.Parameters.AddWithValue("@AutoManual", "Manual");
                             insertcommand.Parameters.AddWithValue("@Date", textBox1.Text);
                             insertcommand.Parameters.AddWithValue("@Basic_Title", textBox7.Text);
                             insertcommand.Parameters.AddWithValue("@Who_By", textBox2.Text);

@@ -27,12 +27,12 @@ namespace User_Interface_For_Vintage_Club_Database
         DataTable dtUsers = new DataTable();
         private void MaintenenceFormEditPage_Load(object sender, EventArgs e)
         {
-            MainIDTakerMechInfo.Value =
-            MainIdTaker.Value = Int32.Parse(Form4.id);
+            MainIdTaker.Value = 1021;
             textBox3.Text = Form4.Machine_Type;
             textBox4.Text = Form4.Year_Built;
             textBox5.Text = Form4.Make;
             textBox6.Text = Form4.Model;
+
             string DateManual = textBox1.Text;
             string DateAutomatic = dateTimePicker1.Text;
             if (MainIdTaker.Value != 0)
@@ -47,12 +47,6 @@ namespace User_Interface_For_Vintage_Club_Database
                     Date = dtUsers.Rows[0]["Date"].ToString();
                     WhoBy = dtUsers.Rows[0]["Who_By"].ToString();
                     MaintenanceInformation = dtUsers.Rows[0]["Maintenence_Information"].ToString();
-
-                    //MainIDTakerMechInfo.Text = ID;
-                    //textBox7.Text = BasicTitle;
-                    //textBox1.Text = Date;
-                    //textBox2.Text = WhoBy;
-                    //richTextBox1.Text = MaintenanceInformation;
                 }
             }
         }
@@ -83,17 +77,17 @@ namespace User_Interface_For_Vintage_Club_Database
             DialogResult DeleteData = MessageBox.Show("Are you sure you want to delete this row? This can only be brought back if you have a backup. It is otherwise removed entirely from the database.", "Delete Row", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (DialogResult.OK == DeleteData)
             {
-                SqlConnection conn = new SqlConnection("Data Source=LAPTOP-BT59QU4U;Initial Catalog=Machine_Database_Fixed;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-                conn.Open();
+                SqlConnection Deleteconn = new SqlConnection("Data Source=LAPTOP-BT59QU4U;Initial Catalog=Machine_Database_Fixed;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                Deleteconn.Open();
                 string query = "DELETE from dbo.Maintenence_Information where ID = '" + MainIdTaker.Value + "'";
-                SqlCommand deletecommand = new SqlCommand(query, conn);
+                SqlCommand deletecommand1 = new SqlCommand(query, Deleteconn);
 
-                int row = deletecommand.ExecuteNonQuery();
+                int row = deletecommand1.ExecuteNonQuery();
 
                 if (row == 1)
                 {
                     DialogResult Submit = MessageBox.Show("This data has now been deleted. Going back to the Maintenance Information Page now!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    conn.Close();
+                    Deleteconn.Close();
                     this.Close();
                 }
                 else
@@ -133,7 +127,7 @@ namespace User_Interface_For_Vintage_Club_Database
             string UpdatedWho_By = textBox2.Text;
             string UpdatedMaintenence_Information = richTextBox1.Text;
 
-            string query = "Update General_Table SET Date = '" + @UpdatedDate + "', Basic_Title = " + @UpdatedBasic_Title + "', Who_By = " + @UpdatedWho_By + "', Maintenence_Information = " + @UpdatedMaintenence_Information + "'Where ID = '" + MainIdTaker.Value + MainIDTakerMechInfo.Text + "'";
+            string query = "Update General_Table SET Date = '" + @UpdatedDate + "', Basic_Title = " + @UpdatedBasic_Title + "', Who_By = " + @UpdatedWho_By + "', Maintenence_Information = " + @UpdatedMaintenence_Information + "'Where ID = '" + MainIdTaker.Value + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
 

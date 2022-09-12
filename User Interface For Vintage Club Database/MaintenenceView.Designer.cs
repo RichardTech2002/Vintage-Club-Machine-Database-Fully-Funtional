@@ -36,27 +36,34 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.basicTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.whoByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maintenenceInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDGrabberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maintenenceInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.machine_Database_FixedDataSet3 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet3();
             this.maintenenceTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.machine_Database_FixedDataSet2 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet2();
             this.maintenence_TableTableAdapter1 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet2TableAdapters.Maintenence_TableTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.maintenence_InformationTableAdapter = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet3TableAdapters.Maintenence_InformationTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.MainIdTaker = new System.Windows.Forms.NumericUpDown();
+            this.IDstring1 = new System.Windows.Forms.TextBox();
+            this.machine_Database_FixedDataSet5 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet5();
+            this.maintenenceInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.maintenence_InformationTableAdapter = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet5TableAdapters.Maintenence_InformationTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Maintenence_Information = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.basicTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.whoByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maintenenceInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDGrabberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoManualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maintenenceInformationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenenceTableBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenenceInformationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button7
@@ -87,6 +94,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -100,11 +108,15 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.basicTitleDataGridViewTextBoxColumn,
+            this.Column1,
+            this.Maintenence_Information,
+            this.iDDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
+            this.basicTitleDataGridViewTextBoxColumn,
             this.whoByDataGridViewTextBoxColumn,
             this.maintenenceInformationDataGridViewTextBoxColumn,
-            this.iDGrabberDataGridViewTextBoxColumn});
+            this.iDGrabberDataGridViewTextBoxColumn,
+            this.autoManualDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.maintenenceInformationBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -130,58 +142,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1682, 426);
             this.dataGridView1.TabIndex = 87;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // basicTitleDataGridViewTextBoxColumn
-            // 
-            this.basicTitleDataGridViewTextBoxColumn.DataPropertyName = "Basic_Title";
-            this.basicTitleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.basicTitleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.basicTitleDataGridViewTextBoxColumn.Name = "basicTitleDataGridViewTextBoxColumn";
-            this.basicTitleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.basicTitleDataGridViewTextBoxColumn.Width = 450;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // whoByDataGridViewTextBoxColumn
-            // 
-            this.whoByDataGridViewTextBoxColumn.DataPropertyName = "Who_By";
-            this.whoByDataGridViewTextBoxColumn.HeaderText = "Who By";
-            this.whoByDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.whoByDataGridViewTextBoxColumn.Name = "whoByDataGridViewTextBoxColumn";
-            this.whoByDataGridViewTextBoxColumn.ReadOnly = true;
-            this.whoByDataGridViewTextBoxColumn.Width = 450;
-            // 
-            // maintenenceInformationDataGridViewTextBoxColumn
-            // 
-            this.maintenenceInformationDataGridViewTextBoxColumn.DataPropertyName = "Maintenence_Information";
-            this.maintenenceInformationDataGridViewTextBoxColumn.HeaderText = "Maintenence Information";
-            this.maintenenceInformationDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maintenenceInformationDataGridViewTextBoxColumn.Name = "maintenenceInformationDataGridViewTextBoxColumn";
-            this.maintenenceInformationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maintenenceInformationDataGridViewTextBoxColumn.Visible = false;
-            this.maintenenceInformationDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iDGrabberDataGridViewTextBoxColumn
-            // 
-            this.iDGrabberDataGridViewTextBoxColumn.DataPropertyName = "ID_Grabber";
-            this.iDGrabberDataGridViewTextBoxColumn.HeaderText = "ID Grabber";
-            this.iDGrabberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDGrabberDataGridViewTextBoxColumn.Name = "iDGrabberDataGridViewTextBoxColumn";
-            this.iDGrabberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDGrabberDataGridViewTextBoxColumn.Visible = false;
-            this.iDGrabberDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // maintenenceInformationBindingSource
-            // 
-            this.maintenenceInformationBindingSource.DataMember = "Maintenence_Information";
-            this.maintenenceInformationBindingSource.DataSource = this.machine_Database_FixedDataSet3;
             // 
             // machine_Database_FixedDataSet3
             // 
@@ -212,10 +172,6 @@
             this.pictureBox1.TabIndex = 88;
             this.pictureBox1.TabStop = false;
             // 
-            // maintenence_InformationTableAdapter
-            // 
-            this.maintenence_InformationTableAdapter.ClearBeforeFill = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -230,10 +186,123 @@
             // 
             this.MainIdTaker.Enabled = false;
             this.MainIdTaker.Location = new System.Drawing.Point(-89, -8);
+            this.MainIdTaker.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
             this.MainIdTaker.Name = "MainIdTaker";
             this.MainIdTaker.Size = new System.Drawing.Size(84, 22);
             this.MainIdTaker.TabIndex = 90;
             this.MainIdTaker.Visible = false;
+            // 
+            // IDstring1
+            // 
+            this.IDstring1.Location = new System.Drawing.Point(492, 145);
+            this.IDstring1.Name = "IDstring1";
+            this.IDstring1.ReadOnly = true;
+            this.IDstring1.Size = new System.Drawing.Size(100, 22);
+            this.IDstring1.TabIndex = 91;
+            // 
+            // machine_Database_FixedDataSet5
+            // 
+            this.machine_Database_FixedDataSet5.DataSetName = "Machine_Database_FixedDataSet5";
+            this.machine_Database_FixedDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // maintenenceInformationBindingSource
+            // 
+            this.maintenenceInformationBindingSource.DataMember = "Maintenence_Information";
+            this.maintenenceInformationBindingSource.DataSource = this.machine_Database_FixedDataSet5;
+            // 
+            // maintenence_InformationTableAdapter
+            // 
+            this.maintenence_InformationTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID";
+            this.Column1.HeaderText = "ID Test";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            this.Column1.Width = 125;
+            // 
+            // Maintenence_Information
+            // 
+            this.Maintenence_Information.DataPropertyName = "Maintenence_Information";
+            this.Maintenence_Information.HeaderText = "Maintenence Information";
+            this.Maintenence_Information.MinimumWidth = 6;
+            this.Maintenence_Information.Name = "Maintenence_Information";
+            this.Maintenence_Information.ReadOnly = true;
+            this.Maintenence_Information.Visible = false;
+            this.Maintenence_Information.Width = 125;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // basicTitleDataGridViewTextBoxColumn
+            // 
+            this.basicTitleDataGridViewTextBoxColumn.DataPropertyName = "Basic_Title";
+            this.basicTitleDataGridViewTextBoxColumn.HeaderText = "Basic Title";
+            this.basicTitleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.basicTitleDataGridViewTextBoxColumn.Name = "basicTitleDataGridViewTextBoxColumn";
+            this.basicTitleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.basicTitleDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // whoByDataGridViewTextBoxColumn
+            // 
+            this.whoByDataGridViewTextBoxColumn.DataPropertyName = "Who_By";
+            this.whoByDataGridViewTextBoxColumn.HeaderText = "Who By";
+            this.whoByDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.whoByDataGridViewTextBoxColumn.Name = "whoByDataGridViewTextBoxColumn";
+            this.whoByDataGridViewTextBoxColumn.ReadOnly = true;
+            this.whoByDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // maintenenceInformationDataGridViewTextBoxColumn
+            // 
+            this.maintenenceInformationDataGridViewTextBoxColumn.DataPropertyName = "Maintenence_Information";
+            this.maintenenceInformationDataGridViewTextBoxColumn.HeaderText = "Maintenence Information";
+            this.maintenenceInformationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maintenenceInformationDataGridViewTextBoxColumn.Name = "maintenenceInformationDataGridViewTextBoxColumn";
+            this.maintenenceInformationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maintenenceInformationDataGridViewTextBoxColumn.Visible = false;
+            this.maintenenceInformationDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // iDGrabberDataGridViewTextBoxColumn
+            // 
+            this.iDGrabberDataGridViewTextBoxColumn.DataPropertyName = "ID_Grabber";
+            this.iDGrabberDataGridViewTextBoxColumn.HeaderText = "ID Grabber";
+            this.iDGrabberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDGrabberDataGridViewTextBoxColumn.Name = "iDGrabberDataGridViewTextBoxColumn";
+            this.iDGrabberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDGrabberDataGridViewTextBoxColumn.Visible = false;
+            this.iDGrabberDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // autoManualDataGridViewTextBoxColumn
+            // 
+            this.autoManualDataGridViewTextBoxColumn.DataPropertyName = "AutoManual";
+            this.autoManualDataGridViewTextBoxColumn.HeaderText = "AutoManual";
+            this.autoManualDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.autoManualDataGridViewTextBoxColumn.Name = "autoManualDataGridViewTextBoxColumn";
+            this.autoManualDataGridViewTextBoxColumn.ReadOnly = true;
+            this.autoManualDataGridViewTextBoxColumn.Visible = false;
+            this.autoManualDataGridViewTextBoxColumn.Width = 125;
             // 
             // MaintenenceView
             // 
@@ -243,10 +312,11 @@
             this.ClientSize = new System.Drawing.Size(1942, 1102);
             this.Controls.Add(this.MainIdTaker);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.IDstring1);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaintenenceView";
@@ -256,12 +326,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MaintenenceView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maintenenceInformationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenenceTableBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenenceInformationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,14 +348,20 @@
         private Machine_Database_FixedDataSet2TableAdapters.Maintenence_TableTableAdapter maintenence_TableTableAdapter1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Machine_Database_FixedDataSet3 machine_Database_FixedDataSet3;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.NumericUpDown MainIdTaker;
+        private System.Windows.Forms.TextBox IDstring1;
+        private Machine_Database_FixedDataSet5 machine_Database_FixedDataSet5;
         private System.Windows.Forms.BindingSource maintenenceInformationBindingSource;
-        private Machine_Database_FixedDataSet3TableAdapters.Maintenence_InformationTableAdapter maintenence_InformationTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn basicTitleDataGridViewTextBoxColumn;
+        private Machine_Database_FixedDataSet5TableAdapters.Maintenence_InformationTableAdapter maintenence_InformationTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Maintenence_Information;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn basicTitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn whoByDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maintenenceInformationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDGrabberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.NumericUpDown MainIdTaker;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autoManualDataGridViewTextBoxColumn;
     }
 }

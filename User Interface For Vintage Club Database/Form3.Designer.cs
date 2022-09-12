@@ -39,9 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Form3IDTaker = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.generalTableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.machine_Database_FixedDataSet4 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet4();
-            this.general_TableTableAdapter = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet4TableAdapters.General_TableTableAdapter();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +53,9 @@
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generalTableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.machine_Database_FixedDataSet4 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet4();
+            this.general_TableTableAdapter = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet4TableAdapters.General_TableTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Form3IDTaker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -108,6 +108,11 @@
             // Form3IDTaker
             // 
             this.Form3IDTaker.Location = new System.Drawing.Point(-25, -9);
+            this.Form3IDTaker.Maximum = new decimal(new int[] {
+            268435455,
+            1042612833,
+            542101086,
+            0});
             this.Form3IDTaker.Name = "Form3IDTaker";
             this.Form3IDTaker.Size = new System.Drawing.Size(24, 22);
             this.Form3IDTaker.TabIndex = 11;
@@ -169,20 +174,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1890, 424);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // generalTableBindingSource2
-            // 
-            this.generalTableBindingSource2.DataMember = "General_Table";
-            this.generalTableBindingSource2.DataSource = this.machine_Database_FixedDataSet4;
-            // 
-            // machine_Database_FixedDataSet4
-            // 
-            this.machine_Database_FixedDataSet4.DataSetName = "Machine_Database_FixedDataSet4";
-            this.machine_Database_FixedDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // general_TableTableAdapter
-            // 
-            this.general_TableTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -313,6 +304,20 @@
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
             this.dataGridViewTextBoxColumn27.ReadOnly = true;
             this.dataGridViewTextBoxColumn27.Width = 350;
+            // 
+            // generalTableBindingSource2
+            // 
+            this.generalTableBindingSource2.DataMember = "General_Table";
+            this.generalTableBindingSource2.DataSource = this.machine_Database_FixedDataSet4;
+            // 
+            // machine_Database_FixedDataSet4
+            // 
+            this.machine_Database_FixedDataSet4.DataSetName = "Machine_Database_FixedDataSet4";
+            this.machine_Database_FixedDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // general_TableTableAdapter
+            // 
+            this.general_TableTableAdapter.ClearBeforeFill = true;
             // 
             // Form3
             // 

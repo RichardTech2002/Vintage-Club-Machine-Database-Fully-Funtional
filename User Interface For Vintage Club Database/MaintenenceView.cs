@@ -29,6 +29,10 @@ namespace User_Interface_For_Vintage_Club_Database
         }
         private void MaintenenceView_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'machine_Database_FixedDataSet5.Maintenence_Information' table. You can move, or remove it, as needed.
+            this.maintenence_InformationTableAdapter.Fill(this.machine_Database_FixedDataSet5.Maintenence_Information);
+            // TODO: This line of code loads data into the 'machine_Database_FixedDataSet5.Maintenence_Information' table. You can move, or remove it, as needed.
+            this.maintenence_InformationTableAdapter1.Fill(this.machine_Database_FixedDataSet5.Maintenence_Information);
             // TODO: This line of code loads data into the 'machine_Database_FixedDataSet3.Maintenence_Information' table. You can move, or remove it, as needed.
             this.maintenence_InformationTableAdapter.Fill(this.machine_Database_FixedDataSet3.Maintenence_Information);
             string SearchBox = ConfigurationManager.ConnectionStrings["SearchString"].ConnectionString;
@@ -45,7 +49,8 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Form4 f4 = new Form4();
+            f4.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
