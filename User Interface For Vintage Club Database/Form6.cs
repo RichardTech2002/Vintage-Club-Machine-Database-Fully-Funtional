@@ -6,32 +6,32 @@ using System.Windows.Forms;
 
 namespace User_Interface_For_Vintage_Club_Database
 {
-    public partial class MaintenenceForm : Form
+    public partial class Form6 : Form
     {
         Form4 f4;
-        public MaintenenceForm(Form4 f4)
+        public Form6(Form4 f4)
         {
             InitializeComponent();
             this.f4 = f4;
         }
 
         Form3 f3;
-        public MaintenenceForm(Form3 f3)
+        public Form6(Form3 f3)
         {
             InitializeComponent();
             this.f3 = f3;
         }
 
-        public MaintenenceForm()
+        public Form6()
         {
             InitializeComponent();
         }
 
-        MaintenenceView mtnv;
-        public MaintenenceForm(MaintenenceView mtnv)
+        Form5 f5;
+        public Form6(Form5 f5)
         {
             InitializeComponent();
-            this.mtnv = mtnv;
+            this.f5 = f5;
         }
         DBAccess objDBAccess = new DBAccess();
         DataTable dtUsers = new DataTable();
@@ -131,8 +131,8 @@ namespace User_Interface_For_Vintage_Club_Database
 
                     //Exit the form part.
 
-                    MaintenenceView mtnv = new MaintenenceView();
-                    mtnv.Show();
+                    Form5 f5 = new Form5();
+                    f5.Show();
                     this.Close();
                 }
             }

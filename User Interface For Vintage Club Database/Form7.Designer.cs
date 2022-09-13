@@ -1,6 +1,6 @@
 ﻿namespace User_Interface_For_Vintage_Club_Database
 {
-    partial class MaintenenceFormEditPage
+    partial class Form7
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenenceFormEditPage));
-            this.MainIdTaker = new System.Windows.Forms.NumericUpDown();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7));
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -54,20 +53,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.IsFormEdited = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).BeginInit();
+            this.AutoManual1 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // MainIdTaker
-            // 
-            this.MainIdTaker.Location = new System.Drawing.Point(1106, 188);
-            this.MainIdTaker.Maximum = new decimal(new int[] {
-            1316134911,
-            2328,
-            0,
-            0});
-            this.MainIdTaker.Name = "MainIdTaker";
-            this.MainIdTaker.Size = new System.Drawing.Size(120, 22);
-            this.MainIdTaker.TabIndex = 45;
             // 
             // label9
             // 
@@ -324,17 +313,40 @@
             this.IsFormEdited.Text = "No";
             this.IsFormEdited.Visible = false;
             // 
+            // AutoManual1
+            // 
+            this.AutoManual1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AutoManual1.Location = new System.Drawing.Point(1044, -9);
+            this.AutoManual1.MaxLength = 100;
+            this.AutoManual1.Name = "AutoManual1";
+            this.AutoManual1.ReadOnly = true;
+            this.AutoManual1.Size = new System.Drawing.Size(120, 34);
+            this.AutoManual1.TabIndex = 52;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(1106, 185);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1569325055,
+            23283064,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.TabIndex = 53;
+            // 
             // MaintenenceFormEditPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.AutoManual1);
             this.Controls.Add(this.IsFormEdited);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.MainIdTaker);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox7);
@@ -365,15 +377,13 @@
             this.Text = "MaintenenceFormEditPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MaintenenceFormEditPage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown MainIdTaker;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;
@@ -398,5 +408,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox IsFormEdited;
+        public System.Windows.Forms.TextBox AutoManual1;
+        public System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

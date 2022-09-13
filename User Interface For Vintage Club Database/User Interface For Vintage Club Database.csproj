@@ -144,23 +144,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Machine_Database_FixedDataSet_for_Maintenence.xsd</DependentUpon>
     </Compile>
-    <Compile Include="MaintenenceForm.cs">
+    <Compile Include="Form6.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenenceForm.Designer.cs">
-      <DependentUpon>MaintenenceForm.cs</DependentUpon>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaintenenceFormEditPage.cs">
+    <Compile Include="Form7.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenenceFormEditPage.Designer.cs">
-      <DependentUpon>MaintenenceFormEditPage.cs</DependentUpon>
+    <Compile Include="Form7.Designer.cs">
+      <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaintenenceView.cs">
+    <Compile Include="Form5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenenceView.Designer.cs">
-      <DependentUpon>MaintenenceView.cs</DependentUpon>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,14 +176,14 @@
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintenenceForm.resx">
-      <DependentUpon>MaintenenceForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintenenceFormEditPage.resx">
-      <DependentUpon>MaintenenceFormEditPage.cs</DependentUpon>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintenenceView.resx">
-      <DependentUpon>MaintenenceView.cs</DependentUpon>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -73,8 +73,6 @@ namespace User_Interface_For_Vintage_Club_Database
                 }
             }
         }
-        DBAccess objDBAccess = new DBAccess();
-        DataTable dtUsers = new DataTable();
 
         Form3 f3;
         public Form4(Form3 f3)
@@ -87,6 +85,8 @@ namespace User_Interface_For_Vintage_Club_Database
         {
             InitializeComponent();
         }
+        DBAccess objDBAccess = new DBAccess();
+        DataTable dtUsers = new DataTable();
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -145,22 +145,7 @@ namespace User_Interface_For_Vintage_Club_Database
             string UpdatedFileLocation1 = ImageLocation1.ToString();
             string UpdatedFileLocation2 = ImageLocation2.ToString();
 
-            string query = "Update General_Table SET Machine_Type = '" +
-            @UpdatedMachineType + "', Year_Built = '" +
-            @UpdatedYearBuilt + "', Original_Owner = '" +
-            @UpdatedOriginal_Owner + "', Date_Acquired = '" +
-            @UpdatedDateAcquired + "', Link_To_Tractordata = '" +
-            @UpdatedLinkToTractordata + "', Description = '" +
-            @UpdatedDescription + "', Make = '" +
-            @UpdatedMake + "', Model = '" +
-            @UpdatedModel + "', Restoration_Status = '" +
-            @UpdatedRestorationStatus + "', Machine_Location = '" +
-            @UpdatedDisplayLocation + "', Donated_Or_Loaned = '" +
-            @UpdatedDonatedOrLoaned + "', IfSold = '" +
-            @UpdatedIfSold + "', Other_Notes = '" +
-            @UpdatedOtherInformation + "',FileLocation1 = '" +
-            @UpdatedFileLocation1 + "',FileLocation2 = '" +
-            @UpdatedFileLocation2 + "'Where ID = '" + Form4IDTaker.Value + "'";
+            string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata + "', Description = '" + @UpdatedDescription + "', Make = '" + @UpdatedMake + "', Model = '" + @UpdatedModel + "', Restoration_Status = '" + @UpdatedRestorationStatus + "', Machine_Location = '" + @UpdatedDisplayLocation + "', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned + "', IfSold = '" + @UpdatedIfSold + "', Other_Notes = '" + @UpdatedOtherInformation + "',FileLocation1 = '" + @UpdatedFileLocation1 + "',FileLocation2 = '" + @UpdatedFileLocation2 + "'Where ID = '" + Form4IDTaker.Value + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
 
@@ -372,8 +357,8 @@ namespace User_Interface_For_Vintage_Club_Database
         }
         private void button7_Click(object sender, EventArgs e)
         {
-            MaintenenceView mtnv = new MaintenenceView();
-            mtnv.Show();
+            Form5 f5 = new Form5();
+            f5.ShowDialog();
         }
     }
 }

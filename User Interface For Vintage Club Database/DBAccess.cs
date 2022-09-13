@@ -9,13 +9,9 @@ namespace DatabaseProject
     {
         private static SqlConnection connection = new SqlConnection();
         private static SqlCommand command = new SqlCommand();
-#pragma warning disable CS0169 // The field 'DBAccess.DbReader' is never used
         private static SqlDataReader DbReader;
-#pragma warning restore CS0169 // The field 'DBAccess.DbReader' is never used
         private static SqlDataAdapter adapter = new SqlDataAdapter();
-#pragma warning disable CS0649 // Field 'DBAccess.DbTran' is never assigned to, and will always have its default value null
         public SqlTransaction DbTran;
-#pragma warning restore CS0649 // Field 'DBAccess.DbTran' is never assigned to, and will always have its default value null
 
         private static string strConnString = "Data Source=LAPTOP-BT59QU4U;Initial Catalog=Machine_Database_Fixed;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
