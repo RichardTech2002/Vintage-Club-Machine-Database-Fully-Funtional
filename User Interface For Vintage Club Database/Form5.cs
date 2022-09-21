@@ -12,22 +12,16 @@ namespace User_Interface_For_Vintage_Club_Database
         public static string ID, BasicTitle, Date, WhoBy, MaintenanceInformation, IDGrabber, AutoManual;
 
         Form4 f4;
+        Form3 f3;
         public Form5(Form4 f4)
         {
             InitializeComponent();
             this.f4 = f4;
         }
-        Form3 f3;
         public Form5(Form3 f3)
         {
             InitializeComponent();
             this.f3 = f3;
-        }
-        Form7 f7;
-        public Form5(Form7 f7)
-        {
-            InitializeComponent();
-            this.f7 = f7;
         }
         public Form5()
         {
@@ -40,6 +34,12 @@ namespace User_Interface_For_Vintage_Club_Database
         public string WhoByBox;
         public string MaintenenceInformationBox;
         public string IDGrabberBox;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public string AutoManualBox;
 
         DBAccess objDBAccess = new DBAccess();
@@ -61,14 +61,9 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form6 mtnf = new Form6();
-            mtnf.ShowDialog();
+            Form6 f6 = new Form6();
+            f6.ShowDialog();
         } 
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -85,8 +80,6 @@ namespace User_Interface_For_Vintage_Club_Database
                     MechInfoView.Text = dataGridView1.Rows[e.RowIndex].Cells["maintenenceInformationDataGridViewTextBoxColumn"].FormattedValue.ToString();
                     AutoManualView.Text = dataGridView1.Rows[e.RowIndex].Cells["autoManualDataGridViewTextBoxColumn"].FormattedValue.ToString();
 
-                    IDValueView.Value = Int32.Parse(IDStringView.Text);
-
                     IDBox = IDStringView.Text;
                     BasicTitleBox = BasicTitleView.Text;
                     DateBox = DateView.Text;
@@ -94,8 +87,11 @@ namespace User_Interface_For_Vintage_Club_Database
                     IDGrabberBox = IDGrabberView.Text;
                     MaintenenceInformationBox = MechInfoView.Text;
                     AutoManualBox = AutoManualView.Text;
+
+                    IDValueView.Value = Int32.Parse(IDStringView.Text);
                 }
-                f7.Show();
+                Form7 f7 = new Form7(IDValueView.Value.ToString());
+                f7.ShowDialog();
             }
             catch
             {

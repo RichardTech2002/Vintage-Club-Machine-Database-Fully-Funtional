@@ -8,9 +8,10 @@ namespace User_Interface_For_Vintage_Club_Database
 {
     public partial class Form4 : Form
     {
-        public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2;
+        public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2, FileLocation3;
         string ImageLocation1 = @"E:\Database General Folder\No Image Icon.jpg";
         string ImageLocation2 = @"E:\Database General Folder\No Image Icon.jpg";
+        string ImageLocation3 = @"E:\Database General Folder\No Image Icon.jpg";
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -33,6 +34,25 @@ namespace User_Interface_For_Vintage_Club_Database
                 this.Hide();
                 Form3 f3 = new Form3();
                 f3.Show();
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog Dialog = new OpenFileDialog();
+                Dialog.Filter = "jpg files(*.jpg)|*.jpg|PNG files(*.png) |*.png";
+
+                if (Dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    ImageLocation3 = Dialog.FileName;
+                    pictureBox3.ImageLocation = ImageLocation3;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -126,6 +146,7 @@ namespace User_Interface_For_Vintage_Club_Database
             button3.Enabled = false;
             button5.Enabled = false;
             comboBox4.Enabled = false;
+            button9.Enabled = false;
 
             //Update the data
 
@@ -144,8 +165,9 @@ namespace User_Interface_For_Vintage_Club_Database
             string UpdatedIfSold = comboBox4.Text;
             string UpdatedFileLocation1 = ImageLocation1.ToString();
             string UpdatedFileLocation2 = ImageLocation2.ToString();
+            string UpdatedFileLocation3 = ImageLocation3.ToString();
 
-            string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata + "', Description = '" + @UpdatedDescription + "', Make = '" + @UpdatedMake + "', Model = '" + @UpdatedModel + "', Restoration_Status = '" + @UpdatedRestorationStatus + "', Machine_Location = '" + @UpdatedDisplayLocation + "', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned + "', IfSold = '" + @UpdatedIfSold + "', Other_Notes = '" + @UpdatedOtherInformation + "',FileLocation1 = '" + @UpdatedFileLocation1 + "',FileLocation2 = '" + @UpdatedFileLocation2 + "'Where ID = '" + Form4IDTaker.Value + "'";
+            string query = "Update General_Table SET Machine_Type = '" + @UpdatedMachineType + "', Year_Built = '" + @UpdatedYearBuilt + "', Original_Owner = '" + @UpdatedOriginal_Owner + "', Date_Acquired = '" + @UpdatedDateAcquired + "', Link_To_Tractordata = '" + @UpdatedLinkToTractordata + "', Description = '" + @UpdatedDescription + "', Make = '" + @UpdatedMake + "', Model = '" + @UpdatedModel + "', Restoration_Status = '" + @UpdatedRestorationStatus + "', Machine_Location = '" + @UpdatedDisplayLocation + "', Donated_Or_Loaned = '" + @UpdatedDonatedOrLoaned + "', IfSold = '" + @UpdatedIfSold + "', Other_Notes = '" + @UpdatedOtherInformation + "',FileLocation1 = '" + @UpdatedFileLocation1 + "',FileLocation2 = '" + @UpdatedFileLocation2 + "', FileLocation3 = '" + @UpdatedFileLocation3 + "' Where ID = '" + Form4IDTaker.Value + "'";
 
             SqlCommand updatecommand = new SqlCommand(query);
 
@@ -165,6 +187,7 @@ namespace User_Interface_For_Vintage_Club_Database
             updatecommand.Parameters.AddWithValue("@IfSold", @UpdatedIfSold);
             updatecommand.Parameters.AddWithValue("@FileLocation1", @UpdatedFileLocation1);
             updatecommand.Parameters.AddWithValue("@FileLocation2", @UpdatedFileLocation2);
+            updatecommand.Parameters.AddWithValue("@FileLocation3", @UpdatedFileLocation3);
 
             int row = objDBAccess.executeQuery(updatecommand);
 
@@ -200,11 +223,12 @@ namespace User_Interface_For_Vintage_Club_Database
             button3.Enabled = true;
             button5.Enabled = true;
             comboBox4.Enabled = true;
+            button9.Enabled = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DialogResult UpdatedData = MessageBox.Show("Are you sure you want to delete this row? This can only be brought back if you have a backup. It is otherwise removed entirely from the database.", "Delete Row", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult UpdatedData = MessageBox.Show("Are you sure you want to delete this row? This can only be brought back if you have a backup. It is otherwise removed entirely from the database.", "DELETE ROW", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             if (DialogResult.OK == UpdatedData)
             {
                 SqlConnection Fakeconn = new SqlConnection("Data Source=LAPTOP-BT59QU4U;Initial Catalog=Machine_Database_Fixed;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
@@ -263,7 +287,7 @@ namespace User_Interface_For_Vintage_Club_Database
             Form4IDTaker.Value = Int32.Parse(f3.IdString);
             if (Form4IDTaker.Value != 0)
             {
-                string query = "Select id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2 from General_Table where Id = '" + Form4IDTaker.Value + "'";
+                string query = "Select id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2, FileLocation3 from General_Table where Id = '" + Form4IDTaker.Value + "'";
                 objDBAccess.readDatathroughAdapter(query, dtUsers);
 
                 if (dtUsers.Rows.Count == 1)
@@ -285,6 +309,7 @@ namespace User_Interface_For_Vintage_Club_Database
                     IfSold = dtUsers.Rows[0]["IfSold"].ToString();
                     FileLocation1 = dtUsers.Rows[0]["FileLocation1"].ToString();
                     FileLocation2 = dtUsers.Rows[0]["FileLocation2"].ToString();
+                    FileLocation3 = dtUsers.Rows[0]["FileLocation3"].ToString();
 
                     textBox1.Text = Machine_Type;
                     numericUpDown1.Value = Int32.Parse(Year_Built);
@@ -301,12 +326,14 @@ namespace User_Interface_For_Vintage_Club_Database
                     comboBox4.Text = IfSold;
                     ImageLocation1 = FileLocation1;
                     ImageLocation2 = FileLocation2;
+                    ImageLocation3 = FileLocation3;
                     pictureBox1.ImageLocation = FileLocation1;
                     pictureBox2.ImageLocation = FileLocation2;
+                    pictureBox3.ImageLocation = FileLocation3;
 
                     objDBAccess.closeConn();
                 }
-                if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "" && richTextBox1.Text == "" && richTextBox3.Text == "" && comboBox1.Text == "" && comboBox2.Text == "" && comboBox3.Text == "" && comboBox4.Text == "" && pictureBox1.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg" && pictureBox2.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg")
+                if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == "" && textBox5.Text == "" && textBox6.Text == "" && richTextBox1.Text == "" && richTextBox3.Text == "" && comboBox1.Text == "" && comboBox2.Text == "" && comboBox3.Text == "" && comboBox4.Text == "" && pictureBox1.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg" && pictureBox2.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg" && pictureBox3.ImageLocation == @"E:\Database General Folder\No Image Icon.jpg")
                 {
                     MessageBox.Show("This record has been deleted. Go back to the database page.", "Illegal Entry!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
@@ -357,7 +384,7 @@ namespace User_Interface_For_Vintage_Club_Database
         }
         private void button7_Click(object sender, EventArgs e)
         {
-            Form5 f5 = new Form5();
+            Form5 f5 = new Form5(this);
             f5.ShowDialog();
         }
     }

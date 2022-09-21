@@ -140,6 +140,7 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void MaintenenceForm_Load(object sender, EventArgs e)
         {
+            Form5 f5 = new Form5();
             textBox3.Text = Form4.Machine_Type;
             textBox4.Text = Form4.Year_Built;
             textBox5.Text = Form4.Make;

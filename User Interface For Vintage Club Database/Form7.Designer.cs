@@ -87,7 +87,6 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(630, 34);
             this.textBox7.TabIndex = 41;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label6
             // 
@@ -186,13 +185,12 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(629, 34);
             this.textBox2.TabIndex = 31;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(59, 214);
+            this.radioButton2.Location = new System.Drawing.Point(54, 214);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(174, 33);
             this.radioButton2.TabIndex = 28;
@@ -233,7 +231,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(1840, 413);
             this.richTextBox1.TabIndex = 25;
             this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label8
             // 
@@ -316,16 +313,22 @@
             // AutoManual1
             // 
             this.AutoManual1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AutoManual1.Location = new System.Drawing.Point(1044, -9);
+            this.AutoManual1.Location = new System.Drawing.Point(113, -9);
             this.AutoManual1.MaxLength = 100;
             this.AutoManual1.Name = "AutoManual1";
             this.AutoManual1.ReadOnly = true;
             this.AutoManual1.Size = new System.Drawing.Size(120, 34);
             this.AutoManual1.TabIndex = 52;
+            this.AutoManual1.Visible = false;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(1106, 185);
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Location = new System.Drawing.Point(239, -3);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             1569325055,
             23283064,
@@ -334,8 +337,9 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown1.TabIndex = 53;
+            this.numericUpDown1.Visible = false;
             // 
-            // MaintenenceFormEditPage
+            // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -365,13 +369,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "MaintenenceFormEditPage";
+            this.Name = "Form7";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaintenenceFormEditPage";

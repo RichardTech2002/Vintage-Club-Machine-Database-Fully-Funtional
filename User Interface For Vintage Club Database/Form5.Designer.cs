@@ -97,7 +97,6 @@
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(304, 937);
             this.button2.Name = "button2";
@@ -105,6 +104,7 @@
             this.button2.TabIndex = 83;
             this.button2.Text = "< Back To Editing Form";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -184,6 +184,7 @@
             this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
             this.iDDataGridViewTextBoxColumn.Width = 150;
             // 
             // basicTitleDataGridViewTextBoxColumn
@@ -312,7 +313,11 @@
             // 
             // IDValueView
             // 
-            this.IDValueView.Enabled = false;
+            this.IDValueView.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.IDValueView.Location = new System.Drawing.Point(39, 299);
             this.IDValueView.Maximum = new decimal(new int[] {
             1661992959,
@@ -320,8 +325,10 @@
             5,
             0});
             this.IDValueView.Name = "IDValueView";
+            this.IDValueView.ReadOnly = true;
             this.IDValueView.Size = new System.Drawing.Size(281, 22);
             this.IDValueView.TabIndex = 136;
+            this.IDValueView.Visible = false;
             // 
             // IDStringView
             // 
@@ -330,6 +337,7 @@
             this.IDStringView.ReadOnly = true;
             this.IDStringView.Size = new System.Drawing.Size(148, 22);
             this.IDStringView.TabIndex = 135;
+            this.IDStringView.Visible = false;
             // 
             // label11
             // 
@@ -340,6 +348,7 @@
             this.label11.Size = new System.Drawing.Size(97, 20);
             this.label11.TabIndex = 134;
             this.label11.Text = "AutoManual";
+            this.label11.Visible = false;
             // 
             // AutoManualView
             // 
@@ -348,6 +357,7 @@
             this.AutoManualView.ReadOnly = true;
             this.AutoManualView.Size = new System.Drawing.Size(148, 22);
             this.AutoManualView.TabIndex = 133;
+            this.AutoManualView.Visible = false;
             // 
             // label16
             // 
@@ -358,6 +368,7 @@
             this.label16.Size = new System.Drawing.Size(68, 20);
             this.label16.TabIndex = 132;
             this.label16.Text = "Who By";
+            this.label16.Visible = false;
             // 
             // label17
             // 
@@ -368,6 +379,7 @@
             this.label17.Size = new System.Drawing.Size(92, 20);
             this.label17.TabIndex = 131;
             this.label17.Text = "ID Grabber";
+            this.label17.Visible = false;
             // 
             // label18
             // 
@@ -378,6 +390,7 @@
             this.label18.Size = new System.Drawing.Size(82, 20);
             this.label18.TabIndex = 130;
             this.label18.Text = "Mech Info";
+            this.label18.Visible = false;
             // 
             // label19
             // 
@@ -388,6 +401,7 @@
             this.label19.Size = new System.Drawing.Size(45, 20);
             this.label19.TabIndex = 129;
             this.label19.Text = "Date";
+            this.label19.Visible = false;
             // 
             // label20
             // 
@@ -398,6 +412,7 @@
             this.label20.Size = new System.Drawing.Size(89, 20);
             this.label20.TabIndex = 128;
             this.label20.Text = "Basic Title";
+            this.label20.Visible = false;
             // 
             // label21
             // 
@@ -408,6 +423,7 @@
             this.label21.Size = new System.Drawing.Size(26, 20);
             this.label21.TabIndex = 127;
             this.label21.Text = "ID";
+            this.label21.Visible = false;
             // 
             // MechInfoView
             // 
@@ -417,6 +433,7 @@
             this.MechInfoView.ReadOnly = true;
             this.MechInfoView.Size = new System.Drawing.Size(148, 22);
             this.MechInfoView.TabIndex = 126;
+            this.MechInfoView.Visible = false;
             // 
             // IDGrabberView
             // 
@@ -425,6 +442,7 @@
             this.IDGrabberView.ReadOnly = true;
             this.IDGrabberView.Size = new System.Drawing.Size(148, 22);
             this.IDGrabberView.TabIndex = 125;
+            this.IDGrabberView.Visible = false;
             // 
             // WhoByView
             // 
@@ -433,6 +451,7 @@
             this.WhoByView.ReadOnly = true;
             this.WhoByView.Size = new System.Drawing.Size(148, 22);
             this.WhoByView.TabIndex = 124;
+            this.WhoByView.Visible = false;
             // 
             // DateView
             // 
@@ -441,6 +460,7 @@
             this.DateView.ReadOnly = true;
             this.DateView.Size = new System.Drawing.Size(148, 22);
             this.DateView.TabIndex = 123;
+            this.DateView.Visible = false;
             // 
             // BasicTitleView
             // 
@@ -449,8 +469,9 @@
             this.BasicTitleView.ReadOnly = true;
             this.BasicTitleView.Size = new System.Drawing.Size(148, 22);
             this.BasicTitleView.TabIndex = 122;
+            this.BasicTitleView.Visible = false;
             // 
-            // MaintenenceView
+            // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -479,7 +500,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MaintenenceView";
+            this.Name = "Form5";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaintenenceView";
@@ -514,15 +535,6 @@
         private Machine_Database_FixedDataSet5 machine_Database_FixedDataSet5;
         private System.Windows.Forms.BindingSource maintenenceInformationBindingSource;
         private Machine_Database_FixedDataSet5TableAdapters.Maintenence_InformationTableAdapter maintenence_InformationTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Maintenence_Information;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn basicTitleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn whoByDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maintenenceInformationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDGrabberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn autoManualDataGridViewTextBoxColumn;
         public System.Windows.Forms.NumericUpDown IDValueView;
         public System.Windows.Forms.TextBox IDStringView;
         private System.Windows.Forms.Label label11;
@@ -538,5 +550,14 @@
         public System.Windows.Forms.TextBox WhoByView;
         public System.Windows.Forms.TextBox DateView;
         public System.Windows.Forms.TextBox BasicTitleView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Maintenence_Information;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn basicTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn whoByDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maintenenceInformationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDGrabberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autoManualDataGridViewTextBoxColumn;
     }
 }

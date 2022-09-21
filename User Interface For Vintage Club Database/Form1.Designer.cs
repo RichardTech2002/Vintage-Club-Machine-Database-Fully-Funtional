@@ -57,7 +57,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(202, 428);
+            this.button1.Location = new System.Drawing.Point(202, 547);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(535, 174);
             this.button1.TabIndex = 1;
@@ -68,7 +68,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1313, 428);
+            this.button2.Location = new System.Drawing.Point(1313, 547);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(535, 174);
             this.button2.TabIndex = 2;
@@ -91,7 +91,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(273, 815);
+            this.button3.Location = new System.Drawing.Point(272, 876);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(334, 134);
             this.button3.TabIndex = 4;
@@ -102,7 +102,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(64, 659);
+            this.textBox1.Location = new System.Drawing.Point(64, 778);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(673, 41);
@@ -112,7 +112,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(1313, 659);
+            this.textBox2.Location = new System.Drawing.Point(1313, 778);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(673, 41);
@@ -122,7 +122,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(1515, 815);
+            this.button5.Location = new System.Drawing.Point(1514, 876);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(288, 134);
             this.button5.TabIndex = 8;

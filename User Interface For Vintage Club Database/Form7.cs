@@ -2,34 +2,31 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Management.Instrumentation;
 using System.Windows.Forms;
 
 namespace User_Interface_For_Vintage_Club_Database
 {
     public partial class Form7 : Form
-
     {
-        Form5 f5;
-        public Form7(Form5 f5)
+        public Form7(string XYZ)
         {
             InitializeComponent();
-            this.f5 = f5;
+            numericUpDown1.Value = Int32.Parse(XYZ);
         }
+
+        public string xyz { get; set; }
+
         public static string ID, BasicTitle, Date, WhoBy, MaintenanceInformation, IDGrabber, AutoManual;
 
         DBAccess objDBAccess = new DBAccess();
         DataTable dtUsers = new DataTable();
         private void MaintenenceFormEditPage_Load(object sender, EventArgs e)
         {
-            numericUpDown1.Value = f5.IDValueView.Value;
             textBox3.Text = Form4.Machine_Type;
             textBox4.Text = Form4.Year_Built;
             textBox5.Text = Form4.Make;
             textBox6.Text = Form4.Model;
 
-            //string DateManual = textBox1.Text;
-            //string DateAutomatic = dateTimePicker1.Text;
             if (numericUpDown1.Value != 0)
             {
                 string query = "Select ID, Date, Basic_Title, Who_By, Maintenence_Information, ID_Grabber, AutoManual from dbo.Maintenence_Information where ID = '" + numericUpDown1.Value + "'";
@@ -44,12 +41,28 @@ namespace User_Interface_For_Vintage_Club_Database
                     WhoBy = dtUsers.Rows[0]["Who_By"].ToString();
                     MaintenanceInformation = dtUsers.Rows[0]["Maintenence_Information"].ToString();
                     AutoManual = dtUsers.Rows[0]["AutoManual"].ToString();
-
-                    textBox1.Text = Date;
-                    textBox7.Text = BasicTitle;
-                    textBox2.Text = WhoBy;
-                    richTextBox1.Text = MaintenanceInformation;
                     AutoManual1.Text = AutoManual;
+
+                    if(AutoManual1.Text == "Auto")
+                    {
+                        radioButton1.Checked = true;
+                        textBox1.Visible = false;
+                        dateTimePicker1.Visible = true;
+                        dateTimePicker1.Text = Date;
+                        textBox7.Text = BasicTitle;
+                        textBox2.Text = WhoBy;
+                        richTextBox1.Text = MaintenanceInformation;
+                    }
+                    if(AutoManual1.Text == "Manual")
+                    {
+                        radioButton2.Checked = true;
+                        textBox1.Visible = true;
+                        dateTimePicker1.Visible = false;
+                        textBox1.Text = Date;
+                        textBox7.Text = BasicTitle;
+                        textBox2.Text = WhoBy;
+                        richTextBox1.Text = MaintenanceInformation;
+                    }
 
                     objDBAccess.closeConn();
                 }
@@ -62,9 +75,9 @@ namespace User_Interface_For_Vintage_Club_Database
             {
                 this.Hide();
             }
-            else
+            else if(IsFormEdited.Text == "Yes")
             {
-                DialogResult ExitCheck = MessageBox.Show("There are unsaved changes. Would you like to continiue?", "Check the form", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult ExitCheck = MessageBox.Show("Would you like to exit the editing page? Any unsaved changes will be undone.", "Would you like to exit?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ExitCheck == DialogResult.Yes)
                 {
                     IsFormEdited.Text = "No";
@@ -74,6 +87,10 @@ namespace User_Interface_For_Vintage_Club_Database
                 {
                     //Do Nothing
                 }
+            }
+            else
+            {
+
             }
         }
 
@@ -126,49 +143,69 @@ namespace User_Interface_For_Vintage_Club_Database
 
         private void button2_Click(object sender, EventArgs e)
         {
-            IsFormEdited.Text = "No";
-            string UpdatedDate = textBox1.Text;
-            string UpdatedBasic_Title = textBox7.Text;
-            string UpdatedWho_By = textBox2.Text;
-            string UpdatedMaintenence_Information = richTextBox1.Text;
-
-            string query = "Update Maintenence_Information SET Date = '" + @UpdatedDate + "', Basic_Title = " + @UpdatedBasic_Title + "', Who_By = " + @UpdatedWho_By + "', Maintenence_Information = " + @UpdatedMaintenence_Information + "'Where ID = '" + numericUpDown1.Value + "'";
-
-            SqlCommand updatecommand = new SqlCommand(query);
-
-            updatecommand.Parameters.AddWithValue("@Date", UpdatedDate);
-            updatecommand.Parameters.AddWithValue("@Basic_Title", UpdatedBasic_Title);
-            updatecommand.Parameters.AddWithValue("@Who_By", UpdatedWho_By);
-            updatecommand.Parameters.AddWithValue("@Maintenence_Information", UpdatedMaintenence_Information);
-
-            int row = objDBAccess.executeQuery(updatecommand);
-
-            if (row == 1)
+            if (radioButton1.Checked == true)
             {
-                DialogResult Submit = MessageBox.Show("Information successfully updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Something went wrong. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+                IsFormEdited.Text = "No";
+                string UpdatedDate = dateTimePicker1.Text;
+                string UpdatedBasic_Title = textBox7.Text;
+                string UpdatedWho_By = textBox2.Text;
+                string UpdatedMaintenence_Information = richTextBox1.Text;
+                string UpdatedAutoManual = AutoManual1.Text;
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            IsFormEdited.Text = "Yes";
+                string query = "Update Maintenence_Information SET Date = '" + @UpdatedDate + "', Basic_Title = '" + @UpdatedBasic_Title + "', Who_By = '" + @UpdatedWho_By + "', Maintenence_Information = '" + @UpdatedMaintenence_Information + "', AutoManual = '" + @UpdatedAutoManual + "' Where ID = '" + numericUpDown1.Value + "'";
+
+                SqlCommand updatecommand = new SqlCommand(query);
+
+                updatecommand.Parameters.AddWithValue("@Date", UpdatedDate);
+                updatecommand.Parameters.AddWithValue("@Basic_Title", UpdatedBasic_Title);
+                updatecommand.Parameters.AddWithValue("@Who_By", UpdatedWho_By);
+                updatecommand.Parameters.AddWithValue("@Maintenence_Information", UpdatedMaintenence_Information);
+                updatecommand.Parameters.AddWithValue("@AutoManual", UpdatedAutoManual);
+
+                int row = objDBAccess.executeQuery(updatecommand);
+
+                if (row == 1)
+                {
+                    DialogResult Submit = MessageBox.Show("Information successfully updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            if(radioButton2.Checked == true)
+            {
+                IsFormEdited.Text = "No";
+                string UpdatedDate = dateTimePicker1.Text;
+                string UpdatedBasic_Title = textBox7.Text;
+                string UpdatedWho_By = textBox2.Text;
+                string UpdatedMaintenence_Information = richTextBox1.Text;
+                string UpdatedAutoManual = AutoManual1.Text;
+
+                string query = "Update Maintenence_Information SET Date = '" + @UpdatedDate + "', Basic_Title = '" + @UpdatedBasic_Title + "', Who_By = '" + @UpdatedWho_By + "', Maintenence_Information = '" + @UpdatedMaintenence_Information + "', AutoManual = '" + @UpdatedAutoManual + "' Where ID = '" + numericUpDown1.Value + "'";
+
+                SqlCommand updatecommand = new SqlCommand(query);
+
+                updatecommand.Parameters.AddWithValue("@Date", UpdatedDate);
+                updatecommand.Parameters.AddWithValue("@Basic_Title", UpdatedBasic_Title);
+                updatecommand.Parameters.AddWithValue("@Who_By", UpdatedWho_By);
+                updatecommand.Parameters.AddWithValue("@Maintenence_Information", UpdatedMaintenence_Information);
+                updatecommand.Parameters.AddWithValue("@AutoManual", UpdatedAutoManual);
+
+                int row = objDBAccess.executeQuery(updatecommand);
+
+                if (row == 1)
+                {
+                    DialogResult Submit = MessageBox.Show("Information successfully updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            IsFormEdited.Text = "Yes";
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            IsFormEdited.Text = "Yes";
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             IsFormEdited.Text = "Yes";
         }

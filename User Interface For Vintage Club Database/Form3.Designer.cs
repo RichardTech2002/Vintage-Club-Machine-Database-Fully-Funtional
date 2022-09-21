@@ -107,7 +107,7 @@
             // 
             // Form3IDTaker
             // 
-            this.Form3IDTaker.Location = new System.Drawing.Point(-25, -9);
+            this.Form3IDTaker.Location = new System.Drawing.Point(-13, 2);
             this.Form3IDTaker.Maximum = new decimal(new int[] {
             268435455,
             1042612833,
