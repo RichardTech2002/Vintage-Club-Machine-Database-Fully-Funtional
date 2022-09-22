@@ -47,10 +47,7 @@
             this.autoManualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maintenenceInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.machine_Database_FixedDataSet5 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet5();
-            this.machine_Database_FixedDataSet3 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet3();
             this.maintenenceTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.machine_Database_FixedDataSet2 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet2();
-            this.maintenence_TableTableAdapter1 = new User_Interface_For_Vintage_Club_Database.Machine_Database_FixedDataSet2TableAdapters.Maintenence_TableTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.MainIdTaker = new System.Windows.Forms.NumericUpDown();
@@ -73,9 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenenceInformationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenenceTableBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDValueView)).BeginInit();
@@ -254,25 +249,8 @@
             this.machine_Database_FixedDataSet5.DataSetName = "Machine_Database_FixedDataSet5";
             this.machine_Database_FixedDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // machine_Database_FixedDataSet3
-            // 
-            this.machine_Database_FixedDataSet3.DataSetName = "Machine_Database_FixedDataSet3";
-            this.machine_Database_FixedDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // maintenenceTableBindingSource1
-            // 
-            this.maintenenceTableBindingSource1.DataMember = "Maintenence_Table";
-            this.maintenenceTableBindingSource1.DataSource = this.machine_Database_FixedDataSet2;
-            // 
-            // machine_Database_FixedDataSet2
-            // 
-            this.machine_Database_FixedDataSet2.DataSetName = "Machine_Database_FixedDataSet2";
-            this.machine_Database_FixedDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // maintenence_TableTableAdapter1
-            // 
-            this.maintenence_TableTableAdapter1.ClearBeforeFill = true;
-            // 
+
+
             // pictureBox1
             // 
             this.pictureBox1.Image = global::User_Interface_For_Vintage_Club_Database.Properties.Resources.Untitled;
@@ -509,9 +487,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenenceInformationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenenceTableBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machine_Database_FixedDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainIdTaker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDValueView)).EndInit();
@@ -525,11 +501,8 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Machine_Database_FixedDataSet2 machine_Database_FixedDataSet2;
         private System.Windows.Forms.BindingSource maintenenceTableBindingSource1;
-        private Machine_Database_FixedDataSet2TableAdapters.Maintenence_TableTableAdapter maintenence_TableTableAdapter1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Machine_Database_FixedDataSet3 machine_Database_FixedDataSet3;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.NumericUpDown MainIdTaker;
         private Machine_Database_FixedDataSet5 machine_Database_FixedDataSet5;

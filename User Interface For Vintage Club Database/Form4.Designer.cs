@@ -429,7 +429,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(239, 79);
             this.button5.TabIndex = 65;
-            this.button5.Text = "Update Picture...";
+            this.button5.Text = "Update First Picture...";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
