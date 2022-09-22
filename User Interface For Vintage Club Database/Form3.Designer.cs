@@ -82,7 +82,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(314, 115);
             this.button2.TabIndex = 8;
-            this.button2.Text = "< Main Menu";
+            this.button2.Text = "Main Menu";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

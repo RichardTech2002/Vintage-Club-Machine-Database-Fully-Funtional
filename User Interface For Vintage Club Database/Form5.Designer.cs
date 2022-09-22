@@ -85,7 +85,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(716, 92);
             this.button7.TabIndex = 84;
-            this.button7.Text = "Maintenance Information Form >";
+            this.button7.Text = "Maintenance Information Form";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -97,7 +97,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(686, 89);
             this.button2.TabIndex = 83;
-            this.button2.Text = "< Back To Editing Form";
+            this.button2.Text = "Back To Editing Form";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -249,8 +249,6 @@
             this.machine_Database_FixedDataSet5.DataSetName = "Machine_Database_FixedDataSet5";
             this.machine_Database_FixedDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-
-
             // pictureBox1
             // 
             this.pictureBox1.Image = global::User_Interface_For_Vintage_Club_Database.Properties.Resources.Untitled;
