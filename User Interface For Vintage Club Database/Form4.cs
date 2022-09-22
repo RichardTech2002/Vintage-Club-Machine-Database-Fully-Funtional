@@ -8,6 +8,20 @@ namespace User_Interface_For_Vintage_Club_Database
 {
     public partial class Form4 : Form
     {
+        Form3 f3;
+        public Form4(Form3 f3)
+        {
+            InitializeComponent();
+            this.f3 = f3;
+        }
+
+        public Form4()
+        {
+            InitializeComponent();
+        }
+        DBAccess objDBAccess = new DBAccess();
+        DataTable dtUsers = new DataTable();
+
         public static string id, Machine_Type, Year_Built, Original_Owner, Date_Acquired, Description, Maintenence_Information, Machine_Location, Restoration_Status, Donated_Or_Loaned, Link_To_TractorData, Model, Make, Other_Notes, IfSold, FileLocation1, FileLocation2, FileLocation3;
         string ImageLocation1 = @"E:\Database General Folder\No Image Icon.jpg";
         string ImageLocation2 = @"E:\Database General Folder\No Image Icon.jpg";
@@ -62,22 +76,6 @@ namespace User_Interface_For_Vintage_Club_Database
             MessageBox.Show("Link Copied! Click on Google search bar and then press CTRL and V at the same time to put the link into your browser.", "Link Copied");
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (pictureBox2 != null)
-            {
-                DialogResult dlgpic2 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dlgpic2 == DialogResult.Yes)
-                {
-                    pictureBox2.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
-                }
-                else
-                {
-                    //Do Nothing
-                }
-            }
-        }
-
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             if (pictureBox1 != null)
@@ -94,19 +92,37 @@ namespace User_Interface_For_Vintage_Club_Database
             }
         }
 
-        Form3 f3;
-        public Form4(Form3 f3)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.f3 = f3;
+            if (pictureBox2 != null)
+            {
+                DialogResult dlgpic2 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlgpic2 == DialogResult.Yes)
+                {
+                    pictureBox2.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
+                }
+                else
+                {
+                    //Do Nothing
+                }
+            }
         }
 
-        public Form4()
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+            if (pictureBox3 != null)
+            {
+                DialogResult dlgpic3 = MessageBox.Show("Would you like to remove this image?", "Remove Image", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlgpic3 == DialogResult.Yes)
+                {
+                    pictureBox3.ImageLocation = @"E:\Database General Folder\No Image Icon.jpg";
+                }
+                else
+                {
+                    //Do Nothing
+                }
+            }
         }
-        DBAccess objDBAccess = new DBAccess();
-        DataTable dtUsers = new DataTable();
 
         private void button3_Click(object sender, EventArgs e)
         {

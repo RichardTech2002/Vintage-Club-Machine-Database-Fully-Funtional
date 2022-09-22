@@ -306,7 +306,7 @@ namespace User_Interface_For_Vintage_Club_Database
             }
             else if (Duh < 15)
             {
-                DialogResult DoubleCheck = MessageBox.Show("This form is not complete. Are you sure you want to submit this data how it is? Remember you can change it later.", "Incomplete Form", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                DialogResult DoubleCheck = MessageBox.Show("This form is not complete. Are you sure you want to submit this data how it is? Remember you can change it later. Any fields left blank will be given default blank answers.", "Incomplete Form", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (DoubleCheck == DialogResult.OK)
                 {
                     if (textBox1.Text == "")

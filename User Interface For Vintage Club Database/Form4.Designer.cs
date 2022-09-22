@@ -183,14 +183,15 @@
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
+            "Auditorium",
+            "In Storage - On-Site",
+            "In Storage - Off-Site",
             "Museum Stage 1 (West)",
             "Museum Stage 2 (South East)",
             "Museum Stage 3 (North East)",
             "Museum Stage 4 (Upstairs)",
-            "Auditorium",
-            "Workshop",
-            "In Storage - On-Site",
-            "In Storage - Off-Site"});
+            "Outside",
+            "Workshop"});
             this.comboBox2.Location = new System.Drawing.Point(1436, 204);
             this.comboBox2.MaxDropDownItems = 20;
             this.comboBox2.Name = "comboBox2";
@@ -229,9 +230,12 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Restored - Funtional",
             "Restored - Display Only",
+            "Unrestored - Display Only",
             "Under Restoration",
             "Awaiting Restoration",
-            "Scrapped"});
+            "Scrapped",
+            "Unknown",
+            "None of These"});
             this.comboBox1.Location = new System.Drawing.Point(1436, 146);
             this.comboBox1.MaxDropDownItems = 20;
             this.comboBox1.Name = "comboBox1";
@@ -261,14 +265,20 @@
             "Dairy Equipment",
             "Forestry Machinery",
             "Hay Making Machinery",
+            "Heavy Machinery",
             "Household Machine",
+            "Household Tool",
+            "Kauri Related Item",
             "Lawn Mower",
+            "Motorbike",
+            "Naval Display Item",
             "Rotary Hoe",
             "Shearing Equipment",
             "Stationary Engine",
             "Tool",
             "Tractor",
             "Truck",
+            "N/A",
             "Other..."});
             this.textBox1.Location = new System.Drawing.Point(221, 27);
             this.textBox1.MaxDropDownItems = 20;
@@ -592,6 +602,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 86;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // button9
             // 
